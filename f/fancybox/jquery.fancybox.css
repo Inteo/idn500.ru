@@ -26,9 +26,15 @@
 
 .fancybox-skin {
 	position: relative;
-	background: #fff;
+	background: #f6f9fb;
 	color: #444;
 	text-shadow: none;
+	border-radius: 15px;
+	overflow: hidden;
+	-webkit-box-shadow: 0 15px 30px 0 #666;
+   -moz-box-shadow: 0 15px 30px 0 #66;
+    box-shadow: 0 15px 30px 0 #666;
+	padding: 0;
 }
 
 .fancybox-opened {
@@ -89,18 +95,48 @@
 
 .fancybox-close {
 	position: absolute;
-	top: 0px;
-	right: 0px;
-	width: 55px;
-	height: 55px;
+	top: 20px;
+	left: 35px;
+	width: 60px;
+	height: 60px;
 	cursor: pointer;
 	z-index: 8040;
-background: rgba(255,255,255,.5) url(../../f/i/icons.png) 0 -76px no-repeat;
+background: #0089d7;
 border:0!important;
+border-radius: 12px;
+  -webkit-box-shadow: inset 0px -3px 0px 0px #004972, inset 0px -50px 40px -30px #006ead;
+  -moz-box-shadow: inset 0px -3px 0px 0px #004972, inset 0px -50px 40px -30px #006ead;
+  box-shadow: inset 0px -3px 0px 0px #004972, inset 0px -50px 40px -30px #006ead;
 }
 
 .fancybox-close:hover {
-background-position:-55px -76px;
+  background: #00a4ec;
+  -webkit-box-shadow: inset 0px -3px 0px 0px #00588a, inset 0px -50px 40px -30px #0086ca;
+  -moz-box-shadow: inset 0px -3px 0px 0px #00588a, inset 0px -50px 40px -30px #0086ca;
+  box-shadow: inset 0px -3px 0px 0px #00588a, inset 0px -50px 40px -30px #0086ca;
+}
+
+.fancybox-close:active {
+  background: #00a4ec;
+  outline: 0;
+  margin-top: 2px;
+  -webkit-box-shadow:  inset 0px -50px 40px -30px #0086ca;
+  -moz-box-shadow: inset 0px -50px 40px -30px #0086ca;
+  box-shadow: inset 0px -50px 40px -30px #0086ca;
+}
+
+.fancybox-close:before {
+  content: '';
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  background: url(/f/i/icons.png);
+  background-position: 0 -38px;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
 }
 
 .fancybox-nav {
