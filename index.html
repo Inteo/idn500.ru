@@ -62,7 +62,20 @@
 	 padding : 0,
 	 minWidth : 960,
 	 minHeight : 520,
-	 scrolling: 'no',
+	 scrolling : 'no',
+        helpers: {
+            overlay: {
+              locked: true 
+            }
+        }
+	 });
+	 
+	 $("a.catalog-btn-link").fancybox({
+	 padding : 0,
+	 maxWidth : 780,
+	 minWidth : 780,
+	 minHeight : 560,
+	 scrolling : 'no',
         helpers: {
             overlay: {
               locked: true 
@@ -70,6 +83,11 @@
         }
 	 });
 });
+  </script>
+  <script>
+    function fancy_close() {
+   $.fancybox.close();
+}
   </script>
 </head>
 
@@ -116,7 +134,7 @@
     </div>
 	<div class="b-search">
 	  <div class="b-search__wrap">
-	    <span class="b-search__catalog-btn"><a href="#b-catalog-popup" class="catalog-btn-link iconized iconized_r-arrow iconized_logo">Весь каталог</a></span>
+	    <span class="b-search__catalog-btn"><a href="#b-app-pay-popup" class="catalog-btn-link iconized iconized_r-arrow iconized_logo">Весь каталог</a></span>
 		<div class="b-search__form">
 		  <form class="b-search__form-wrap">
 		    <div class="b-search__input-wrap">
@@ -301,6 +319,7 @@
   
   <div class="b-popups">
     <div class="b-catalog-popup" id="b-catalog-popup">
+	  <a href="#" class="b-catalog-popup__close" onclick="fancy_close();"></a>
 	  <div class="b-search">
 	  <div class="b-search__wrap">
 		<div class="b-search__form">
@@ -443,9 +462,22 @@
 	   <div class="b-catalog-popup__bottom-detail">
 	     <span class="b-catalog-popup__bottom-title">Уже есть сформированный список того, что необходимо?</span>
 		 <p class="b-catalog-popup__bottom-text">Отправьте заявку, прикрепив файл со списком товаров, или просто <a href="#" class="b-catalog-popup__bottom-link">свяжитесь с нами</a> и наш специалист даст Вам подробную консультацию и ответит на все интересующие Вас вопросы.</p>
-		 <span class="b-catalog-popup__bottom-btn"><a href="#b-catalog-popup" class="b-catalog-popup__bottom-btn-link iconized iconized_mail">Отправить заявку</a></span>
+		 <span class="b-catalog-popup__bottom-btn"><a href="#" class="b-catalog-popup__bottom-btn-link iconized iconized_mail">Отправить заявку</a></span>
 	   </div>
 	 </div>
+	</div>
+	<div class="b-app-pay-popup" id="b-app-pay-popup">
+	  <a href="#" class="b-popup__close iconized iconized_close" onclick="fancy_close();"></a>
+	  <span class="b-app-pay-popup__tilte">Заявка  на расчет</span>
+	  <img src="/f/i/table2.png" class="b-app-pay-popup__image" alt="">
+	  <p class="b-app-pay-popup__text">Если у вас уже есть сформированный список необходимой вам продукции, то просто отправьте заявку, прикрепив файл со списком товаров, и наш специалист свяжется с вами в течении 24 часов.</p>
+	  <form class="b-app-pay-popup-form">
+		    <input type="text" class="b-app-pay-popup__contact" value="" placeholder="Контактное лицо">
+			<input type="text" class="b-app-pay-popup__phone" value="" placeholder="Телефон">
+			<input type="text" class="b-app-pay-popup__email" value="" placeholder="Электронная почта">
+			<a class="b-app-pay-popup__add-file" href="#"></a><span class="b-app-pay-popup__add-file-label">Прикрепить список товара</span>
+		    <input type="submit" class="" value="Отправить">
+	  </form>
 	</div>
   </div>
 </body>
