@@ -3051,6 +3051,52 @@ input[type="button"].btn-block {
   color: #fff;
 }
 
+.b-catalog-popup__close {
+	position: absolute;
+	top: 20px;
+	left: 35px;
+	width: 60px;
+	height: 60px;
+	cursor: pointer;
+	z-index: 8040;
+background: #0089d7;
+border:0!important;
+border-radius: 12px;
+  -webkit-box-shadow: inset 0px -3px 0px 0px #004972, inset 0px -50px 40px -30px #006ead;
+  -moz-box-shadow: inset 0px -3px 0px 0px #004972, inset 0px -50px 40px -30px #006ead;
+  box-shadow: inset 0px -3px 0px 0px #004972, inset 0px -50px 40px -30px #006ead;
+}
+
+.b-catalog-popup__close:hover {
+  background: #00a4ec;
+  -webkit-box-shadow: inset 0px -3px 0px 0px #00588a, inset 0px -50px 40px -30px #0086ca;
+  -moz-box-shadow: inset 0px -3px 0px 0px #00588a, inset 0px -50px 40px -30px #0086ca;
+  box-shadow: inset 0px -3px 0px 0px #00588a, inset 0px -50px 40px -30px #0086ca;
+}
+
+.b-catalog-popup__close:active {
+  background: #00a4ec;
+  outline: 0;
+  margin-top: 2px;
+  -webkit-box-shadow:  inset 0px -50px 40px -30px #0086ca;
+  -moz-box-shadow: inset 0px -50px 40px -30px #0086ca;
+  box-shadow: inset 0px -50px 40px -30px #0086ca;
+}
+
+.b-catalog-popup__close:before {
+  content: '';
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  background: url(/f/i/icons.png);
+  background-position: 0 -38px;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
 .iconized_mail:before {
   content: '';
   position: absolute;
@@ -3059,4 +3105,80 @@ input[type="button"].btn-block {
   top: 12px;
   width: 20px;
   height: 15px;
+}
+
+.b-app-pay-popup {
+  position: relative;
+  padding: 20px 40px;
+}
+
+.b-popup__close {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: #f6f9fb;
+  position: absolute;
+  right: -17px;
+  top: -17px;
+  cursor: pointer;
+  z-index: 8040;
+  border-radius: 20px;
+}
+
+.b-popup__close:active,
+.b-popup__close:focus {
+  outline: 0;
+}
+
+.iconized_close:before {
+  background-position: 0 -59px;
+  width: 11px;
+  height: 11px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  right: 0;
+}
+
+.iconized_close:hover:before {
+  background-position: -11px -59px;
+}
+
+.b-app-pay-popup__tilte {
+  font: bold 40px 'PT Sans Narrow', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #1f1a17;
+  display: block;
+  text-align: center;
+  letter-spacing: 1px;
+  margin-bottom: 45px;
+}
+
+.b-app-pay-popup__image {
+  float: left; 
+}
+
+.b-app-pay-popup__text {
+  float: left;
+  display: block;
+  width: 400px;
+  font: 16px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  line-height: 28px;
+  padding-left: 10px;
+  letter-spacing: .6px;
+}
+
+.b-app-pay-popup-form {
+  margin-top: 35px;
+  width: 100%;
+  float: left;
+}
+
+.b-app-pay-popup__contact {
+  width: 100%;
+  height: 38px;
+  border: 0;
+  padding: 0 15px;
+  border-radius: 3px;
+  
 }
