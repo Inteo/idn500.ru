@@ -15,7 +15,7 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 body {
-  margin: 0;
+
 }
 article,
 aside,
@@ -205,7 +205,7 @@ html {
 }
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.42857143;
   color: #333333;
   background-color: #ffffff;
@@ -1756,7 +1756,6 @@ input[type="button"].btn-block {
 
 .b-header {
   position: relative;
-  height: 140px;
   width: 100%;
 }
 
@@ -1795,20 +1794,16 @@ input[type="button"].btn-block {
 .b-header__menu ul li {
   float: left;
   margin-left: 20px;
-  display: inline-block;
+  display: block;
   margin-top: -10px;
   margin-bottom: 10px;
-  /* float left не сочетается с display inline-block, либо одно либо другое */
 }
 
 .b-header__menu ul li a {
   text-decoration: underline;
-  font: 14px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font: 14px/30px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #0089d7;
-  line-height: 30px;
   outline: none;
-  /* можно задать шрифт для body и больше нигде его не задавать, line height можно задавать прямо в теге font - http://www.w3schools.com/cssref/pr_font_font.asp -  14px/30px;*/
-
 }
 
 .b-header__menu  ul  li  a:hover {
@@ -1830,7 +1825,7 @@ input[type="button"].btn-block {
 
 .b-header__free-call{
   display: block;
-  font: 14px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; /* не нужно, если задать шрифт для body */
+  font-size: 14px;
   color: #000;
 }
 
@@ -1838,13 +1833,12 @@ input[type="button"].btn-block {
   display: block;
   font: 700 30px 'PT Sans Narrow', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #000;
-  letter-spacing: .6px; /* лучше задавать в единицах em, дробных пикселей не бывает, если в макете например 25 - это .025em */
 }
 
 .b-header__contact-us {
   position: relative;
   margin-left: 23px;
-  font: 14px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; /* не нужно, если задать шрифт для body */
+  font-size: 14px
 
 }
 
@@ -1859,47 +1853,29 @@ input[type="button"].btn-block {
   text-decoration: none;
 }
 
-.iconized {
+[class^='iconize-'],
+[class*=' iconize-'] {
+  display: inline-block;
   position: relative;
+  margin-left: 77px;
 }
-
-.iconized:before {
+[class^='iconize-']:before,
+[class*=' iconize-']:before {
   content: '';
+  display: block;
   position: absolute;
-  background: url(/f/i/icons.png);
+  left: -77px;
+  top: 0;
+  background: url('/f/i/icons.png') -9999px -9999px no-repeat;
 }
 
-.iconized:after{
-  content: '';
-  position: absolute;
-  background: url(/f/i/icons.png);
-}
-
-.iconized_callback:before  {
+.iconize_callback:before  {
   background-position: 0 0;
   width: 20px;
   height: 15px;
   top: 3px;
   left: -23px;
 }
-
-.rub {
-  position: relative;
-  float: none !important;
-}
-
-.rub:after {
-  display: block;
-  content: '-';
-  position: absolute;
-  top: 0;
-  left: 0;
-  line-height: 0;
-  margin-top: .85em;
-}
-
-/* можно использовать знак рубля из шрифта - есть в pt sans - &#8377; */
-/*-------------end---------------*/
 
 .b-header__cart {
   float: right;
@@ -1908,24 +1884,27 @@ input[type="button"].btn-block {
   width: 220px;
   height: 60px;
   background: #f6f9fb;
-  -webkit-box-shadow: inset 0px -50px 40px -30px #e4eef2;
-  -moz-box-shadow: inset 0px -50px 40px -30px #e4eef2;
-  box-shadow: inset 0px -50px 40px -30px #e4eef2;
+  background-image: linear-gradient(to top, #e4eef2, #f6f9fb);
+  background: -webkit-gradient(linear, bottom, top, color-stop(#e4eef2), color-stop(#f6f9fb));
+  -webkit-box-shadow: inset 0px -2px 0px 0px #a8bac1;
+  -moz-box-shadow: inset 0px -2px 0px 0px #a8bac1;
+  box-shadow: inset 0px -2px 0px 0px #a8bac1;
   border-radius: 15px;
   position: relative;
 }
 
 .b-header__cart:hover {
-  -webkit-box-shadow: inset 0px -50px 40px -30px #deeaef, inset 0px -3px 0px 0px #b9ced7;
-  -moz-box-shadow: inset 0px -50px 40px -30px #ddeeaef, inset 0px -3px 0px 0px #b9ced7;
-  box-shadow: inset 0px -50px 40px -30px #deeaef, inset 0px -3px 0px 0px #b9ced7;
+  background-image: linear-gradient(to top, #deeaef, #f6f9fb);
+  background: -webkit-gradient(linear, bottom, top, color-stop(#deeaef), color-stop(#f6f9fb));
 }
 
 .b-header__cart:active {
-  -webkit-box-shadow: inset 0px -50px 40px -30px #e4eef2;
-  -moz-box-shadow: inset 0px -50px 40px -30px #e4eef2;
-  box-shadow: inset 0px -50px 40px -30px #e4eef2;
+  background-image: linear-gradient(to top, #deeaef, #f6f9fb);
+  background: -webkit-gradient(linear, bottom, top, color-stop(#deeaef), color-stop(#f6f9fb));
   margin-top: 4px;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
 }
 
 .b-header__cart:hover .b-header__cart-title{
@@ -1958,7 +1937,7 @@ input[type="button"].btn-block {
 
 .b-header__cart_empty .b-header__cart-title:after {
   content: ' пуста';
-  font: bold 16px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: bold
   color: #000;
 }
 
@@ -1976,7 +1955,8 @@ input[type="button"].btn-block {
   position: absolute;
   top: 9px;
   left: 22px;
-  font: bold 14px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; /* если задан font для body - Достаточно font-weight:bold; */
+  font-weight: bold;
+  font-size:  14px;
   color: #fff;
 }
 
@@ -1987,26 +1967,20 @@ input[type="button"].btn-block {
 
 .b-header__cart-title {
   display: block;
-  font: bold 16px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; /* если задан font для body - Достаточно font-weight:bold; */
+  font-weight: bold;
   color: #000;
-}
-
-.b-header__cart-price {
-  font: 16px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; /* если задан font для body - Достаточно font-size: 16px; */
 }
 
 .b-header__title {
   display: block;
-  font: 700 60px 'PT Sans Narrow', 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+  font: 700 60px/60px 'PT Sans Narrow', 'Helvetica Neue', Helvetica, Arial, sans-serif; 
   color: #000;
   text-align: left;
   width: 740px;
   padding-top: 30px;
-  line-height: 65px; /* можно прописать в теге font, в макете 60px */
 }
 
 .b-header__text {
-  font: 16px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;/* если задан font для body - Достаточно font-size: 16px; */
   max-width: 1280px;
   padding-top: 25px;
   display: block;
@@ -2017,7 +1991,6 @@ input[type="button"].btn-block {
 
 .b-header__text a {
   text-decoration: underline;
-  font: 16px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;/* если задан font для body - Достаточно font-size: 16px; */
   color: #0089d7;
 }
 
@@ -2026,11 +1999,9 @@ input[type="button"].btn-block {
 }
 
 .b-search {
-  float: left;
   height: 100px;
   background: #f6f9fb;
   width: 100%;
-  /* скорее всего float:left Не нужен - width 100% + float:left несовместимо - float используется для выравнивания элемента и его обтекания остальными */
 }
 
 .b-search__wrap {
@@ -2038,34 +2009,17 @@ input[type="button"].btn-block {
 }
 
 .b-search__form {
-  height: 38px; /* наверно не нужен, высота должна подстраиваться под содержимое*/
   margin-left: 260px;
 }
 
 .b-search__form-wrap {
   padding-left: 40px;
   margin-top: 12px; 
-  display: table;
-  width: 100%;
+  position: relative;
 }
 
-/* нету блока с table-row
-Структура таблица такая
-<div style="display:table"> таблица
-  <div style="display:table-row"> строка 
-    <div style="display:table-cell"></div> ячейки
-    <div style="display:table-cell"></div>
-    <div style="display:table-cell"></div>
-   </div>
-   <div style="display:table-row">...</div>
- </div>
- иначе бывают баги
- */
-
 .b-search__input-wrap {
-  display: table-cell; /* table-cell внутри table-cell */
-  width: 100%;
-  position: relative;
+  margin-right: 130px;
 }
 
 .b-search__input {
@@ -2073,7 +2027,6 @@ input[type="button"].btn-block {
   border-radius: 7px;
   padding: 10px;
   border: 0;
-  display: table-cell;
   width: 100%;
   box-shadow: 2px 2px 1px #dde6e9 inset;
 }
@@ -2088,7 +2041,6 @@ input[type="button"].btn-block {
   position:relative;
   padding:.1em 60px .1em .3em;
   background:none;
-  font: 16px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;/* если задан font для body - Достаточно font-size: 16px; */
   color: #000;
 }
  
@@ -2102,8 +2054,8 @@ input[type="button"].btn-block {
 }
 
 .input-hint {
-  font: 16px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;/* если задан font для body - Достаточно font-size: 16px; */
   color: #000;
+  padding-left: 20px;
 }
 
 .input-hint_bold {
@@ -2141,17 +2093,19 @@ input[type="button"].btn-block {
 }
 
 .b-search__submit{
-  margin-left: 25px;
   outline: none;
-  width: 81px;
-  height: 38px;
+  position: absolute;
+  right: 25px;
+  top: 0;
+  padding: 9px 18px;
   background: #ffffff;
   -webkit-box-shadow: inset 0px -30px 30px -20px #dfeaef, inset 0px -3px 0px 0px #a8bac1;
   -moz-box-shadow: inset 0px -30px 30px -20px #dfeaef, inset 0px -3px 0px 0px #a8bac1;
   box-shadow: inset 0px -30px 30px -20px #dfeaef, inset 0px -3px 0px 0px #a8bac1;
-  border: none;
-  position: relative;
-  font: bold 16px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;/* если задан font для body - Достаточно font-size: 16px; */
+  border-radius: 4px;
+  font-weight: bold;
+  border: 0;
+  font: 700 16px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; 
 }
 
 .b-search__submit:hover{
@@ -2173,8 +2127,8 @@ input[type="button"].btn-block {
 }
 
 .b-search__catalog-btn {
-  width: 260px;
-  display: block;
+  
+  display: inline-block;
   float: left;
   height: 60px;
   border-radius: 15px;
@@ -2229,7 +2183,7 @@ input[type="button"].btn-block {
   height: 15px;
 }
 
-.iconized_logo:before {
+.iconize_logo:before {
   background-position: -29px 0;
   left: 20px;
   top: 13px;
@@ -2290,12 +2244,12 @@ input[type="button"].btn-block {
 }
 
 .b-catalog-grid__item-link {
-  position: absolute;
   display: block;
-  left: 0;
-  right: 0; 
-  bottom: 0;
-  top: 0;
+  text-decoration: none;
+}
+
+.b-catalog-grid__item-link:hover {
+  text-decoration: none;
 }
 
 .b-bottom-block {
@@ -2363,7 +2317,7 @@ input[type="button"].btn-block {
 }
 
 .b-bottom-block__text {
-  font: 16px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
 }
 
 .b-footer {
@@ -2409,7 +2363,6 @@ input[type="button"].btn-block {
 
 .b-footer__link,
 .b-footer__link:focus {
-  font: 16px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; /* если задан font для body - Достаточно font-size: 16px; */
   color: #fff;
   text-decoration: underline;
   display: inline-block;
@@ -2440,7 +2393,7 @@ input[type="button"].btn-block {
   background: url(/f/i/button.png);
   background-position: 0 0;
   border: 0;
-  font: bold 16px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; /* font-size: 16px; font-weight: bold;*/
+  font-weight: bold;
   color: #000;
   margin-left: 10px;
 }
@@ -2462,7 +2415,6 @@ input[type="button"].btn-block {
 }
 
 .b-footer__made-by a {
-  font: 16px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; /*font-size */
   color: #fff;
   text-decoration: underline;
   letter-spacing: 1px;
@@ -2476,7 +2428,6 @@ input[type="button"].btn-block {
 
 .b-footer__made-by span {
   position: relative;
-  font: 16px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; /*font-size */
   color: #fff;
 }
 
@@ -2568,7 +2519,6 @@ input[type="button"].btn-block {
 }
 
 .b-activity__item-text {
-  font: 16px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; /*font-size */
   color: #000;
   padding-top: 20px;
   line-height: 28px;
@@ -2580,7 +2530,7 @@ input[type="button"].btn-block {
 }
 
 .b-path {
-  font: 14px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Не нужно*/
+  font-size: 14px;
   padding-top: 15px;
 }
 
@@ -2626,7 +2576,6 @@ input[type="button"].btn-block {
 }
 
 .b-content__text-block-text {
-  font: 16px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; /*font-size */
   color: #000;
   line-height: 30px;
   padding-top: 15px;
@@ -2667,7 +2616,6 @@ input[type="button"].btn-block {
   display: block;
   float: left;
   padding: 7px 10px 0 0;
-  font: 16px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 .b-product__view-button,
@@ -2757,9 +2705,7 @@ input[type="button"].btn-block {
 
 .b-product-tiles__item-mask {
    background-image: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1));
-   /* нужно продублировать в префиксом -webkit - есть браузеры, не поддерживающие чистый linear-gradient.
    -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0)), color-stop(100%,rgba(255,255,255,1)));
-   */
    position: absolute;
    bottom: 60px;
    width: 100%;
@@ -2778,14 +2724,14 @@ input[type="button"].btn-block {
   left: 38px;
   display: inline-block; /* при position absolute скорее всего не нужен */
   background: #f6f9fb;
-  font: bold 16px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; /*font-size, weight */
+  font-weight: bold
   width: 140px;
 }
 
 .b-product-tiles__item-available:after {
   content: '';
   position: absolute;
-  /* если заданы размеры, нужен display:block */
+  display: block;
   width: 20px;
   height: 20px;
   background: url(/f/i/available-icons.png);
@@ -2807,7 +2753,6 @@ input[type="button"].btn-block {
 
 .b-product-tiles__item-name {
   display: block;
-  font: 16px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #000;
   position: absolute;
   letter-spacing: .6px;
@@ -2874,7 +2819,7 @@ input[type="button"].btn-block {
 }
 
 .b-see-more__link {
-  font: bold 16px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; /* font-size, font-weight */
+  font-weight: bold
   color: #fff;
   width: 140px;
   display: block;
@@ -2892,7 +2837,7 @@ input[type="button"].btn-block {
   outline: 0;
 }
 
-.iconized_small-arrow:after {
+.iconize_small-arrow:after {
   background-position: 0 -12px;
   width: 5px;
   height: 9px;
@@ -2921,7 +2866,7 @@ input[type="button"].btn-block {
   margin: 0;
   padding: 0 20px 50px 20px;
   list-style: none;
-  float: left;
+
   margin-top: -20px;
 }
 
@@ -2933,16 +2878,12 @@ input[type="button"].btn-block {
 .b-catalog-popup__menu-item {
   position: relative;
   clear: both;
+  width: 210px;
+  padding-top: 30px;
 }
 
 .b-catalog-popup__menu-image {
   float: left;
-}
-
-.b-catalog-popup__menu-link {
-  padding-top: 30px;
-  float: left;
-  /* float не нужен - ссылку ничего не обтекает, padding нужно задать родителю, ссылка строчный элемент, не должна влиять на оформление*/
 }
 
 .b-catalog-popup__menu-link:hover .b-catalog-popup__menu-image{
@@ -2953,10 +2894,7 @@ input[type="button"].btn-block {
 
 .b-catalog-popup__menu-text {
   display: block;
-  width: 170px;
-  float: left; /* float, width не нужен, достаточно задать margin-left - ширина картинки + 10px, width должен задавать родитель, float используется только если нужно задать элементу обтекание или выстроить элементы в ряд, всегда можно сверстать без них */
-  padding-left: 10px;
-  font: 16px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; /* font-size */
+  margin-left: 50px;
   color: #000;
 }
 
@@ -2970,16 +2908,13 @@ input[type="button"].btn-block {
 
 .b-catalog-popup__submenu-item{
   padding-top: 10px;
-  /* padding - 
+  width: 170px;
 }
 
 .b-catalog-popup__submenu-link{
-  font: 14px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; /* не нужно */
+  font-size: 14px
   color: #0089d7;
   outline: 0;
-  width: 160px;
-  display: block;
-  /* width, display block не нужны, за ширину отвечает родитель, сама ссылка строчной элемент - при наведении на пустое место рядом со ссылкой не должна подсвечиваться*/
 }
 
 .b-catalog-popup__submenu-link:hover {
@@ -2992,8 +2927,7 @@ input[type="button"].btn-block {
   background: #fff;
   min-height: 230px;
   position: relative;
-  float: left; /* не нужен - блок во всю ширину */
-  padding: 15px 90px 30px; 
+  padding: 30px 90px 30px; 
 }
 
 .b-catalog-popup__bottom-image {
@@ -3003,8 +2937,7 @@ input[type="button"].btn-block {
 }
 
 .b-catalog-popup__bottom-detail {
-  padding-left: 230px; /* мелочь, но padding-top лучше перенести в родительский блок, а вместо padding-left - margin-left, padding - отступ от границ внутри блока, margin - отступ самого блока...тут margin */
-  padding-top: 15px;
+  margin-left: 230px; 
   z-index: 10;
 }
 
@@ -3022,14 +2955,14 @@ input[type="button"].btn-block {
 .b-catalog-popup__bottom-title {
   font: bold 25px 'PT Sans Narrow', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #1f1a17;
-  letter-spacing: .6px; /* em */
+  letter-spacing: 0.025em;
 }
 
 .b-catalog-popup__bottom-text {
-  font: 16px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; /* font-size */
   color: #000;
   line-height: 28px;
-  padding-top: 15px; /* нужно задать margin-bottom 15px заголовку, сейчас убираем заголовок - появляется отступ сверху 15px*/
+  padding-top: 15px; 
+  padding-bottom: 15px;
 }
 
 .b-catalog-popup__bottom-btn{
@@ -3073,7 +3006,7 @@ input[type="button"].btn-block {
 
 .b-catalog-popup__bottom-btn-link,
 .b-catalog-popup__bottom-btn-link:focus {
-  font: bold 16px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; /* font-size, font-weight */
+  font-weight: bold;
   color: #fff;
   line-height: 38px;
   padding-left: 40px;
@@ -3081,7 +3014,6 @@ input[type="button"].btn-block {
   text-decoration: none;
   width: 183px;
   height: 40px;
-  letter-spacing: .1px; /* em */
   text-shadow: 0px 1px #000;
   outline: none;
 }
@@ -3139,7 +3071,7 @@ border-radius: 12px;
 
 .iconized_mail:before {
   content: '';
-  /* display: block при указании размеров */
+  display: block;
   position: absolute;
   background-position: 0 -22px;
   left: 10px;
