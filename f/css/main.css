@@ -1785,30 +1785,28 @@ input[type="button"].btn-block {
   margin-right: 47%;
 }
 
-.b-header__menu ul {
+.b-header__menu  ul {
   padding: 0;
   margin: 0;
   list-style: none;
   margin-left: -20px;
+
 }
 
-.b-header__menu ul li {
+.b-header__menu  ul  li {
   float: left;
   margin-left: 20px;
   display: inline-block;
   margin-top: -10px;
   margin-bottom: 10px;
-  /* float left не сочетается с display inline-block, либо одно либо другое */
 }
 
-.b-header__menu ul li a {
+.b-header__menu  ul  li  a {
   text-decoration: underline;
   font: 14px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #0089d7;
   line-height: 30px;
   outline: none;
-  /* можно задать шрифт для body и больше нигде его не задавать, line height можно задавать прямо в теге font - http://www.w3schools.com/cssref/pr_font_font.asp -  14px/30px;*/
-
 }
 
 .b-header__menu  ul  li  a:hover {
@@ -1830,7 +1828,7 @@ input[type="button"].btn-block {
 
 .b-header__free-call{
   display: block;
-  font: 14px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; /* не нужно, если задать шрифт для body */
+  font: 14px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #000;
 }
 
@@ -1838,13 +1836,13 @@ input[type="button"].btn-block {
   display: block;
   font: 700 30px 'PT Sans Narrow', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #000;
-  letter-spacing: .6px; /* лучше задавать в единицах em, дробных пикселей не бывает, если в макете например 25 - это .025em */
+  letter-spacing: .6px;
 }
 
 .b-header__contact-us {
   position: relative;
   margin-left: 23px;
-  font: 14px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; /* не нужно, если задать шрифт для body */
+  font: 14px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
 }
 
@@ -1897,8 +1895,6 @@ input[type="button"].btn-block {
   line-height: 0;
   margin-top: .85em;
 }
-
-/* можно использовать знак рубля из шрифта - есть в pt sans - &#8377; */
 /*-------------end---------------*/
 
 .b-header__cart {
@@ -1976,7 +1972,7 @@ input[type="button"].btn-block {
   position: absolute;
   top: 9px;
   left: 22px;
-  font: bold 14px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; /* если задан font для body - Достаточно font-weight:bold; */
+  font: bold 14px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #fff;
 }
 
@@ -1987,26 +1983,26 @@ input[type="button"].btn-block {
 
 .b-header__cart-title {
   display: block;
-  font: bold 16px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; /* если задан font для body - Достаточно font-weight:bold; */
+  font: bold 16px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #000;
 }
 
 .b-header__cart-price {
-  font: 16px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; /* если задан font для body - Достаточно font-size: 16px; */
+  font: 16px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 .b-header__title {
   display: block;
-  font: 700 60px 'PT Sans Narrow', 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+  font: 700 60px 'PT Sans Narrow', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #000;
   text-align: left;
   width: 740px;
   padding-top: 30px;
-  line-height: 65px; /* можно прописать в теге font, в макете 60px */
+  line-height: 65px;
 }
 
 .b-header__text {
-  font: 16px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;/* если задан font для body - Достаточно font-size: 16px; */
+  font: 16px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   max-width: 1280px;
   padding-top: 25px;
   display: block;
@@ -2017,7 +2013,7 @@ input[type="button"].btn-block {
 
 .b-header__text a {
   text-decoration: underline;
-  font: 16px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;/* если задан font для body - Достаточно font-size: 16px; */
+  font: 16px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #0089d7;
 }
 
@@ -2030,7 +2026,6 @@ input[type="button"].btn-block {
   height: 100px;
   background: #f6f9fb;
   width: 100%;
-  /* скорее всего float:left Не нужен - width 100% + float:left несовместимо - float используется для выравнивания элемента и его обтекания остальными */
 }
 
 .b-search__wrap {
@@ -2038,7 +2033,7 @@ input[type="button"].btn-block {
 }
 
 .b-search__form {
-  height: 38px; /* наверно не нужен, высота должна подстраиваться под содержимое*/
+  height: 38px;
   margin-left: 260px;
 }
 
@@ -2049,21 +2044,8 @@ input[type="button"].btn-block {
   width: 100%;
 }
 
-/* нету блока с table-row
-Структура таблица такая
-<div style="display:table"> таблица
-  <div style="display:table-row"> строка 
-    <div style="display:table-cell"></div> ячейки
-    <div style="display:table-cell"></div>
-    <div style="display:table-cell"></div>
-   </div>
-   <div style="display:table-row">...</div>
- </div>
- иначе бывают баги
- */
-
 .b-search__input-wrap {
-  display: table-cell; /* table-cell внутри table-cell */
+  display: table-cell;
   width: 100%;
   position: relative;
 }
@@ -2088,7 +2070,7 @@ input[type="button"].btn-block {
   position:relative;
   padding:.1em 60px .1em .3em;
   background:none;
-  font: 16px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;/* если задан font для body - Достаточно font-size: 16px; */
+  font: 16px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #000;
 }
  
@@ -2102,7 +2084,7 @@ input[type="button"].btn-block {
 }
 
 .input-hint {
-  font: 16px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;/* если задан font для body - Достаточно font-size: 16px; */
+  font: 16px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #000;
 }
 
@@ -2151,7 +2133,7 @@ input[type="button"].btn-block {
   box-shadow: inset 0px -30px 30px -20px #dfeaef, inset 0px -3px 0px 0px #a8bac1;
   border: none;
   position: relative;
-  font: bold 16px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;/* если задан font для body - Достаточно font-size: 16px; */
+  font: bold 16px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 .b-search__submit:hover{
@@ -2182,7 +2164,6 @@ input[type="button"].btn-block {
   -webkit-box-shadow: inset 0px -3px 0px 0px #004770, inset 0px -50px 40px -30px #006ead, 0px 5px 10px -3px #000;
   -moz-box-shadow: inset 0px -3px 0px 0px #004770, inset 0px -50px 40px -30px #006ead, 0px 5px 10px -3px #000;
   box-shadow: inset 0px -3px 0px 0px #004770, inset 0px -50px 40px -30px #006ead, 0px 5px 10px -3px #000;
-  /* попробовать задать фон градиентом - как в макете */
 }
 
 .b-search__catalog-btn:hover{
@@ -2239,7 +2220,7 @@ input[type="button"].btn-block {
 
 .b-catalog-grid {
   padding: 40px 30px 10px;
-  float: left;  /* не нужен, каталог занимает всю ширину*/
+  float: left;  
   margin-left: -20px;
 }
 
@@ -2250,9 +2231,6 @@ input[type="button"].btn-block {
   position: relative;
   margin-left: 20px;
   margin-bottom: 70px;
-  /* не критично, но если блоки могут иметь разную высоту - верстать лучше без float, через display:inline-block; - http://habrahabr.ru/post/161581/
-  + можно задать min-height: 260px; 
-  сейчас все названия в 2 строчки, если появится в 3 строчки - придется переделывать */
 }
 
 .b-catalog-grid__item:hover .b-catalog-grid__item-image {
@@ -2284,7 +2262,7 @@ input[type="button"].btn-block {
   color: #000;
   text-align: center;
   padding-top: 12px;
-  letter-spacing: .6px; /* em */
+  letter-spacing: .6px;
   display: block;
   width: 100%;
 }
@@ -2369,7 +2347,7 @@ input[type="button"].btn-block {
 .b-footer {
   padding: 30px 40px;
   text-align: justify;
-  width: 100%; /* лишнее, для div всегда 100% */
+  width: 100%;
   min-width: 960px;
 }
 
@@ -2409,7 +2387,7 @@ input[type="button"].btn-block {
 
 .b-footer__link,
 .b-footer__link:focus {
-  font: 16px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; /* если задан font для body - Достаточно font-size: 16px; */
+  font: 16px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #fff;
   text-decoration: underline;
   display: inline-block;
@@ -2440,7 +2418,7 @@ input[type="button"].btn-block {
   background: url(/f/i/button.png);
   background-position: 0 0;
   border: 0;
-  font: bold 16px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; /* font-size: 16px; font-weight: bold;*/
+  font: bold 16px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #000;
   margin-left: 10px;
 }
@@ -2462,7 +2440,7 @@ input[type="button"].btn-block {
 }
 
 .b-footer__made-by a {
-  font: 16px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; /*font-size */
+  font: 16px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #fff;
   text-decoration: underline;
   letter-spacing: 1px;
@@ -2476,7 +2454,7 @@ input[type="button"].btn-block {
 
 .b-footer__made-by span {
   position: relative;
-  font: 16px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; /*font-size */
+  font: 16px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #fff;
 }
 
@@ -2501,7 +2479,7 @@ input[type="button"].btn-block {
   color: #000;
   margin-bottom: 40px;
   display: block;
-  letter-spacing: 1.4px; /* em */
+  letter-spacing: 1.4px;
 }
 
 .b-activity__item {
@@ -2542,7 +2520,7 @@ input[type="button"].btn-block {
 .b-activity__item-title {
   font: bold 40px 'PT Sans Narrow', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #000;
-  letter-spacing: .8px; /* em */
+  letter-spacing: .8px;
   line-height: 30px;
 }
 
@@ -2568,7 +2546,7 @@ input[type="button"].btn-block {
 }
 
 .b-activity__item-text {
-  font: 16px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; /*font-size */
+  font: 16px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #000;
   padding-top: 20px;
   line-height: 28px;
@@ -2580,7 +2558,7 @@ input[type="button"].btn-block {
 }
 
 .b-path {
-  font: 14px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Не нужно*/
+  font: 14px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   padding-top: 15px;
 }
 
@@ -2588,7 +2566,7 @@ input[type="button"].btn-block {
   font-size: 16px;
   color: #0089d7;
   text-decoration: underline;
-  letter-spacing: .4px; /* em */
+  letter-spacing: .4px;
   line-height: 10px;
 }
 
@@ -2599,7 +2577,7 @@ input[type="button"].btn-block {
 .b-content__title {
   font: bold 60px 'PT Sans Narrow', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #000;
-  letter-spacing: 1.4px; /*em*/
+  letter-spacing: 1.4px;
 }
 
 .b-content__text-block-wrap {
@@ -2613,7 +2591,7 @@ input[type="button"].btn-block {
 .b-content__text-block-title {
   font: bold 40px 'PT Sans Narrow', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #000;
-  letter-spacing: .8px; /*em*/
+  letter-spacing: .8px;
 }
 
 .b-content__text-block-link {
@@ -2626,7 +2604,7 @@ input[type="button"].btn-block {
 }
 
 .b-content__text-block-text {
-  font: 16px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; /*font-size */
+  font: 16px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #000;
   line-height: 30px;
   padding-top: 15px;
@@ -2757,9 +2735,6 @@ input[type="button"].btn-block {
 
 .b-product-tiles__item-mask {
    background-image: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1));
-   /* нужно продублировать в префиксом -webkit - есть браузеры, не поддерживающие чистый linear-gradient.
-   -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0)), color-stop(100%,rgba(255,255,255,1)));
-   */
    position: absolute;
    bottom: 60px;
    width: 100%;
@@ -2776,16 +2751,15 @@ input[type="button"].btn-block {
   height: 30px;
   bottom: 20px;
   left: 38px;
-  display: inline-block; /* при position absolute скорее всего не нужен */
+  display: inline-block;
   background: #f6f9fb;
-  font: bold 16px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; /*font-size, weight */
+  font: bold 16px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   width: 140px;
 }
 
 .b-product-tiles__item-available:after {
   content: '';
   position: absolute;
-  /* если заданы размеры, нужен display:block */
   width: 20px;
   height: 20px;
   background: url(/f/i/available-icons.png);
@@ -2834,7 +2808,7 @@ input[type="button"].btn-block {
 }
 
 .b-product-tiles__mask {
-  background-image: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,1)); /* + -webkit */
+  background-image: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,1));
   position: absolute;
   right: 0;
   top: 110px;
@@ -2874,7 +2848,7 @@ input[type="button"].btn-block {
 }
 
 .b-see-more__link {
-  font: bold 16px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; /* font-size, font-weight */
+  font: bold 16px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #fff;
   width: 140px;
   display: block;
@@ -2942,7 +2916,6 @@ input[type="button"].btn-block {
 .b-catalog-popup__menu-link {
   padding-top: 30px;
   float: left;
-  /* float не нужен - ссылку ничего не обтекает, padding нужно задать родителю, ссылка строчный элемент, не должна влиять на оформление*/
 }
 
 .b-catalog-popup__menu-link:hover .b-catalog-popup__menu-image{
@@ -2954,9 +2927,9 @@ input[type="button"].btn-block {
 .b-catalog-popup__menu-text {
   display: block;
   width: 170px;
-  float: left; /* float, width не нужен, достаточно задать margin-left - ширина картинки + 10px, width должен задавать родитель, float используется только если нужно задать элементу обтекание или выстроить элементы в ряд, всегда можно сверстать без них */
+  float: left;
   padding-left: 10px;
-  font: 16px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; /* font-size */
+  font: 16px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #000;
 }
 
@@ -2970,16 +2943,14 @@ input[type="button"].btn-block {
 
 .b-catalog-popup__submenu-item{
   padding-top: 10px;
-  /* padding - 
 }
 
 .b-catalog-popup__submenu-link{
-  font: 14px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; /* не нужно */
+  font: 14px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #0089d7;
   outline: 0;
   width: 160px;
   display: block;
-  /* width, display block не нужны, за ширину отвечает родитель, сама ссылка строчной элемент - при наведении на пустое место рядом со ссылкой не должна подсвечиваться*/
 }
 
 .b-catalog-popup__submenu-link:hover {
@@ -2992,7 +2963,7 @@ input[type="button"].btn-block {
   background: #fff;
   min-height: 230px;
   position: relative;
-  float: left; /* не нужен - блок во всю ширину */
+  float: left;
   padding: 15px 90px 30px; 
 }
 
@@ -3003,7 +2974,7 @@ input[type="button"].btn-block {
 }
 
 .b-catalog-popup__bottom-detail {
-  padding-left: 230px; /* мелочь, но padding-top лучше перенести в родительский блок, а вместо padding-left - margin-left, padding - отступ от границ внутри блока, margin - отступ самого блока...тут margin */
+  padding-left: 230px;
   padding-top: 15px;
   z-index: 10;
 }
@@ -3022,14 +2993,14 @@ input[type="button"].btn-block {
 .b-catalog-popup__bottom-title {
   font: bold 25px 'PT Sans Narrow', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #1f1a17;
-  letter-spacing: .6px; /* em */
+  letter-spacing: .6px;
 }
 
 .b-catalog-popup__bottom-text {
-  font: 16px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; /* font-size */
+  font: 16px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #000;
   line-height: 28px;
-  padding-top: 15px; /* нужно задать margin-bottom 15px заголовку, сейчас убираем заголовок - появляется отступ сверху 15px*/
+  padding-top: 15px;
 }
 
 .b-catalog-popup__bottom-btn{
@@ -3042,17 +3013,6 @@ input[type="button"].btn-block {
   -webkit-box-shadow: inset 0px -3px 0px 0px #c43801, inset 0px -50px 40px -30px #fd5600;
   -moz-box-shadow: inset 0px -3px 0px 0px #c43801, inset 0px -50px 40px -30px #fd5600;
   box-shadow: inset 0px -3px 0px 0px #c43801, inset 0px -50px 40px -30px #fd5600;
-  /* width, display block, float, height - не нужны, кнопка должне менять размеры в зависимости от размера шрифта, количества текста 
-  желательно фон задать градиентом, как в макете
-  все это форматирование можно перенести в класс кнопки, отказаться от лишних span
-  стили можно прописать в классе btn - кнопка стандартная - может еще где-то использоваться
-
-  <p class="b-catalog-popup__bottom-text">Отправьте заявку, прикрепив файл со списком...</p>
-  <a href="#b-catalog-popup" class="btn"><span class="iconized iconized_mail">Отправить заявку</span></a>
-
-  класс iconized нужно задавать для содержимого кнопки - кнопка может быть и без иконки - <a class="btn">Отправить заявку</a> должно нормально отображаться
-  и расположение иконки не должно зависеть от padding и других параметров кнопки - сейчас поменяем padding иконки съедет
-  */
 }
 
 .b-catalog-popup__bottom-btn:hover{
@@ -3073,7 +3033,7 @@ input[type="button"].btn-block {
 
 .b-catalog-popup__bottom-btn-link,
 .b-catalog-popup__bottom-btn-link:focus {
-  font: bold 16px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; /* font-size, font-weight */
+  font: bold 16px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #fff;
   line-height: 38px;
   padding-left: 40px;
@@ -3081,7 +3041,7 @@ input[type="button"].btn-block {
   text-decoration: none;
   width: 183px;
   height: 40px;
-  letter-spacing: .1px; /* em */
+  letter-spacing: .1px;
   text-shadow: 0px 1px #000;
   outline: none;
 }
@@ -3093,7 +3053,6 @@ input[type="button"].btn-block {
 
 .iconized_mail:before {
   content: '';
-  /* display: block при указании размеров */
   position: absolute;
   background-position: 0 -22px;
   left: 10px;
