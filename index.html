@@ -7,19 +7,19 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="description" content="">
   <meta name="keywords" content="">
-  <link rel="stylesheet" href="f/css/main.css"> <!-- все пути - абсолютные -->
+  <link rel="stylesheet" href="/f/css/main.css"> 
   <!--[if lte IE 9]><link rel="stylesheet" href="f/css/ie.css"><![endif]-->
   <link href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Open+Sans:400,400italic,800,600&subset=latin,cyrillic" rel="stylesheet">
-  <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&subset=latin,cyrillic-ext,latin-ext,cyrillic' rel='stylesheet' type='text/css'>
-  <!-- нужен ли cyrillic-ext,latin-ext? лишний вес -->
-  <link rel="stylesheet" href="f/fancybox/jquery.fancybox.css?v=2.1.5" media="screen">
+  <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/f/fancybox/jquery.fancybox.css?v=2.1.5" media="screen">
   <link rel="shortcut icon" href="favicon.ico">
-  <script src="f/js/jquery-1.10.2.min.js"></script>
-  <script src="f/js/jquery.carouFredSel-6.2.1-packed.js"></script>
-  <script src="f/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
-  <script src="f/js/jquery.touchSwipe.min.js"></script>
-  <script src="f/js/jquery.transit.min.js"></script>
-  <script src="f/js/common.js"></script>
+  <script src="/f/js/jquery-1.10.2.min.js"></script>
+  <script src="/f/js/jquery.carouFredSel-6.2.1-packed.js"></script>
+  <script src="/f/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+  <script src="/f/js/jquery.touchSwipe.min.js"></script>
+  <script src="/f/js/jquery.transit.min.js"></script>
+  <script src="/f/js/common.js"></script>
   <!--[if lt IE 9]><script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script><![endif]-->
   <script>
     $(document).ready(function() {
@@ -59,7 +59,7 @@
         else {$(this).parent().find('.clear-text').removeClass('ct-show');}
     });
 	
-    $("a.catalog-btn-link").fancybox({
+    $(".b-search__catalog-btn").fancybox({
 	 padding : 0,
 	 minWidth : 960,
 	 minHeight : 520,
@@ -77,11 +77,11 @@
 <body>
   <div class="b-main">
   <div class="b-main__wrap clearfix">
-    <div class="b-header"> <!-- Задана высота b-header, при этом внутри есть header__wrap высота которого всегда больше - такого лучше избегать -->
+    <div class="b-header">
 	<div class="b-header__wrap">
       <div class="b-header__logo">
         <a href="/">
-          <img src="f/i/logo.png" alt="">
+          <img src="/f/i/logo.png" alt="">
         </a>
 	   </div>
 	   <div class="b-header__content clearfix">
@@ -117,7 +117,7 @@
     </div>
 	<div class="b-search">
 	  <div class="b-search__wrap">
-	    <span class="b-search__catalog-btn"><a href="#b-catalog-popup" class="catalog-btn-link iconized iconized_r-arrow iconized_logo">Весь каталог</a></span>
+	    <a class="b-search__catalog-btn" href="#b-catalog-popup"><span class="iconize iconize_logo">Весь каталог<span class="iconize iconize_r-arrow"></span></a>
 		<div class="b-search__form">
 		  <form class="b-search__form-wrap">
 		    <div class="b-search__input-wrap">
@@ -125,7 +125,7 @@
               <input class="b-search__input" type="text" id="input-name" value="" >
               <span class="clear-text"></span>
 			</div>
-		    <input type="submit" class="b-search__submit btn" value="Найти">
+		    <input type="submit" class="b-search__submit" value="Найти">
 		  </form>
 		</div>
 	  </div>
@@ -133,105 +133,118 @@
 	</div>
 	<div class="b-catalog-grid">
 	  <div class="b-catalog-grid__item">
-	   <a href="#" class="b-catalog-grid__item-link"></a> <!-- поисковики видят пустую ссылку. должно быть 
 	   <a href="#" class="b-catalog-grid__item-link">
-	   <span class="b-catalog-grid__item-image"><img src="/f/i/catalog-icons/icon1.png"></span>
-	   <span class="b-catalog-grid__item-name">Лежачие полицейские</span>
+	     <span class="b-catalog-grid__item-image"><img src="/f/i/catalog-icons/icon1.png"></span>
+	     <span class="b-catalog-grid__item-name">Лежачие полицейские</span>
 	   </a>
-       position: absolute для ссылки не нужен
-	   -->
-	   <span class="b-catalog-grid__item-image"><img src="/f/i/catalog-icons/icon1.png"></span>
-	   <span class="b-catalog-grid__item-name">Лежачие полицейские</span>
 	  </div>
 	  <div class="b-catalog-grid__item">
-	   <a href="#" class="b-catalog-grid__item-link"></a>
-	   <span class="b-catalog-grid__item-image"><img src="/f/i/catalog-icons/icon2.png"></span>
-	   <span class="b-catalog-grid__item-name">Гибкие столбики</span>
+	   <a href="#" class="b-catalog-grid__item-link">
+	     <span class="b-catalog-grid__item-image"><img src="/f/i/catalog-icons/icon2.png"></span>
+	     <span class="b-catalog-grid__item-name">Гибкие столбики</span>
+	   </a>
 	  </div>
 	  <div class="b-catalog-grid__item">
-	   <a href="#" class="b-catalog-grid__item-link"></a>
-	   <span class="b-catalog-grid__item-image"><img src="/f/i/catalog-icons/icon3.png"></span>
-	   <span class="b-catalog-grid__item-name">Резиновая защита углов</span>
+	   <a href="#" class="b-catalog-grid__item-link">
+	     <span class="b-catalog-grid__item-image"><img src="/f/i/catalog-icons/icon3.png"></span>
+	     <span class="b-catalog-grid__item-name">Резиновая защита углов</span>
+	   </a>
 	  </div>
 	  <div class="b-catalog-grid__item">
-	   <a href="#" class="b-catalog-grid__item-link"></a>
-	   <span class="b-catalog-grid__item-image"><img src="/f/i/catalog-icons/icon4.png"></span>
-	   <span class="b-catalog-grid__item-name">Резиновая защита стен</span>
+	   <a href="#" class="b-catalog-grid__item-link">
+	     <span class="b-catalog-grid__item-image"><img src="/f/i/catalog-icons/icon4.png"></span>
+	     <span class="b-catalog-grid__item-name">Резиновая защита стен</span>
+	   </a>
 	  </div>
 	  <div class="b-catalog-grid__item">
-	   <a href="#" class="b-catalog-grid__item-link"></a>
-	   <span class="b-catalog-grid__item-image"><img src="/f/i/catalog-icons/icon5.png"></span>
-	   <span class="b-catalog-grid__item-name">Резиновые колесоотбойники</span>
+	   <a href="#" class="b-catalog-grid__item-link">
+	     <span class="b-catalog-grid__item-image"><img src="/f/i/catalog-icons/icon5.png"></span>
+	     <span class="b-catalog-grid__item-name">Резиновые колесоотбойники</span>
+	   </a>
 	  </div>
 	  <div class="b-catalog-grid__item">
-	   <a href="#" class="b-catalog-grid__item-link"></a>
-	   <span class="b-catalog-grid__item-image"><img src="/f/i/catalog-icons/icon6.png"></span>
-	   <span class="b-catalog-grid__item-name">Делиниаторы</span>
+	   <a href="#" class="b-catalog-grid__item-link">
+	     <span class="b-catalog-grid__item-image"><img src="/f/i/catalog-icons/icon6.png"></span>
+	     <span class="b-catalog-grid__item-name">Делиниаторы</span>
+	   </a>
 	  </div>
 	  <div class="b-catalog-grid__item">
-	   <a href="#" class="b-catalog-grid__item-link"></a>
-	   <span class="b-catalog-grid__item-image"><img src="/f/i/catalog-icons/icon7.png"></span>
-	   <span class="b-catalog-grid__item-name">Зеркала дорожные</span>
+	   <a href="#" class="b-catalog-grid__item-link">
+	     <span class="b-catalog-grid__item-image"><img src="/f/i/catalog-icons/icon7.png"></span>
+	     <span class="b-catalog-grid__item-name">Зеркала дорожные</span>
+	   </a>
 	  </div>
 	  <div class="b-catalog-grid__item">
-	   <a href="#" class="b-catalog-grid__item-link"></a>
-	   <span class="b-catalog-grid__item-image"><img src="/f/i/catalog-icons/icon8.png"></span>
-	   <span class="b-catalog-grid__item-name">Кабель-каналы</span>
+	   <a href="#" class="b-catalog-grid__item-link">
+	     <span class="b-catalog-grid__item-image"><img src="/f/i/catalog-icons/icon8.png"></span>
+	     <span class="b-catalog-grid__item-name">Кабель-каналы</span>
+	   </a>
 	  </div>
 	  <div class="b-catalog-grid__item">
-	   <a href="#" class="b-catalog-grid__item-link"></a>
-	   <span class="b-catalog-grid__item-image"><img src="/f/i/catalog-icons/icon9.png"></span>
-	   <span class="b-catalog-grid__item-name">Знаки дорожные</span>
+	   <a href="#" class="b-catalog-grid__item-link">
+	     <span class="b-catalog-grid__item-image"><img src="/f/i/catalog-icons/icon9.png"></span>
+	     <span class="b-catalog-grid__item-name">Знаки дорожные</span>
+	   </a>
 	  </div>
 	  <div class="b-catalog-grid__item">
-	   <a href="#" class="b-catalog-grid__item-link"></a>
-	   <span class="b-catalog-grid__item-image"><img src="/f/i/catalog-icons/icon10.png"></span>
-	   <span class="b-catalog-grid__item-name">Барьеры водоналивные</span>
+	   <a href="#" class="b-catalog-grid__item-link">
+	     <span class="b-catalog-grid__item-image"><img src="/f/i/catalog-icons/icon10.png"></span>
+	     <span class="b-catalog-grid__item-name">Барьеры водоналивные</span>
+	   </a>
 	  </div>
 	  <div class="b-catalog-grid__item">
-	   <a href="#" class="b-catalog-grid__item-link"></a>
-	   <span class="b-catalog-grid__item-image"><img src="/f/i/catalog-icons/icon11.png"></span>
-	   <span class="b-catalog-grid__item-name">Оборудование для паркинга</span>
+	   <a href="#" class="b-catalog-grid__item-link">
+	     <span class="b-catalog-grid__item-image"><img src="/f/i/catalog-icons/icon11.png"></span>
+	     <span class="b-catalog-grid__item-name">Оборудование для паркинга</span>
+	   </a>
 	  </div>
 	  <div class="b-catalog-grid__item">
-	   <a href="#" class="b-catalog-grid__item-link"></a>
-	   <span class="b-catalog-grid__item-image"><img src="/f/i/catalog-icons/icon12.png"></span>
-	   <span class="b-catalog-grid__item-name">Сигнальные столбики</span>
+	   <a href="#" class="b-catalog-grid__item-link">
+	     <span class="b-catalog-grid__item-image"><img src="/f/i/catalog-icons/icon12.png"></span>
+	     <span class="b-catalog-grid__item-name">Сигнальные столбики</span>
+	   </a>
 	  </div>
 	  <div class="b-catalog-grid__item">
-	   <a href="#" class="b-catalog-grid__item-link"></a>
-	   <span class="b-catalog-grid__item-image"><img src="/f/i/catalog-icons/icon13.png"></span>
-	   <span class="b-catalog-grid__item-name">Средства ограждения</span>
+	   <a href="#" class="b-catalog-grid__item-link">
+	     <span class="b-catalog-grid__item-image"><img src="/f/i/catalog-icons/icon13.png"></span>
+	     <span class="b-catalog-grid__item-name">Средства ограждения</span>
+	   </a>
 	  </div>
 	  <div class="b-catalog-grid__item">
-	   <a href="#" class="b-catalog-grid__item-link"></a>
-	   <span class="b-catalog-grid__item-image"><img src="/f/i/catalog-icons/icon14.png"></span>
-	   <span class="b-catalog-grid__item-name">Барьерные дорожные ограждения</span>
+	   <a href="#" class="b-catalog-grid__item-link">
+	     <span class="b-catalog-grid__item-image"><img src="/f/i/catalog-icons/icon14.png"></span>
+	     <span class="b-catalog-grid__item-name">Барьерные дорожные ограждения</span>
+	   </a>
 	  </div>
 	  <div class="b-catalog-grid__item">
-	   <a href="#" class="b-catalog-grid__item-link"></a>
-	   <span class="b-catalog-grid__item-image"><img src="/f/i/catalog-icons/icon15.png"></span>
-	   <span class="b-catalog-grid__item-name">Материалы для дорожной разметки</span>
+	   <a href="#" class="b-catalog-grid__item-link">
+	     <span class="b-catalog-grid__item-image"><img src="/f/i/catalog-icons/icon15.png"></span>
+	     <span class="b-catalog-grid__item-name">Материалы для дорожной разметки</span>
+	   </a>
 	  </div>
 	  <div class="b-catalog-grid__item">
-	   <a href="#" class="b-catalog-grid__item-link"></a>
-	   <span class="b-catalog-grid__item-image"><img src="/f/i/catalog-icons/icon16.png"></span>
-	   <span class="b-catalog-grid__item-name">Светофоры и контроллеры</span>
+	   <a href="#" class="b-catalog-grid__item-link">
+	     <span class="b-catalog-grid__item-image"><img src="/f/i/catalog-icons/icon16.png"></span>
+	     <span class="b-catalog-grid__item-name">Светофоры и контроллеры</span>
+	   </a>
 	  </div>
 	  <div class="b-catalog-grid__item">
-	   <a href="#" class="b-catalog-grid__item-link"></a>
-	   <span class="b-catalog-grid__item-image"><img src="/f/i/catalog-icons/icon17.png"></span>
-	   <span class="b-catalog-grid__item-name">Катафоты и маячки</span>
+	   <a href="#" class="b-catalog-grid__item-link">
+	     <span class="b-catalog-grid__item-image"><img src="/f/i/catalog-icons/icon17.png"></span>
+	     <span class="b-catalog-grid__item-name">Катафоты и маячки</span>
+	   </a>
 	  </div>
 	  <div class="b-catalog-grid__item">
-	   <a href="#" class="b-catalog-grid__item-link"></a>
-	   <span class="b-catalog-grid__item-image"><img src="/f/i/catalog-icons/icon18.png"></span>
-	   <span class="b-catalog-grid__item-name">Фонари сигнальные осветительные</span>
+	   <a href="#" class="b-catalog-grid__item-link">
+	     <span class="b-catalog-grid__item-image"><img src="/f/i/catalog-icons/icon18.png"></span>
+	     <span class="b-catalog-grid__item-name">Фонари сигнальные осветительные</span>
+	   </a>
 	  </div>
 	  <div class="b-catalog-grid__item">
-	   <a href="#" class="b-catalog-grid__item-link"></a>
-	   <span class="b-catalog-grid__item-image"><img src="/f/i/catalog-icons/icon19.png"></span>
-	   <span class="b-catalog-grid__item-name">Шлагбаумы</span>
+	   <a href="#" class="b-catalog-grid__item-link">
+	     <span class="b-catalog-grid__item-image"><img src="/f/i/catalog-icons/icon19.png"></span>
+	     <span class="b-catalog-grid__item-name">Шлагбаумы</span>
+	   </a>
 	  </div>
 	</div>
 	<div class="b-bottom-block">
@@ -322,7 +335,7 @@
 		</div>
 	  </div>
 	 </div>
-	 <div class="b-catalog-popup__menu">
+	 <div class="b-catalog-popup__menu clearfix">
 	  <div class="b-catalog-popup__menu-col">
 	   <div class="b-catalog-popup__menu-item">
 	     <a href="#" class="b-catalog-popup__menu-link">
@@ -444,11 +457,11 @@
 	     </div>
 		 </div>
 	 </div>
-	 <div style="clear: both;"></div> <!-- не нужен, нужно задать b-catalog-popup__menu класс clearfix http://amiweb.ru/css/etot-zagadochnyj-clearfix-->
+	 <div style="clear: both;"></div>
 	 <div class="b-catalog-popup__bottom">
 	   <img src="/f/i/table.jpg" class="b-catalog-popup__bottom-image" alt="">
 	   <div class="b-catalog-popup__bottom-detail">
-	     <span class="b-catalog-popup__bottom-title">Уже есть сформированный список того, что необходимо?</span> <!-- это блочный элемент - p или div -->
+	     <div class="b-catalog-popup__bottom-title">Уже есть сформированный список того, что необходимо?</div> 
 		 <p class="b-catalog-popup__bottom-text">Отправьте заявку, прикрепив файл со списком товаров, или просто <a href="#" class="b-catalog-popup__bottom-link">свяжитесь с нами</a> и наш специалист даст Вам подробную консультацию и ответит на все интересующие Вас вопросы.</p>
 		 <span class="b-catalog-popup__bottom-btn"><a href="#b-catalog-popup" class="b-catalog-popup__bottom-btn-link iconized iconized_mail">Отправить заявку</a></span>
 	   </div>
