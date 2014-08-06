@@ -3021,7 +3021,6 @@ input[type="button"].btn-block {
   color: #fff;
 }
 
-<<<<<<< HEAD
 .b-catalog-popup__close {
 	position: absolute;
 	top: 20px;
@@ -3068,10 +3067,7 @@ border-radius: 12px;
   bottom: 0;
 }
 
-.iconized_mail:before {
-=======
 .iconize_mail:before {
->>>>>>> origin/debug
   content: '';
   display: block;
   position: absolute;
