@@ -209,6 +209,7 @@ body {
   line-height: 1.42857143;
   color: #333333;
   background-color: #ffffff;
+  letter-spacing: 0.025em;
 }
 input,
 button,
@@ -915,7 +916,6 @@ label {
   display: inline-block;
   max-width: 100%;
   margin-bottom: 5px;
-  font-weight: bold;
 }
 input[type="search"] {
   -webkit-box-sizing: border-box;
@@ -1804,6 +1804,7 @@ input[type="button"].btn-block {
   font: 14px/30px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #0089d7;
   outline: none;
+  letter-spacing: normal;
 }
 
 .b-header__menu  ul  li  a:hover {
@@ -1826,6 +1827,7 @@ input[type="button"].btn-block {
 .b-header__free-call{
   display: block;
   font-size: 14px;
+  letter-spacing: normal;
   color: #000;
 }
 
@@ -1833,16 +1835,19 @@ input[type="button"].btn-block {
   display: block;
   font: 700 30px 'PT Sans Narrow', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #000;
+  letter-spacing: normal;
 }
 
 .b-header__contact-us {
   position: relative;
   margin-left: 23px;
-  font-size: 14px
-
+  font-size: 14px;
+  letter-spacing: normal;
 }
 
-/*--------------start------------------*/
+/*--------------start------------------
+---------------------------------------
+-----------------------------------------*/
 .dotted-link {
   border-bottom: 1px dotted;
   color: #0089d7;
@@ -1914,10 +1919,85 @@ input[type="button"].btn-block {
 }
 
 .rub {
-  font: bold 30px 'PT Sans Narrow', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  color: #000;
+  font: 16px 'PT Sans Narrow', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
+.orange-btn,
+.orange-btn:focus{
+  border-radius: 4px;
+  background: #fd8700;
+  background-image: linear-gradient(to top, #fd5500, #fd8700);
+  background: -webkit-gradient(linear, bottom, top, color-stop(#fd5500), color-stop(#fd8700));
+  -webkit-box-shadow: inset 0 -2px 0 0 #c43801, 0 -1px 0 0 #fd8700;
+  -moz-box-shadow: inset 0 -2px 0 0 #c43801, 0 -1px 0 0 #fd8700;
+  box-shadow: inset 0 -2px 0 0 #c43801, 0 -1px 0 0 #fd8700;
+  font-weight: bold;
+  font: bold 16px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #fff;
+  letter-spacing: normal;
+  text-decoration: none;
+  text-shadow: 0px 1px #000;
+  outline: none;
+  padding: 6px 22px 10px;
+}
+
+.orange-btn:hover{
+  background-image: linear-gradient(to top, #fd7700, #ffbb2a);
+  background: -webkit-gradient(linear, bottom, top, color-stop(#fd7700), color-stop(#ffbb2a));
+  -webkit-box-shadow: inset 0 -2px 0 0 #d04e00, 0 -1px 0 0 #ffbb2a;
+  -moz-box-shadow: inset 0 -2px 0 0 #d04e00, 0 -1px 0 0 #ffbb2a;
+  box-shadow: inset 0 -2px 0 0 #d04e00, 0 -1px 0 0 #ffbb2a;
+  text-decoration: none;
+  color: #fff;
+}
+
+.orange-btn:active{
+  background-image: linear-gradient(to top, #fd7700, #ffbb2a);
+  background: -webkit-gradient(linear, bottom, top, color-stop(#fd7700), color-stop(#ffbb2a));
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  text-decoration: none;
+  color: #fff;
+}
+
+.blue-btn,
+.blue-btn:focus {
+  font: bold 30px 'PT Sans Narrow', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  padding: 7px 12px 13px;
+  text-shadow: 0px 1px #000; 
+  text-decoration: none;
+  background: #0089d7;
+  background-image: linear-gradient(to top, #006eac, #0089d7);
+  background: -webkit-gradient(linear, bottom, top, color-stop(#006eac), color-stop(#0089d7));
+  -webkit-box-shadow: inset 0 -2px 0 0 #004972, 0 7px 15px -5px #000, 0 -2px 0 0 #0089d7;
+  -moz-box-shadow: inset 0 -2px 0 0 #004972, 0 7px 15px -5px #000, 0 -2px 0 0 #0089d7;
+  box-shadow: inset 0 -2px 0 0 #004972, 0 7px 15px -5px #000, 0 -2px 0 0 #0089d7;
+  outline: none;
+  color: #fff;
+  border-radius: 15px;
+}
+
+.blue-btn:hover {
+  text-decoration: none;
+  color: #fff;
+  background-image: linear-gradient(to top, #0085c9, #00a4ec);
+  background: -webkit-gradient(linear, bottom, top, color-stop(#0085c9), color-stop(#00a4ec));
+  -webkit-box-shadow: inset 0 -2px 0 0 #00588a, 0 7px 15px -5px #000, 0 -2px 0 0 #00a4ec;
+  -moz-box-shadow: inset 0 -2px 0 0 #00588a, 0 7px 15px -5px #000, 0 -2px 0 0 #00a4ec;
+  box-shadow: inset 0 -2px 0 0 #00588a, 0 7px 15px -5px #000, 0 -2px 0 0 #00a4ec;
+}
+
+.blue-btn:active{
+  background-image: linear-gradient(to top, #0085c9, #00a4ec);
+  background: -webkit-gradient(linear, bottom, top, color-stop(#0085c9), color-stop(#00a4ec));
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  outline: 0;
+}
+
+/*-----------------end---------------------*/
 .b-header__cart {
   float: right;
   margin-right: 5px;
@@ -2020,7 +2100,7 @@ input[type="button"].btn-block {
   font: 700 60px/60px 'PT Sans Narrow', 'Helvetica Neue', Helvetica, Arial, sans-serif; 
   color: #000;
   text-align: left;
-  width: 740px;
+  width: 780px;
   padding-top: 30px;
 }
 
@@ -2029,7 +2109,6 @@ input[type="button"].btn-block {
   padding-top: 25px;
   display: block;
   line-height: 30px;
-  letter-spacing: .5px;
   padding-bottom: 25px;
 }
 
@@ -2047,7 +2126,7 @@ input[type="button"].btn-block {
 }
 
 .b-search__wrap {
-  padding: 46px 30px;
+  padding: 31px 30px;
 }
 
 .b-search__form {
@@ -2092,6 +2171,7 @@ input[type="button"].btn-block {
   box-shadow: inset 0px -2px 0 0 #b7cdd6;
   border-radius: 4px;
   font-weight: bold;
+  letter-spacing: normal;
   border: 0;
   font: 700 16px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; 
 }
@@ -2139,6 +2219,7 @@ input[type="button"].btn-block {
 .input-hint {
   color: #000;
   padding-left: 20px;
+  letter-spacing: normal;
 }
 
 .input-hint_bold {
@@ -2179,47 +2260,6 @@ input[type="button"].btn-block {
   float: left;
 }
 
-.b-search__catalog-btn,
-.b-search__catalog-btn:focus {
-  font: bold 30px 'PT Sans Narrow', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  color: #fff;
-  padding: 13px 16px;
-  text-decoration: none;
-  letter-spacing: 0.025em;
-  text-shadow: 0px 1px #000;
-  outline: none;
-  border-radius: 15px;
-  background: #0089d7;
-  background-image: linear-gradient(to top, #006eac, #0089d7);
-  background: -webkit-gradient(linear, bottom, top, color-stop(#006eac), color-stop(#0089d7));
-  -webkit-box-shadow: inset 0 -2px 0 0 #004972, 0 7px 15px -5px #000;
-  -moz-box-shadow: inset 0 -2px 0 0 #004972, 0 7px 15px -5px #000;
-  box-shadow: inset 0 -2px 0 0 #004972, 0 7px 15px -5px #000;
-}
-
-.b-search__catalog-btn:hover{
-  background-image: linear-gradient(to top, #0085c9, #00a4ec);
-  background: -webkit-gradient(linear, bottom, top, color-stop(#0085c9), color-stop(#00a4ec));
-  -webkit-box-shadow: inset 0 -2px 0 0 #00588a, 0 7px 15px -5px #000;
-  -moz-box-shadow: inset 0 -2px 0 0 #00588a, 0 7px 15px -5px #000;
-  box-shadow: inset 0 -2px 0 0 #00588a, 0 7px 15px -5px #000;
-  background: #00a4ec;
-  text-decoration: none;
-  color: #fff;
-}
-
-.b-search__catalog-btn:active{
-  background-image: linear-gradient(to top, #0085c9, #00a4ec);
-  background: -webkit-gradient(linear, bottom, top, color-stop(#0085c9), color-stop(#00a4ec));
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
-  background: #00a4ec;
-  padding-bottom: 15px;
-  padding-top: 11px;
-  outline: 0;
-}
-
 .iconize-r-arrow {
   margin-left: 10px;
   margin-right: 20px;
@@ -2245,6 +2285,21 @@ input[type="button"].btn-block {
   height: 33px;
 }
 
+.iconize-mail {
+  margin-left: 18px;
+}
+
+.iconize-mail:before {
+  content: '';
+  display: block;
+  position: absolute;
+  background-position: 0 -22px;
+  left: -30px;
+  top: -13px;
+  width: 20px;
+  height: 15px;
+}
+
 .b-catalog-grid {
   padding: 40px 30px 10px;
   margin-left: -20px;
@@ -2252,14 +2307,12 @@ input[type="button"].btn-block {
 
 .b-catalog-grid__item {
   width: 220px;
-  height: 260px;
-  float: left;
+  min-height: 260px;
+  display: inline-block;
   position: relative;
   margin-left: 20px;
   margin-bottom: 70px;
-  /* не критично, но если блоки могут иметь разную высоту - верстать лучше без float, через display:inline-block; - http://habrahabr.ru/post/161581/
-  + можно задать min-height: 260px; 
-  сейчас все названия в 2 строчки, если появится в 3 строчки - придется переделывать */
+  vertical-align: top;
 }
 
 .b-catalog-grid__item:hover .b-catalog-grid__item-image {
@@ -2291,14 +2344,15 @@ input[type="button"].btn-block {
   color: #000;
   text-align: center;
   padding-top: 12px;
-  letter-spacing: .6px; /* em */
   display: block;
   width: 100%;
 }
 
-.b-catalog-grid__item-link {
+.b-catalog-grid__item-link,
+.b-catalog-grid__item-link:focus {
   display: block;
   text-decoration: none;
+  outline: 0;
 }
 
 .b-catalog-grid__item-link:hover {
@@ -2467,7 +2521,6 @@ input[type="button"].btn-block {
 .b-footer__made-by a {
   color: #fff;
   text-decoration: underline;
-  letter-spacing: 1px;
   padding-top: 20px;
   display: inline-block;
 }
@@ -2502,7 +2555,6 @@ input[type="button"].btn-block {
   color: #000;
   margin-bottom: 40px;
   display: block;
-  letter-spacing: 1.4px; /* em */
 }
 
 .b-activity__item {
@@ -2543,7 +2595,6 @@ input[type="button"].btn-block {
 .b-activity__item-title {
   font: bold 40px 'PT Sans Narrow', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #000;
-  letter-spacing: .8px; /* em */
   line-height: 30px;
 }
 
@@ -2588,7 +2639,6 @@ input[type="button"].btn-block {
   font-size: 16px;
   color: #0089d7;
   text-decoration: underline;
-  letter-spacing: .4px; /* em */
   line-height: 10px;
 }
 
@@ -2599,7 +2649,6 @@ input[type="button"].btn-block {
 .b-content__title {
   font: bold 60px 'PT Sans Narrow', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #000;
-  letter-spacing: 1.4px; /*em*/
 }
 
 .b-content__text-block-wrap {
@@ -2613,7 +2662,6 @@ input[type="button"].btn-block {
 .b-content__text-block-title {
   font: bold 40px 'PT Sans Narrow', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #000;
-  letter-spacing: .8px; /*em*/
 }
 
 .b-content__text-block-link {
@@ -2646,7 +2694,6 @@ input[type="button"].btn-block {
 .b-product__title:focus {
   font: bold 40px 'PT Sans Narrow', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #000;
-  letter-spacing: 1px;
   text-decoration: underline;
   float: left;
   outline: 0;
@@ -2804,7 +2851,6 @@ input[type="button"].btn-block {
   display: block;
   color: #000;
   position: absolute;
-  letter-spacing: .6px;
   margin: auto;
   text-align: center;
   left: 0;
@@ -2929,6 +2975,9 @@ input[type="button"].btn-block {
 .b-catalog-popup__menu-image {
   float: left;
 }
+.b-catalog-popup__menu-link:hover {
+  text-decoration: none;
+}
 
 .b-catalog-popup__menu-link:hover .b-catalog-popup__menu-image{
   border: 2px solid #0089d7;
@@ -2956,7 +3005,8 @@ input[type="button"].btn-block {
 }
 
 .b-catalog-popup__submenu-link{
-  font-size: 14px
+  font-size: 14px;
+  letter-spacing: normal;
   color: #0089d7;
   outline: 0;
 }
@@ -2999,7 +3049,6 @@ input[type="button"].btn-block {
 .b-catalog-popup__bottom-title {
   font: bold 25px 'PT Sans Narrow', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #1f1a17;
-  letter-spacing: 0.025em;
 }
 
 .b-catalog-popup__bottom-text {
@@ -3007,64 +3056,6 @@ input[type="button"].btn-block {
   line-height: 28px;
   padding-top: 15px; 
   padding-bottom: 15px;
-}
-
-.b-catalog-popup__bottom-btn{
-  width: 183px;
-  display: block;
-  float: left;
-  height: 40px;
-  border-radius: 4px;
-  background: #fd8700;
-  -webkit-box-shadow: inset 0px -3px 0px 0px #c43801, inset 0px -50px 40px -30px #fd5600;
-  -moz-box-shadow: inset 0px -3px 0px 0px #c43801, inset 0px -50px 40px -30px #fd5600;
-  box-shadow: inset 0px -3px 0px 0px #c43801, inset 0px -50px 40px -30px #fd5600;
-  /* width, display block, float, height - не нужны, кнопка должне менять размеры в зависимости от размера шрифта, количества текста 
-  желательно фон задать градиентом, как в макете
-  все это форматирование можно перенести в класс кнопки, отказаться от лишних span
-  стили можно прописать в классе btn - кнопка стандартная - может еще где-то использоваться
-
-  <p class="b-catalog-popup__bottom-text">Отправьте заявку, прикрепив файл со списком...</p>
-  <a href="#b-catalog-popup" class="btn"><span class="iconized iconized_mail">Отправить заявку</span></a>
-
-  класс iconized нужно задавать для содержимого кнопки - кнопка может быть и без иконки - <a class="btn">Отправить заявку</a> должно нормально отображаться
-  и расположение иконки не должно зависеть от padding и других параметров кнопки - сейчас поменяем padding иконки съедет
-  */
-}
-
-.b-catalog-popup__bottom-btn:hover{
-  -webkit-box-shadow: inset 0px -3px 0px 0px #d04e00, inset 0px -50px 40px -30px #fd7901;
-  -moz-box-shadow: inset 0px -3px 0px 0px #d04e00, inset 0px -50px 40px -30px #fd7901;
-  box-shadow: inset 0px -3px 0px 0px #d04e00, inset 0px -50px 40px -30px #fd7901;
-  background: #ffbb2a;
-}
-
-.b-catalog-popup__bottom-btn:active{
-  -webkit-box-shadow: inset 0px -50px 40px -30px #fd7901;
-  -moz-box-shadow: inset 0px -50px 40px -30px #fd7901;
-  box-shadow: inset 0px -50px 40px -30px #fd7901;
-  background: #ffbb2a;
-  height: 38px;
-  margin-top: 2px;
-}
-
-.b-catalog-popup__bottom-btn-link,
-.b-catalog-popup__bottom-btn-link:focus {
-  font-weight: bold;
-  color: #fff;
-  line-height: 38px;
-  padding-left: 40px;
-  display: block;
-  text-decoration: none;
-  width: 183px;
-  height: 40px;
-  text-shadow: 0px 1px #000;
-  outline: none;
-}
-
-.b-catalog-popup__bottom-btn-link:hover {
-  text-decoration: none;
-  color: #fff;
 }
 
 .b-catalog-popup__close {
@@ -3075,28 +3066,6 @@ input[type="button"].btn-block {
 	height: 60px;
 	cursor: pointer;
 	z-index: 8040;
-   background: #0089d7;
-border:0!important;
-border-radius: 12px;
-  -webkit-box-shadow: inset 0px -3px 0px 0px #004972, inset 0px -50px 40px -30px #006ead;
-  -moz-box-shadow: inset 0px -3px 0px 0px #004972, inset 0px -50px 40px -30px #006ead;
-  box-shadow: inset 0px -3px 0px 0px #004972, inset 0px -50px 40px -30px #006ead;
-}
-
-.b-catalog-popup__close:hover {
-  background: #00a4ec;
-  -webkit-box-shadow: inset 0px -3px 0px 0px #00588a, inset 0px -50px 40px -30px #0086ca;
-  -moz-box-shadow: inset 0px -3px 0px 0px #00588a, inset 0px -50px 40px -30px #0086ca;
-  box-shadow: inset 0px -3px 0px 0px #00588a, inset 0px -50px 40px -30px #0086ca;
-}
-
-.b-catalog-popup__close:active {
-  background: #00a4ec;
-  outline: 0;
-  margin-top: 2px;
-  -webkit-box-shadow:  inset 0px -50px 40px -30px #0086ca;
-  -moz-box-shadow: inset 0px -50px 40px -30px #0086ca;
-  box-shadow: inset 0px -50px 40px -30px #0086ca;
 }
 
 .b-catalog-popup__close:before {
@@ -3111,17 +3080,6 @@ border-radius: 12px;
   right: 0;
   top: 0;
   bottom: 0;
-}
-
-.iconize_mail:before {
-  content: '';
-  display: block;
-  position: absolute;
-  background-position: 0 -22px;
-  left: 10px;
-  top: 12px;
-  width: 20px;
-  height: 15px;
 }
 
 .b-app-pay-popup {
@@ -3167,7 +3125,6 @@ border-radius: 12px;
   color: #1f1a17;
   display: block;
   text-align: center;
-  letter-spacing: 1px;
   margin-bottom: 45px;
 }
 
@@ -3182,7 +3139,6 @@ border-radius: 12px;
   font: 16px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   line-height: 28px;
   padding-left: 10px;
-  letter-spacing: .6px;
 }
 
 .b-app-pay-popup-form {

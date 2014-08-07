@@ -45,7 +45,7 @@
 }
 
 .fancybox-inner {
-  overflow: visible !important;
+  border-radius: 15px;
 }
 
 .fancybox-type-iframe .fancybox-inner {
