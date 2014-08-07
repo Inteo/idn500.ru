@@ -70,19 +70,6 @@
             }
         }
 	 });
-	 
-	 $("a.catalog-btn-link").fancybox({
-	 padding : 0,
-	 maxWidth : 780,
-	 minWidth : 780,
-	 minHeight : 560,
-	 scrolling : 'no',
-        helpers: {
-            overlay: {
-              locked: true 
-            }
-        }
-	 });
 });
   </script>
   <script>
@@ -110,14 +97,14 @@
 	      </div>
 	      <div class="b-header__cart-text">
 			<span class="b-header__cart-title">Корзина</span>
-			<span class="b-header__cart-price">42 000 <span class="rub">Р</span></span>
+			<span class="b-header__cart-price">42 000 &#8377 </span>
 		  </div>
 		</div>
 		<div class="b-header__contacts">
           <div class="b-header__phone">
 		    <span class="b-header__free-call">Бесплатный звонок по России</span>
 		    <span class="b-header__number">8 800 707-99-27</span>
-            <a href="#callback" class="modal-inline b-header__contact-us iconized iconized_callback dotted-link" title="Обратный звонок">Связаться с нами</a>
+            <a href="#callback" class="modal-inline b-header__contact-us iconize-callback dotted-link" title="Обратный звонок">Связаться с нами</a>
           </div>
         </div>
 		<div class="b-header__menu">
@@ -135,7 +122,8 @@
     </div>
 	<div class="b-search">
 	  <div class="b-search__wrap">
-	    <a class="b-search__catalog-btn" href="#b-catalog-popup"><span class="iconize iconize_logo">Весь каталог<span class="iconize iconize_r-arrow"></span></a>
+	    
+	    <div class="b-search__catalog-btn-wrap"><a class="b-search__catalog-btn" href="#b-catalog-popup"><span class="iconize-logo"></span>Весь каталог<span class="iconize-r-arrow"></span></a></div>
 		<div class="b-search__form">
 		  <form class="b-search__form-wrap">
 		    <div class="b-search__input-wrap">
@@ -143,7 +131,9 @@
               <input class="b-search__input" type="text" id="input-name" value="" >
               <span class="clear-text"></span>
 			</div>
-		    <input type="submit" class="b-search__submit" value="Найти">
+		    <div class="b-search__submit-wrap">
+			  <input type="submit" class="b-search__submit" value="Найти">
+			</div>
 		  </form>
 		</div>
 	  </div>
@@ -267,25 +257,25 @@
 	</div>
 	<div class="b-bottom-block">
 	  <div class="b-bottom-block__item">
-		<div class="b-bottom-block__item-wrap iconize iconize_bottom-block-1">
+		<div class="b-bottom-block__item-wrap iconize-bottom-block-1">
 	      <span class="b-bottom-block__title">11<span class="b-bottom-block__title_small">лет</span></span>
 		  <span class="b-bottom-block__text">успешной работы</span>
 		</div>
 	  </div>
 	  <div class="b-bottom-block__item">
-		<div class="b-bottom-block__item-wrap iconize iconize_bottom-block-1">
+		<div class="b-bottom-block__item-wrap iconize-bottom-block-2">
 	      <span class="b-bottom-block__title">5772</span>
 		  <span class="b-bottom-block__text">довольных клиентов</span>
 		</div>
 	  </div>
 	  <div class="b-bottom-block__item">
-		<div class="b-bottom-block__item-wrap iconize iconize_bottom-block-1">
+		<div class="b-bottom-block__item-wrap iconize-bottom-block-3">
 	      <span class="b-bottom-block__title">1352</span>
 		  <span class="b-bottom-block__text">товарных позиций в каталоге</span>
 		</div>
 	  </div>
 	  <div class="b-bottom-block__item">
-		<div class="b-bottom-block__item-wrap iconize iconize_bottom-block-1">
+		<div class="b-bottom-block__item-wrap iconize-bottom-block-4">
 	      <span class="b-bottom-block__title">542</span>
 		  <span class="b-bottom-block__text">выполненных государственных и муниципальных контрактов</span>
 		</div>
