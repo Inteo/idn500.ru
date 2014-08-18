@@ -30,7 +30,6 @@
 	color: #444;
 	text-shadow: none;
 	border-radius: 15px;
-	
 	-webkit-box-shadow: 0 15px 30px 0 #666;
    -moz-box-shadow: 0 15px 30px 0 #66;
     box-shadow: 0 15px 30px 0 #666;
@@ -46,6 +45,7 @@
 
 .fancybox-inner {
   border-radius: 15px;
+  overflow: visible !important;
 }
 
 .fancybox-type-iframe .fancybox-inner {

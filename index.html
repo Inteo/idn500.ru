@@ -21,74 +21,6 @@
   <script src="/f/js/jquery.transit.min.js"></script>
   <script src="/f/js/common.js"></script>
   <!--[if lt IE 9]><script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script><![endif]-->
-  <script>
-    $(document).ready(function() {
- 
-    $('.b-search__input').each(function(){
-        if($(this).val() != '') {
-            $(this).prev().addClass('hide');
-            $(this).parent().find('.clear-text').addClass('ct-show');
-        }
-    });
- 
-    $('.b-search__input').blur(function() {
-        if ($(this).val() == '') $(this).prev().removeClass('hide');
-    });
- 
-    $('.b-search__input').focus(function() {
-        $(this).prev().addClass('hide');
-    });
- 
-    $('.b-search__input').mouseover(function() {
-        if ($(this).val() != '') {
-            $(this).prev().addClass('hide');
-            $(this).parent().find('.clear-text').addClass('ct-show');
-        }
-    });
- 
-    $('.clear-text').click(function() {
-        $(this).parent().find('.b-search__input').val('').focus();
-        $(this).removeClass('ct-show');
- 
-    });
- 
-    $('.b-search__input').keyup(function() {
-        if($(this).val() != '') {
-            $(this).parent().find('.clear-text').addClass('ct-show');
-        }
-        else {$(this).parent().find('.clear-text').removeClass('ct-show');}
-    });
-	
-    $(".b-search__catalog-btn").fancybox({
-	 padding : 0,
-	 minWidth : 960,
-	 minHeight : 520,
-	 scrolling : 'no',
-        helpers: {
-            overlay: {
-              locked: true 
-            }
-        }
-	 });
-	 
-	 $(".b-app-pay-popup").fancybox({
-	 padding : 0,
-	 minWidth : 960,
-	 minHeight : 520,
-	 scrolling : 'no',
-        helpers: {
-            overlay: {
-              locked: true 
-            }
-        }
-	 });
-});
-  </script>
-  <script>
-    function fancy_close() {
-   $.fancybox.close();
-}
-  </script>
 </head>
 
 <body>
@@ -116,7 +48,7 @@
           <div class="b-header__phone">
 		    <span class="b-header__free-call">Бесплатный звонок по России</span>
 		    <span class="b-header__number">8 800 707-99-27</span>
-            <a href="#callback" class="modal-inline b-header__contact-us iconize-callback dotted-link" title="Обратный звонок">Связаться с нами</a>
+            <a href="#b-contact-popup" class="modal-inline b-header__contact-us iconize-callback dotted-link">Связаться с нами</a>
           </div>
         </div>
 		<div class="b-header__menu">
@@ -126,7 +58,8 @@
             <li><a href="#">Сферы деятельности</a></li>
             <li><a href="#">Доставка</a></li>
 			<li><a href="#">Вопрос-ответ</a></li>
-			<li><a href="#"><a class="b-app-pay-popup" href="#b-app-pay-popup">Заявка на расчет (ВРЕМЕННАЯ!!!)</a></li>
+			<li><a href="#"><a class="b-app-pay-popup-link" href="#b-app-pay-popup">Заявка на расчет (ВРЕМЕННАЯ!!!)</a></li>
+			<li><a href="#"><a class="b-app-pay-succsess-popup-link" href="#b-app-pay-succsess-popup">Заявка принята (ВРЕМЕННАЯ!!!)</a></li>
           </ul>
         </div>
 	  </div>
@@ -145,7 +78,7 @@
               <span class="clear-text"></span>
 			</div>
 		    <div class="b-search__submit-wrap">
-			  <input type="submit" class="b-search__submit" value="Найти">
+			  <input type="submit" class="b-search__submit grey-btn" value="Найти">
 			</div>
 		  </form>
 		</div>
@@ -331,7 +264,7 @@
               <span class="clear-text"></span>
 			</div>
 		    <div class="b-search__submit-wrap">
-			  <input type="submit" class="b-search__submit" value="Найти">
+			  <input type="submit" class="b-search__submit grey-btn" value="Найти">
 			</div>
 		  </form>
 		</div>
@@ -468,18 +401,71 @@
 	   </div>
 	 </div>
 	</div>
-	<div class="b-app-pay-popup" id="b-app-pay-popup">
+	<div class="b-app-pay-popup clearfix" id="b-app-pay-popup">
 	  <a href="#" class="b-popup__close iconize-popup-close" onclick="fancy_close();"></a>
 	  <span class="b-app-pay-popup__tilte">Заявка  на расчет</span>
 	  <img src="/f/i/table2.png" class="b-app-pay-popup__image" alt="">
 	  <p class="b-app-pay-popup__text">Если у вас уже есть сформированный список необходимой вам продукции, то просто отправьте заявку, прикрепив файл со списком товаров, и наш специалист свяжется с вами в течении 24 часов.</p>
 	  <form class="b-app-pay-popup-form">
-		    <input type="text" class="b-app-pay-popup__contact" value="" placeholder="Контактное лицо">
-			<input type="text" class="b-app-pay-popup__phone" value="" placeholder="Телефон">
-			<input type="text" class="b-app-pay-popup__email" value="" placeholder="Электронная почта">
-			<a class="b-app-pay-popup__add-file" href="#"></a><span class="b-app-pay-popup__add-file-label">Прикрепить список товара</span>
-		    <input type="submit" class="" value="Отправить">
+		    <input type="text" class="b-app-pay-popup__contact input-text" value="" placeholder="Контактное лицо">
+			<div class="b-app-pay-popup__phone-wrap">
+			  <input type="text" class="b-app-pay-popup__phone input-text input-text_correct" value="" placeholder="Телефон">
+			</div>
+			<div class="b-app-pay-popup__email-wrap">
+			  <input type="text" class="b-app-pay-popup__email input-text input-text_wrong" value="" placeholder="Электронная почта">
+			  <span class="invalid-input-text">Поле заполнено неправлено</span>
+			</div>
+			<div class="b-app-pay-popup__add-file clearfix">
+			  <span class="b-app-pay-popup__add-file-btn grey-btn iconize-plus"></span>
+			  <span class="b-app-pay-popup__add-file-label">Прикрепить список товара</span>
+			</div>
+			<div class="b-app-pay-popup__submit-wrap">
+		      <input type="submit" class="b-app-pay-popup__submit orange-btn" value="Отправить">
+			</div>
+	  </form>  
+	</div>
+	<div class="b-app-pay-succsess-popup clearfix" id="b-app-pay-succsess-popup">
+	  <a href="#" class="b-popup__close iconize-popup-close" onclick="fancy_close();"></a>
+	  <div class="b-app-pay-succsess-popup__title-wrap">
+	    <span class="b-app-pay-succsess-popup__title">Заявка успешно отправлена!</span>
+      </div>
+	  <span class="b-app-pay-succsess-popup__text">Наш менеджер свяжется с вами в ближайшее время.</span>
+	  <div class="b-app-pay-succsess-popup__submit-wrap">
+		<input type="submit" class="b-app-pay-succsess-popup__submit orange-btn" value="Спасибо">
+	  </div>  
+	</div>
+	<div class="b-contact-popup clearfix" id="b-contact-popup">
+	  <a href="#" class="b-popup__close iconize-popup-close" onclick="fancy_close();"></a>
+	  <img src="/f/i/contact-image.png" class="b-contact-popup__image" alt="">
+	  <div class="b-contact-popup__main">
+	    <span class="b-contact-popup__title">Единый call-центр</span>
+		<span class="b-contact-popup__text iconize-rus">Бесплатный звонок по России</span>
+		<span class="b-contact-popup__phone">8 800 707-99-27</span>
+		<div class="b-contact-popup__buttons">
+		  <span class="b-contact-popup__write orange-btn">Напишите нам</span>
+		  <span class="b-contact-popup__or">или</span>
+		  <span class="b-contact-popup__call orange-btn">Зажите обратный звонок</span>
+		</div>
+	  </div>
+	  <form class="b-contact-popup__form b-contact-popup__form_write clearfix">
+	    <input type="text" class="b-contact-popup__contact input-text" value="" placeholder="Контактное лицо">
+		<input type="text" class="b-contact-popup__email input-text" value="" placeholder="Электронная почта">
+		<textarea class="b-contact-popup__message input-text input-text_area" placeholder="Текст сообщения"></textarea>
+		<div class="b-contact-popup__submit-wrap">
+		      <input type="submit" class="b-contact-popup__submit orange-btn" value="Отправить">
+	    </div>
 	  </form>
+	  <form class="b-contact-popup__form b-contact-popup__form_call clearfix">
+	    <input type="text" class="b-contact-popup__contact input-text" value="" placeholder="Контактное лицо">
+		<input type="text" class="b-contact-popup__form-phone input-text" value="" placeholder="Телефон">
+		<textarea class="b-contact-popup__message input-text input-text_area" placeholder="Текст сообщения"></textarea>
+		<div class="b-contact-popup__submit-wrap">
+		      <input type="submit" class="b-contact-popup__submit orange-btn" value="Отправить">
+	    </div>
+	  </form>
+	  <div class="b-contact-popup__message-send clearfix">
+	    <span class="b-contact-popup__message-text">Сообщение успешно отправлено!</span>
+	  </div>
 	</div>
   </div>
 </body>

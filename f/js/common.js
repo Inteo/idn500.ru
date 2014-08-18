@@ -346,6 +346,135 @@ $(document).ready(function(){
 				fixed: false
 			}
 		}
-	});	
+	});
+
+	$('.b-search__input').each(function(){
+        if($(this).val() != '') {
+            $(this).prev().addClass('hide');
+            $(this).parent().find('.clear-text').addClass('ct-show');
+        }
+    });
+ 
+    $('.b-search__input').blur(function() {
+        if ($(this).val() == '') $(this).prev().removeClass('hide');
+    });
+ 
+    $('.b-search__input').focus(function() {
+        $(this).prev().addClass('hide');
+    });
+ 
+    $('.b-search__input').mouseover(function() {
+        if ($(this).val() != '') {
+            $(this).prev().addClass('hide');
+            $(this).parent().find('.clear-text').addClass('ct-show');
+        }
+    });
+ 
+    $('.clear-text').click(function() {
+        $(this).parent().find('.b-search__input').val('').focus();
+        $(this).removeClass('ct-show');
+ 
+    });
+ 
+    $('.b-search__input').keyup(function() {
+        if($(this).val() != '') {
+            $(this).parent().find('.clear-text').addClass('ct-show');
+        }
+        else {$(this).parent().find('.clear-text').removeClass('ct-show');}
+    });
+	
+    $(".b-search__catalog-btn").fancybox({
+	 padding : 0,
+	 maxWidth : 1300,
+	 minHeight : 520,
+	 scrolling : 'no',
+        helpers: {
+            overlay: {
+              locked: true 
+            }
+        }
+	 });
+	 
+	 $(".b-app-pay-popup-link").fancybox({
+	 padding : 0,
+	 maxWidth : 780,
+	 maxHeight : 970,
+	 scrolling : 'no',
+        helpers: {
+            overlay: {
+              locked: true 
+            }
+        }
+	 });
+	 
+	 $(".b-app-pay-succsess-popup-link").fancybox({
+	 padding : 0,
+	 minWidth : 780,
+	 maxHeight : 250,
+	 scrolling : 'no',
+        helpers: {
+            overlay: {
+              locked: true 
+            }
+        }
+	 });
+	 
+	 $(".b-header__contact-us").fancybox({
+	 padding : 0,
+	 minWidth : 690,
+	 minHeight : 240,
+	 scrolling : 'no',
+        helpers: {
+            overlay: {
+              locked: true 
+            }
+        },
+	 'afterLoad': function() { 
+		  $(this.outer).parent().parent().addClass("fancy-top");
+		}
+	 });
+	 
+	 $(".b-contact-popup__write, .b-contact-popup__call").click(function (){
+	   $(".b-contact-popup__message-send").hide();
+	   if($(".b-contact-popup__write, .b-contact-popup__call").hasClass("active-btn")) {
+	     if($(this).hasClass("b-contact-popup__write")) {
+		   $(this).addClass("active-btn");
+		   $(".b-contact-popup__call").removeClass("active-btn");
+		 }
+		 else {
+		   $(this).addClass("active-btn");
+		   $(".b-contact-popup__write").removeClass("active-btn");
+		 }
+	   } 
+	   else {
+	     $(this).addClass("active-btn");
+	   }
+	   
+	   if($(".b-contact-popup__write").hasClass("active-btn")) {
+	     $(".b-contact-popup__form_write").show();
+		 $(".b-contact-popup__form_call").hide();
+		 
+		 $.fancybox.update();
+	   }
+	   else {
+	     $(".b-contact-popup__form_write").hide();
+		 $(".b-contact-popup__form_call").show();
+		
+		 $.fancybox.update();
+	   }
+	 });
+	 
+	 $(".b-contact-popup__submit").click(function () {
+	    $(".b-contact-popup__form_write").hide();
+		$(".b-contact-popup__form_call").hide();
+		$(".b-contact-popup__message-send").show();
+	 })
+	 
+	
 	
 });
+
+  function fancy_close() {
+   $.fancybox.close();
+  }
+

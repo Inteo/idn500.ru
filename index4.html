@@ -9,8 +9,8 @@
   <meta name="keywords" content="">
   <link rel="stylesheet" href="/f/css/main.css">
   <!--[if lte IE 9]><link rel="stylesheet" href="f/css/ie.css"><![endif]-->
-  <link href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Open+Sans:400,400italic,800,600&subset=latin,cyrillic" rel="stylesheet">
-  <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+  <link href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Open+Sans:400,400italic,800,600&subset=all" rel="stylesheet">
+  <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&subset=all' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="/f/fancybox/jquery.fancybox.css?v=2.1.5" media="screen">
   <link rel="shortcut icon" href="favicon.ico">
   <script src="/f/js/jquery-1.10.2.min.js"></script>
@@ -21,42 +21,29 @@
   <script src="/f/js/common.js"></script>
   <!--[if lt IE 9]><script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script><![endif]-->
    <script>
+   function see_more_button() {
+     $(".b-product-list").each(function(i){
+	
+		var total_height = 0;
+		$(this).find(".b-product-list__item").each(function(i){
+		  total_height = total_height + $(this).height();
+		});
+		total_height = total_height + $(this).find(".b-product-list__item").height();
+		console.log(total_height);
+		if($(this).height() < total_height){
+		  $(this).find(".b-see-more").show();
+		  $(this).find(".b-product-list-wrap").removeClass("b-product-list-wrap_unmasked");
+		}
+		else if($(this).height() > total_height){
+		  $(this).find(".b-see-more").hide();
+		  $(this).find(".b-product-list-wrap").addClass("b-product-list-wrap_unmasked");
+		}
+	});
+   }
+   
     $(document).ready(function() {
-	
-	$(".b-product-tiles").each(function(i){
-	
-		var total_width = 0;
-		$(this).find(".b-product-tiles__item").each(function(i){
-		  total_width = total_width + $(this).width();
-		});
-		total_width = total_width + $(this).find(".b-product-tiles__item").width() - 90;
-		if($(this).width() < total_width){
-		  $(this).find(".b-see-more").show();
-		}
-		else if($(this).width() > total_width){
-		  $(this).find(".b-see-more").hide();
-		}
-	});
-});
-
-$(window).resize(function(){
-  $(".b-product-tiles").each(function(i){
-	
-		var total_width = 0;
-		$(this).find(".b-product-tiles__item").each(function(i){
-		  total_width = total_width + $(this).width();
-		});
-		total_width = total_width + $(this).find(".b-product-tiles__item").width() - 90;
-		if($(this).width() < total_width){
-		  $(this).find(".b-see-more").show();
-		}
-		else if($(this).width() > total_width){
-		  $(this).find(".b-see-more").hide();
-		}
-	});
-});
-
-  
+	  see_more_button();
+   });
   </script>
 </head>
 
@@ -142,146 +129,364 @@ $(window).resize(function(){
 	  </div>
 	  </div>
 	  <span class="b-content__title">Что необходимо для организации парковки?</span>
-	  <div class="b-product-tiles">
+	  <div class="b-product-list">
 	    <div class="b-product__view">
 		  <span class="b-product__view-text">Вид:</span>
-		  <a href="/index4.html#parking_pole" class="b-product__view-button b-product__view-button_list"></a>
-          <a href="#" class="b-product__view-button b-product__view-button_active b-product__view-button_tiles"></a>
+		  <a href="#" class="b-product__view-button b-product__view-button_list b-product__view-button_active"></a>
+          <a href="/index3.html#parking_pole" class="b-product__view-button b-product__view-button_tiles"></a>
 		</div>
 	  
 	    <a href="#" id="parking_pole" class="b-product__title">Парковочные столбики</a>
 		
-		<div class="b-product-tiles-wrap">
-		<div class="b-product-tiles__item">
-		  <a href="#" class="b-product-tiles__item-link">
-		    <img src="/f/i/img1.jpg" class="b-product-tiles__item-image">
-		    <span class="b-product-tiles__item-mask"></span>
-		    <span class="b-product-tiles__item-name">Столбик бетонируемый</span>
-		    <span class="b-product-tiles__item-price">920 &#8377 </span>
-		    <div class="b-product-tiles__item-available"><span class="item-available iconize-available">В наличии</span></div>
-		  </a>
+		<div class="b-product-list-wrap">
+		<div class="b-product-list__title">
+		  <div class="b-product-list__title-wrap">
+		  <div class="b-product-list__title-name">Наименование товара и характеристики</div>		 
+		  <div class="b-product-list__title-item b-product-list__title-item_available">Наличие</div>
+		  <div class="b-product-list__title-item b-product-list__title-item_price">Стоимость с НДС</div>
+		  <div class="b-product-list__title-item b-product-list__title-item_qty"></div>
+		  </div>
 		</div>
-		<div class="b-product-tiles__item">
-		  <a href="#" class="b-product-tiles__item-link">
-		    <img src="/f/i/img2.jpg" class="b-product-tiles__item-image">
-		    <span class="b-product-tiles__item-mask"></span>
-		    <span class="b-product-tiles__item-name">Столбик анкерный</span>
-		    <span class="b-product-tiles__item-price">1015 &#8377</span>
-		    <div class="b-product-tiles__item-available"><span class="item-available iconize-available">В наличии</span></div>
-		  </a>
+		 
+		<div class="b-product-list__item">
+           <div class="b-product-list__item-wrap">
+		    <a href="#" class="b-product-list__item-link">
+		    <div class="b-product-list__item-detail">
+			  <img src="/f/i/img1.jpg" class="b-product-list__item-image">
+			  <div class="b-product-list__item-info">
+			    <span class="b-product-list__item-name">Столбик бетонируемый</span>
+				<div class="b-product-list__item-info-row">
+				  <span class="b-product-list__item-info-name-wrap">
+				    <span class="b-product-list__item-info-name">Тип крепления</span>
+				    <span class="b-product-list__item-info-line"></span>
+				  </span>
+				  <span class="b-product-list__item-info-value">Бетонируемое</span>
+				</div>
+				<div class="b-product-list__item-info-row">
+				<span class="b-product-list__item-info-name-wrap">
+				  <span class="b-product-list__item-info-name">Высота</span>
+				  <span class="b-product-list__item-info-line"></span>
+				</span>
+				  <span class="b-product-list__item-info-value">750 + 250 мм</span>
+				</div>
+				<div class="b-product-list__item-info-row">
+				<span class="b-product-list__item-info-name-wrap">
+				  <span class="b-product-list__item-info-name">Масса</span>
+				  <span class="b-product-list__item-info-line"></span>
+				</span>
+				<span class="b-product-list__item-info-value">3,33 кг</span>
+				</div>
+				<div class="b-product-list__item-info-row">
+				<span class="b-product-list__item-info-name-wrap">
+				  <span class="b-product-list__item-info-name">Диаметр трубы</span>
+				  <span class="b-product-list__item-info-line"></span>
+				</span>
+				<span class="b-product-list__item-info-value">76 мм</span>
+				</div>
+			  </div>
+			</div>
+			<div class="b-product-list__item-cell b-product-list__item-cell_available"><span class="item-available item-available_unback iconize-available">В наличии</span></div>
+		    <div class="b-product-list__item-cell b-product-list__item-cell_price">920 &#8377 </div>
+			<div class="b-product-list__item-cell b-product-list__item-cell_qty">
+			  <span class="b-product-list__item-qty-counter grey-btn grey-btn_counter">-</span>
+			  <input type="text" class="b-product-list__item-qty-input grey-input" value="1">
+			  <span class="b-product-list__item-qty-counter grey-btn grey-btn_counter">+</span>
+			  <span class="orange-btn orange-btn_cart iconize-cart">В корзину</span>
+			 </div>
+			 </a>
+          </div>
 		</div>
-		<div class="b-product-tiles__item">
-		  <a href="#" class="b-product-tiles__item-link">
-		    <img src="/f/i/img3.jpg" class="b-product-tiles__item-image">
-		    <span class="b-product-tiles__item-mask"></span>
-		    <span class="b-product-tiles__item-name">Столбик передвижной</span>
-		    <span class="b-product-tiles__item-price">1975 &#8377</span>
-		    <div class="b-product-tiles__item-available"><span class="item-available iconize-available iconize-available_false">Под заказ</span></div>
-		  </a>
+		
+		<div class="b-product-list__item">
+           <div class="b-product-list__item-wrap">
+		   <a href="#" class="b-product-list__item-link">
+		    <div class="b-product-list__item-detail">
+			  <img src="/f/i/img2.jpg" class="b-product-list__item-image">
+			  <div class="b-product-list__item-info">
+			    <span class="b-product-list__item-name">Столбик анкерный</span>
+				<div class="b-product-list__item-info-row">
+				  <span class="b-product-list__item-info-name-wrap">
+				    <span class="b-product-list__item-info-name">Тип крепления</span>
+				    <span class="b-product-list__item-info-line"></span>
+				  </span>
+				  <span class="b-product-list__item-info-value">Бетонируемое</span>
+				</div>
+				<div class="b-product-list__item-info-row">
+				<span class="b-product-list__item-info-name-wrap">
+				  <span class="b-product-list__item-info-name">Высота</span>
+				  <span class="b-product-list__item-info-line"></span>
+				</span>
+				  <span class="b-product-list__item-info-value">750 + 250 мм</span>
+				</div>
+				<div class="b-product-list__item-info-row">
+				<span class="b-product-list__item-info-name-wrap">
+				  <span class="b-product-list__item-info-name">Масса</span>
+				  <span class="b-product-list__item-info-line"></span>
+				</span>
+				<span class="b-product-list__item-info-value">3,33 кг</span>
+				</div>
+				<div class="b-product-list__item-info-row">
+				<span class="b-product-list__item-info-name-wrap">
+				  <span class="b-product-list__item-info-name">Диаметр трубы</span>
+				  <span class="b-product-list__item-info-line"></span>
+				</span>
+				<span class="b-product-list__item-info-value">76 мм</span>
+				</div>
+			  </div>
+			</div>
+			<div class="b-product-list__item-cell b-product-list__item-cell_available"><span class="item-available item-available_unback iconize-available">В наличии</span></div>
+		    <div class="b-product-list__item-cell b-product-list__item-cell_price">1025 &#8377 </div>
+			<div class="b-product-list__item-cell b-product-list__item-cell_qty">
+			  <span class="b-product-list__item-qty-counter grey-btn grey-btn_counter">-</span>
+			  <input type="text" class="b-product-list__item-qty-input grey-input" value="1">
+			  <span class="b-product-list__item-qty-counter grey-btn grey-btn_counter">+</span>
+			  <span class="orange-btn orange-btn_cart iconize-cart">В корзину</span>
+			 </div>
+			 </a>
+          </div>
 		</div>
-		<div class="b-product-tiles__item">
-		  <a href="#" class="b-product-tiles__item-link">
-		    <img src="/f/i/img4.jpg" class="b-product-tiles__item-image">
-		    <span class="b-product-tiles__item-mask"></span>
-		    <span class="b-product-tiles__item-name">Столбик бетонируемый</span>
-		    <span class="b-product-tiles__item-price">1780 &#8377</span>
-		     <div class="b-product-tiles__item-available"><span class="item-available iconize-available">В наличии</span></div>
-		  </a>
+		<div class="b-product-list__item">
+           <div class="b-product-list__item-wrap">
+		   <a href="#" class="b-product-list__item-link">
+		    <div class="b-product-list__item-detail">
+			  <img src="/f/i/img3.jpg" class="b-product-list__item-image">
+			  <div class="b-product-list__item-info">
+			    <span class="b-product-list__item-name">Столбик передвижной</span>
+				<div class="b-product-list__item-info-row">
+				  <span class="b-product-list__item-info-name-wrap">
+				    <span class="b-product-list__item-info-name">Тип крепления</span>
+				    <span class="b-product-list__item-info-line"></span>
+				  </span>
+				  <span class="b-product-list__item-info-value">Бетонируемое</span>
+				</div>
+				<div class="b-product-list__item-info-row">
+				<span class="b-product-list__item-info-name-wrap">
+				  <span class="b-product-list__item-info-name">Высота</span>
+				  <span class="b-product-list__item-info-line"></span>
+				</span>
+				  <span class="b-product-list__item-info-value">750 + 250 мм</span>
+				</div>
+				<div class="b-product-list__item-info-row">
+				<span class="b-product-list__item-info-name-wrap">
+				  <span class="b-product-list__item-info-name">Масса</span>
+				  <span class="b-product-list__item-info-line"></span>
+				</span>
+				<span class="b-product-list__item-info-value">3,33 кг</span>
+				</div>
+				<div class="b-product-list__item-info-row">
+				<span class="b-product-list__item-info-name-wrap">
+				  <span class="b-product-list__item-info-name">Диаметр трубы</span>
+				  <span class="b-product-list__item-info-line"></span>
+				</span>
+				<span class="b-product-list__item-info-value">76 мм</span>
+				</div>
+			  </div>
+			</div>
+			<div class="b-product-list__item-cell b-product-list__item-cell_available"><span class="item-available item-available_unback iconize-available">В наличии</span></div>
+		    <div class="b-product-list__item-cell b-product-list__item-cell_price">1975 &#8377 </div>
+			<div class="b-product-list__item-cell b-product-list__item-cell_qty">
+			  <span class="b-product-list__item-qty-counter grey-btn grey-btn_counter">-</span>
+			  <input type="text" class="b-product-list__item-qty-input grey-input" value="1">
+			  <span class="b-product-list__item-qty-counter grey-btn grey-btn_counter">+</span>
+			  <span class="orange-btn orange-btn_cart iconize-cart">В корзину</span>
+			 </div>
+			 </a>
+          </div>
 		</div>
-		<div class="b-product-tiles__item">
-		  <a href="#" class="b-product-tiles__item-link">
-		    <img src="/f/i/img1.jpg" class="b-product-tiles__item-image">
-		    <span class="b-product-tiles__item-mask"></span>
-		    <span class="b-product-tiles__item-name">Столбик бетонируемый</span>
-		    <span class="b-product-tiles__item-price">920 &#8377</span>
-		    <div class="b-product-tiles__item-available"><span class="item-available iconize-available">В наличии</span></div>
-		  </a>
+		<div class="b-product-list__item">
+           <div class="b-product-list__item-wrap">
+		   <a href="#" class="b-product-list__item-link">
+		    <div class="b-product-list__item-detail">
+			  <img src="/f/i/img3.jpg" class="b-product-list__item-image">
+			  <div class="b-product-list__item-info">
+			    <span class="b-product-list__item-name">Столбик передвижной</span>
+				<div class="b-product-list__item-info-row">
+				  <span class="b-product-list__item-info-name-wrap">
+				    <span class="b-product-list__item-info-name">Тип крепления</span>
+				    <span class="b-product-list__item-info-line"></span>
+				  </span>
+				  <span class="b-product-list__item-info-value">Бетонируемое</span>
+				</div>
+				<div class="b-product-list__item-info-row">
+				<span class="b-product-list__item-info-name-wrap">
+				  <span class="b-product-list__item-info-name">Высота</span>
+				  <span class="b-product-list__item-info-line"></span>
+				</span>
+				  <span class="b-product-list__item-info-value">750 + 250 мм</span>
+				</div>
+				<div class="b-product-list__item-info-row">
+				<span class="b-product-list__item-info-name-wrap">
+				  <span class="b-product-list__item-info-name">Масса</span>
+				  <span class="b-product-list__item-info-line"></span>
+				</span>
+				<span class="b-product-list__item-info-value">3,33 кг</span>
+				</div>
+				<div class="b-product-list__item-info-row">
+				<span class="b-product-list__item-info-name-wrap">
+				  <span class="b-product-list__item-info-name">Диаметр трубы</span>
+				  <span class="b-product-list__item-info-line"></span>
+				</span>
+				<span class="b-product-list__item-info-value">76 мм</span>
+				</div>
+			  </div>
+			</div>
+			<div class="b-product-list__item-cell b-product-list__item-cell_available"><span class="item-available item-available_unback iconize-available">В наличии</span></div>
+		    <div class="b-product-list__item-cell b-product-list__item-cell_price">1975 &#8377 </div>
+			<div class="b-product-list__item-cell b-product-list__item-cell_qty">
+			  <span class="b-product-list__item-qty-counter grey-btn grey-btn_counter">-</span>
+			  <input type="text" class="b-product-list__item-qty-input grey-input" value="1">
+			  <span class="b-product-list__item-qty-counter grey-btn grey-btn_counter">+</span>
+			  <span class="orange-btn orange-btn_cart iconize-cart">В корзину</span>
+			 </div>
+			 </a>
+          </div>
 		</div>
-		<div class="b-product-tiles__item">
-		  <a href="#" class="b-product-tiles__item-link">
-		    <img src="/f/i/img1.jpg" class="b-product-tiles__item-image">
-		    <span class="b-product-tiles__item-mask"></span>
-		    <span class="b-product-tiles__item-name">Столбик бетонируемый</span>
-		    <span class="b-product-tiles__item-price">920 &#8377</span>
-		    <div class="b-product-tiles__item-available"><span class="item-available iconize-available">В наличии</span></div>
-		  </a>
+		<div class="b-product-list__item">
+           <div class="b-product-list__item-wrap">
+		   <a href="#" class="b-product-list__item-link">
+		    <div class="b-product-list__item-detail">
+			  <img src="/f/i/img3.jpg" class="b-product-list__item-image">
+			  <div class="b-product-list__item-info">
+			    <span class="b-product-list__item-name">Столбик передвижной</span>
+				<div class="b-product-list__item-info-row">
+				  <span class="b-product-list__item-info-name-wrap">
+				    <span class="b-product-list__item-info-name">Тип крепления</span>
+				    <span class="b-product-list__item-info-line"></span>
+				  </span>
+				  <span class="b-product-list__item-info-value">Бетонируемое</span>
+				</div>
+				<div class="b-product-list__item-info-row">
+				<span class="b-product-list__item-info-name-wrap">
+				  <span class="b-product-list__item-info-name">Высота</span>
+				  <span class="b-product-list__item-info-line"></span>
+				</span>
+				  <span class="b-product-list__item-info-value">750 + 250 мм</span>
+				</div>
+				<div class="b-product-list__item-info-row">
+				<span class="b-product-list__item-info-name-wrap">
+				  <span class="b-product-list__item-info-name">Масса</span>
+				  <span class="b-product-list__item-info-line"></span>
+				</span>
+				<span class="b-product-list__item-info-value">3,33 кг</span>
+				</div>
+				<div class="b-product-list__item-info-row">
+				<span class="b-product-list__item-info-name-wrap">
+				  <span class="b-product-list__item-info-name">Диаметр трубы</span>
+				  <span class="b-product-list__item-info-line"></span>
+				</span>
+				<span class="b-product-list__item-info-value">76 мм</span>
+				</div>
+			  </div>
+			</div>
+			<div class="b-product-list__item-cell b-product-list__item-cell_available"><span class="item-available item-available_unback iconize-available">В наличии</span></div>
+		    <div class="b-product-list__item-cell b-product-list__item-cell_price">1975 &#8377 </div>
+			<div class="b-product-list__item-cell b-product-list__item-cell_qty">
+			  <span class="b-product-list__item-qty-counter grey-btn grey-btn_counter">-</span>
+			  <input type="text" class="b-product-list__item-qty-input grey-input" value="1">
+			  <span class="b-product-list__item-qty-counter grey-btn grey-btn_counter">+</span>
+			  <span class="orange-btn orange-btn_cart iconize-cart">В корзину</span>
+			 </div>
+			 </a>
+          </div>
 		</div>
-		<div class="b-product-tiles__item">
-		  <a href="#" class="b-product-tiles__item-link">
-		    <img src="/f/i/img1.jpg" class="b-product-tiles__item-image">
-		    <span class="b-product-tiles__item-mask"></span>
-		    <span class="b-product-tiles__item-name">Столбик бетонируемый</span>
-		    <span class="b-product-tiles__item-price">920 &#8377</span>
-		    <div class="b-product-tiles__item-available"><span class="item-available iconize-available">В наличии</span></div>
-		  </a>
+		<div class="b-product-list__item">
+           <div class="b-product-list__item-wrap">
+		   <a href="#" class="b-product-list__item-link">
+		    <div class="b-product-list__item-detail">
+			  <img src="/f/i/img3.jpg" class="b-product-list__item-image">
+			  <div class="b-product-list__item-info">
+			    <span class="b-product-list__item-name">Столбик передвижной</span>
+				<div class="b-product-list__item-info-row">
+				  <span class="b-product-list__item-info-name-wrap">
+				    <span class="b-product-list__item-info-name">Тип крепления</span>
+				    <span class="b-product-list__item-info-line"></span>
+				  </span>
+				  <span class="b-product-list__item-info-value">Бетонируемое</span>
+				</div>
+				<div class="b-product-list__item-info-row">
+				<span class="b-product-list__item-info-name-wrap">
+				  <span class="b-product-list__item-info-name">Высота</span>
+				  <span class="b-product-list__item-info-line"></span>
+				</span>
+				  <span class="b-product-list__item-info-value">750 + 250 мм</span>
+				</div>
+				<div class="b-product-list__item-info-row">
+				<span class="b-product-list__item-info-name-wrap">
+				  <span class="b-product-list__item-info-name">Масса</span>
+				  <span class="b-product-list__item-info-line"></span>
+				</span>
+				<span class="b-product-list__item-info-value">3,33 кг</span>
+				</div>
+				<div class="b-product-list__item-info-row">
+				<span class="b-product-list__item-info-name-wrap">
+				  <span class="b-product-list__item-info-name">Диаметр трубы</span>
+				  <span class="b-product-list__item-info-line"></span>
+				</span>
+				<span class="b-product-list__item-info-value">76 мм</span>
+				</div>
+			  </div>
+			</div>
+			<div class="b-product-list__item-cell b-product-list__item-cell_available"><span class="item-available item-available_unback iconize-available">В наличии</span></div>
+		    <div class="b-product-list__item-cell b-product-list__item-cell_price">1975 &#8377 </div>
+			<div class="b-product-list__item-cell b-product-list__item-cell_qty">
+			  <span class="b-product-list__item-qty-counter grey-btn grey-btn_counter">-</span>
+			  <input type="text" class="b-product-list__item-qty-input grey-input" value="1">
+			  <span class="b-product-list__item-qty-counter grey-btn grey-btn_counter">+</span>
+			  <span class="orange-btn orange-btn_cart iconize-cart">В корзину</span>
+			 </div>
+			 </a>
+          </div>
 		</div>
-		<div class="b-product-tiles__item">
-		  <a href="#" class="b-product-tiles__item-link">
-		    <img src="/f/i/img1.jpg" class="b-product-tiles__item-image">
-		    <span class="b-product-tiles__item-mask"></span>
-		    <span class="b-product-tiles__item-name">Столбик бетонируемый</span>
-		    <span class="b-product-tiles__item-price">920 &#8377</span>
-		    <div class="b-product-tiles__item-available"><span class="item-available iconize-available">В наличии</span></div>
-		  </a>
+		<div class="b-product-list__item">
+           <div class="b-product-list__item-wrap">
+		   <a href="#" class="b-product-list__item-link">
+		    <div class="b-product-list__item-detail">
+			  <img src="/f/i/img3.jpg" class="b-product-list__item-image">
+			  <div class="b-product-list__item-info">
+			    <span class="b-product-list__item-name">Столбик передвижной</span>
+				<div class="b-product-list__item-info-row">
+				  <span class="b-product-list__item-info-name-wrap">
+				    <span class="b-product-list__item-info-name">Тип крепления</span>
+				    <span class="b-product-list__item-info-line"></span>
+				  </span>
+				  <span class="b-product-list__item-info-value">Бетонируемое</span>
+				</div>
+				<div class="b-product-list__item-info-row">
+				<span class="b-product-list__item-info-name-wrap">
+				  <span class="b-product-list__item-info-name">Высота</span>
+				  <span class="b-product-list__item-info-line"></span>
+				</span>
+				  <span class="b-product-list__item-info-value">750 + 250 мм</span>
+				</div>
+				<div class="b-product-list__item-info-row">
+				<span class="b-product-list__item-info-name-wrap">
+				  <span class="b-product-list__item-info-name">Масса</span>
+				  <span class="b-product-list__item-info-line"></span>
+				</span>
+				<span class="b-product-list__item-info-value">3,33 кг</span>
+				</div>
+				<div class="b-product-list__item-info-row">
+				<span class="b-product-list__item-info-name-wrap">
+				  <span class="b-product-list__item-info-name">Диаметр трубы</span>
+				  <span class="b-product-list__item-info-line"></span>
+				</span>
+				<span class="b-product-list__item-info-value">76 мм</span>
+				</div>
+			  </div>
+			</div>
+			<div class="b-product-list__item-cell b-product-list__item-cell_available"><span class="item-available item-available_unback iconize-available">В наличии</span></div>
+		    <div class="b-product-list__item-cell b-product-list__item-cell_price">1975 &#8377 </div>
+			<div class="b-product-list__item-cell b-product-list__item-cell_qty">
+			  <span class="b-product-list__item-qty-counter grey-btn grey-btn_counter">-</span>
+			  <input type="text" class="b-product-list__item-qty-input grey-input" value="1">
+			  <span class="b-product-list__item-qty-counter grey-btn grey-btn_counter">+</span>
+			  <span class="orange-btn orange-btn_cart iconize-cart">В корзину</span>
+			 </div>
+			 </a>
+          </div>
 		</div>
-		<div class="b-product-tiles__item">
-		  <a href="#" class="b-product-tiles__item-link">
-		    <img src="/f/i/img1.jpg" class="b-product-tiles__item-image">
-		    <span class="b-product-tiles__item-mask"></span>
-		    <span class="b-product-tiles__item-name">Столбик бетонируемый</span>
-		    <span class="b-product-tiles__item-price">920 &#8377</span>
-		    <div class="b-product-tiles__item-available"><span class="item-available iconize-available">В наличии</span></div>
-		  </a>
-		</div>
-		<div class="b-product-tiles__item">
-		  <a href="#" class="b-product-tiles__item-link">
-		    <img src="/f/i/img1.jpg" class="b-product-tiles__item-image">
-		    <span class="b-product-tiles__item-mask"></span>
-		    <span class="b-product-tiles__item-name">Столбик бетонируемый</span>
-		    <span class="b-product-tiles__item-price">920 &#8377</span>
-		    <div class="b-product-tiles__item-available"><span class="item-available iconize-available">В наличии</span></div>
-		  </a>
-		</div>
+		<div class="b-see-more-list"><a href="#" class="b-see-more blue-btn"><span class="iconize-small-arrow">Смотреть все</span></a></div>
 	  </div>
-	  <div class="b-product-tiles__mask"></div>
-	  <div class="b-see-more-tiles"><a href="#" class="b-see-more blue-btn"><span class="iconize-small-arrow">Смотреть все</span></a></div>
-	</div>
-	<div class="b-product-tiles">
-	    <a href="#" class="b-product__title">Гибкие столбики</a>
-		
-		<div class="b-product-tiles-wrap">
-		<div class="b-product-tiles__item">
-		  <a href="#" class="b-product-tiles__item-link">
-		    <img src="/f/i/img1.jpg" class="b-product-tiles__item-image">
-		    <span class="b-product-tiles__item-mask"></span>
-		    <span class="b-product-tiles__item-name">Столбик разделительный гибкий 470мм</span>
-		    <span class="b-product-tiles__item-price">920 &#8377</span>
-		    <div class="b-product-tiles__item-available"><span class="item-available iconize-available">В наличии</span></div>
-		  </a>
-		</div>
-		<div class="b-product-tiles__item">
-		  <a href="#" class="b-product-tiles__item-link">
-		    <img src="/f/i/img2.jpg" class="b-product-tiles__item-image">
-		    <span class="b-product-tiles__item-mask"></span>
-		    <span class="b-product-tiles__item-name">Столбик разделительный гибкий 750мм со съемным основанием</span>
-		    <span class="b-product-tiles__item-price">1015 &#8377</span>
-		    <div class="b-product-tiles__item-available"><span class="item-available iconize-available">В наличии</span></div>
-		  </a>
-		</div>
-		
-		
-		<div class="b-product-tiles__item">
-		  <a href="#" class="b-product-tiles__item-link">
-		    <img src="/f/i/img3.jpg" class="b-product-tiles__item-image">
-		    <span class="b-product-tiles__item-mask"></span>
-		    <span class="b-product-tiles__item-name">Столбик разделительный гибкий 1000мм</span>
-		    <span class="b-product-tiles__item-price">1975 &#8377</span>
-		    <div class="b-product-tiles__item-available"><span class="item-available iconize-available iconize-available_false">Под заказ</span></div>
-		  </a>
-		</div>
-	  </div>
-	  <div class="b-product-tiles__mask"></div>
-	  <div class="b-see-more-tiles"><a href="#" class="b-see-more blue-btn"><span class="iconize-small-arrow">Смотреть все</span></a></div>
 	</div>
 	</div>
   </div>
