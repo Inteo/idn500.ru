@@ -470,11 +470,46 @@ $(document).ready(function(){
 		$(".b-contact-popup__message-send").show();
 	 })
 	 
+	see_more_button_list();
+	see_more_button_tiles();
 	
-	
+});
+
+$(window).resize(function(){
+   see_more_button_tiles();
 });
 
   function fancy_close() {
    $.fancybox.close();
   }
+  
+function see_more_button_list() {
+     $(".b-product-list").each(function(i){
+		var total_height = 860;
 
+		if($(this).height() > total_height){
+		  $(this).find(".b-see-more").show();
+		  $(this).find(".b-product-list-wrap").removeClass("b-product-list-wrap_unmasked");
+		}
+		else if($(this).height() < total_height){
+		  $(this).find(".b-see-more").hide();
+		  $(this).find(".b-product-list-wrap").addClass("b-product-list-wrap_unmasked");
+		}
+	});
+   }
+function see_more_button_tiles() {   
+ $(".b-product-tiles").each(function(i){
+	
+		var total_width = 0;
+		$(this).find(".b-product-tiles__item").each(function(i){
+		  total_width = total_width + $(this).width();
+		});
+		total_width = total_width + $(this).find(".b-product-tiles__item").width() - 90;
+		if($(this).width() < total_width){
+		  $(this).find(".b-see-more").show();
+		}
+		else if($(this).width() > total_width){
+		  $(this).find(".b-see-more").hide();
+		}
+	});
+   }
