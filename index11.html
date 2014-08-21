@@ -23,24 +23,24 @@
   <!--[if lt IE 9]><script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script><![endif]-->
   <script>
   $(document).ready(function() {
-      $(".b-contacts-cities__item").click(function() {
-          var theClass = $(this).attr("class");
-          var theClasses = theClass.match(/\w+|"[^"]+"/g);
-          var str = theClasses.join(' ');
-          var num = parseInt(str.replace(/\D+/g,""));
-          var cls = ".b-contacts-address_" + num;
-          $('.b-contacts-address').each(function() {
-            $(".b-contacts-address").removeClass("b-contacts-address_active");
-          });
-          $('.b-contacts-cities__item').each(function() {
-            $(".b-contacts-cities__item").removeClass("switch-btn_active");
-            $(".b-contacts-cities__item").find(".iconize-map-marker").removeClass("iconize-map-marker_active");
-          });
-          $(this).addClass("switch-btn_active");
-          $(this).find(".iconize-map-marker").addClass("iconize-map-marker_active");
-          $(cls).addClass("b-contacts-address_active");
-          }) 
+    $(".b-contacts-cities__item").click(function() {
+      var theClass = $(this).attr("class");
+      var theClasses = theClass.match(/\w+|"[^"]+"/g);
+      var str = theClasses.join(' ');
+      var num = parseInt(str.replace(/\D+/g, ""));
+      var cls = ".b-contacts-address_" + num;
+      $('.b-contacts-address').each(function() {
+        $(".b-contacts-address").removeClass("b-contacts-address_active");
       });
+      $('.b-contacts-cities__item').each(function() {
+        $(".b-contacts-cities__item").removeClass("switch-btn_active");
+        $(".b-contacts-cities__item").find(".iconize-map-marker").removeClass("iconize-map-marker_active");
+      });
+      $(this).addClass("switch-btn_active");
+      $(this).find(".iconize-map-marker").addClass("iconize-map-marker_active");
+      $(cls).addClass("b-contacts-address_active");
+    })
+  });
   </script>
 </head>
 

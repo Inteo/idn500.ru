@@ -8,19 +8,31 @@
   <meta name="description" content="">
   <meta name="keywords" content="">
   <link rel="stylesheet" href="/f/css/main.css">
+  <link rel="stylesheet" href="/f/css/jquery.mCustomScrollbar.css">
   <!--[if lte IE 9]><link rel="stylesheet" href="f/css/ie.css"><![endif]-->
-  <link href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Open+Sans:400,400italic,800,600&subset=latin,cyrillic" rel="stylesheet">
-  <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
-
+  <link href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Open+Sans:400,400italic,800,600&subset=all" rel="stylesheet">
+  <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&subset=all' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="/f/fancybox/jquery.fancybox.css?v=2.1.5" media="screen">
   <link rel="shortcut icon" href="favicon.ico">
   <script src="/f/js/jquery-1.10.2.min.js"></script>
   <script src="/f/js/jquery.carouFredSel-6.2.1-packed.js"></script>
+  <script src="/f/js/jquery.mCustomScrollbar.js"></script>
   <script src="/f/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
   <script src="/f/js/jquery.touchSwipe.min.js"></script>
   <script src="/f/js/jquery.transit.min.js"></script>
   <script src="/f/js/common.js"></script>
   <!--[if lt IE 9]><script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script><![endif]-->
+  <script>
+  $(document).ready(function() {
+    $(".b-about-products__item-link-spec").hover(
+      function() {
+        $(this).parent().parent().find(".b-about-products__item-link-wrap").addClass("b-about-products__item-link-wrap_hover");
+      }, function() {
+        $(this).parent().parent().find(".b-about-products__item-link-wrap").removeClass("b-about-products__item-link-wrap_hover");
+      }
+    );
+  });
+  </script>
 </head>
 
 <body>
@@ -70,8 +82,6 @@
               </ul>
             </div>
           </div>
-          <span class="b-header__title">Средства организации дорожного движения и парковки</span>
-          <span class="b-header__text">Направлениями деятельности компании являются инженерные разработки и производство технических средств организации дорожного движения, включающих в себя элементы из резины. К продукции собственного производства относятся: <a href="#">Искусственные дорожные неровности</a> («лежачие полицейские») типов <a href="#">ИДН-500</a> и <a href="#">ИДН-900</a>, <a href="#">делиниатор</a>.</span>
         </div>
         <div class="b-search">
           <div class="b-search__wrap">
@@ -99,189 +109,250 @@
           </div>
         </div>
       </div>
-      <div class="b-catalog-grid">
-        <div class="b-catalog-grid__item">
-          <a href="#" class="b-catalog-grid__item-link">
-            <span class="b-catalog-grid__item-image">
-              <img src="/f/i/catalog-icons/icon1.png">
-            </span>
-            <span class="b-catalog-grid__item-name">Лежачие полицейские</span>
-          </a>
-        </div>
-        <div class="b-catalog-grid__item">
-          <a href="#" class="b-catalog-grid__item-link">
-            <span class="b-catalog-grid__item-image">
-              <img src="/f/i/catalog-icons/icon2.png">
-            </span>
-            <span class="b-catalog-grid__item-name">Гибкие столбики</span>
-          </a>
-        </div>
-        <div class="b-catalog-grid__item">
-          <a href="#" class="b-catalog-grid__item-link">
-            <span class="b-catalog-grid__item-image">
-              <img src="/f/i/catalog-icons/icon3.png">
-            </span>
-            <span class="b-catalog-grid__item-name">Резиновая защита углов</span>
-          </a>
-        </div>
-        <div class="b-catalog-grid__item">
-          <a href="#" class="b-catalog-grid__item-link">
-            <span class="b-catalog-grid__item-image">
-              <img src="/f/i/catalog-icons/icon4.png">
-            </span>
-            <span class="b-catalog-grid__item-name">Резиновая защита стен</span>
-          </a>
-        </div>
-        <div class="b-catalog-grid__item">
-          <a href="#" class="b-catalog-grid__item-link">
-            <span class="b-catalog-grid__item-image">
-              <img src="/f/i/catalog-icons/icon5.png">
-            </span>
-            <span class="b-catalog-grid__item-name">Резиновые колесоотбойники</span>
-          </a>
-        </div>
-        <div class="b-catalog-grid__item">
-          <a href="#" class="b-catalog-grid__item-link">
-            <span class="b-catalog-grid__item-image">
-              <img src="/f/i/catalog-icons/icon6.png">
-            </span>
-            <span class="b-catalog-grid__item-name">Делиниаторы</span>
-          </a>
-        </div>
-        <div class="b-catalog-grid__item">
-          <a href="#" class="b-catalog-grid__item-link">
-            <span class="b-catalog-grid__item-image">
-              <img src="/f/i/catalog-icons/icon7.png">
-            </span>
-            <span class="b-catalog-grid__item-name">Зеркала дорожные</span>
-          </a>
-        </div>
-        <div class="b-catalog-grid__item">
-          <a href="#" class="b-catalog-grid__item-link">
-            <span class="b-catalog-grid__item-image">
-              <img src="/f/i/catalog-icons/icon8.png">
-            </span>
-            <span class="b-catalog-grid__item-name">Кабель-каналы</span>
-          </a>
-        </div>
-        <div class="b-catalog-grid__item">
-          <a href="#" class="b-catalog-grid__item-link">
-            <span class="b-catalog-grid__item-image">
-              <img src="/f/i/catalog-icons/icon9.png">
-            </span>
-            <span class="b-catalog-grid__item-name">Знаки дорожные</span>
-          </a>
-        </div>
-        <div class="b-catalog-grid__item">
-          <a href="#" class="b-catalog-grid__item-link">
-            <span class="b-catalog-grid__item-image">
-              <img src="/f/i/catalog-icons/icon10.png">
-            </span>
-            <span class="b-catalog-grid__item-name">Барьеры водоналивные</span>
-          </a>
-        </div>
-        <div class="b-catalog-grid__item">
-          <a href="#" class="b-catalog-grid__item-link">
-            <span class="b-catalog-grid__item-image">
-              <img src="/f/i/catalog-icons/icon11.png">
-            </span>
-            <span class="b-catalog-grid__item-name">Оборудование для паркинга</span>
-          </a>
-        </div>
-        <div class="b-catalog-grid__item">
-          <a href="#" class="b-catalog-grid__item-link">
-            <span class="b-catalog-grid__item-image">
-              <img src="/f/i/catalog-icons/icon12.png">
-            </span>
-            <span class="b-catalog-grid__item-name">Сигнальные столбики</span>
-          </a>
-        </div>
-        <div class="b-catalog-grid__item">
-          <a href="#" class="b-catalog-grid__item-link">
-            <span class="b-catalog-grid__item-image">
-              <img src="/f/i/catalog-icons/icon13.png">
-            </span>
-            <span class="b-catalog-grid__item-name">Средства ограждения</span>
-          </a>
-        </div>
-        <div class="b-catalog-grid__item">
-          <a href="#" class="b-catalog-grid__item-link">
-            <span class="b-catalog-grid__item-image">
-              <img src="/f/i/catalog-icons/icon14.png">
-            </span>
-            <span class="b-catalog-grid__item-name">Барьерные дорожные ограждения</span>
-          </a>
-        </div>
-        <div class="b-catalog-grid__item">
-          <a href="#" class="b-catalog-grid__item-link">
-            <span class="b-catalog-grid__item-image">
-              <img src="/f/i/catalog-icons/icon15.png">
-            </span>
-            <span class="b-catalog-grid__item-name">Материалы для дорожной разметки</span>
-          </a>
-        </div>
-        <div class="b-catalog-grid__item">
-          <a href="#" class="b-catalog-grid__item-link">
-            <span class="b-catalog-grid__item-image">
-              <img src="/f/i/catalog-icons/icon16.png">
-            </span>
-            <span class="b-catalog-grid__item-name">Светофоры и контроллеры</span>
-          </a>
-        </div>
-        <div class="b-catalog-grid__item">
-          <a href="#" class="b-catalog-grid__item-link">
-            <span class="b-catalog-grid__item-image">
-              <img src="/f/i/catalog-icons/icon17.png">
-            </span>
-            <span class="b-catalog-grid__item-name">Катафоты и маячки</span>
-          </a>
-        </div>
-        <div class="b-catalog-grid__item">
-          <a href="#" class="b-catalog-grid__item-link">
-            <span class="b-catalog-grid__item-image">
-              <img src="/f/i/catalog-icons/icon18.png">
-            </span>
-            <span class="b-catalog-grid__item-name">Фонари сигнальные осветительные</span>
-          </a>
-        </div>
-        <div class="b-catalog-grid__item">
-          <a href="#" class="b-catalog-grid__item-link">
-            <span class="b-catalog-grid__item-image">
-              <img src="/f/i/catalog-icons/icon19.png">
-            </span>
-            <span class="b-catalog-grid__item-name">Шлагбаумы</span>
-          </a>
+      <div class="b-content">
+        <span class="b-content__title">О компании</span>
+        <div class="b-about">
+          <div class="b-about-top-block">
+            <img src="/f/i/about.jpg" alt="" class="b-about-top-block__image">
+            <div class="b-about-top-block-wrap">
+              <p class="b-about-top-block__text">Производственная компания «Технология» основана в 2003 году. Первым видом выпускаемой продукции стали резиновые лежачие полицейские (ИДН). За более чем десятилетний период работы мы значительно расширили ассортимент выпускаемых и продаваемых изделий, а также открыли ряд совместных производств с зарубежными партнерами. Мы изготавливаем стандартные ТСОДД, а также работаем с индивидуальными проектами наших Заказчиков.</p>
+              <div class="b-achiv-block-wrap">
+                <div class="b-achiv-block b-achiv-block_about">
+                  <div class="b-achiv-block__item">
+                    <div class="b-achiv-block__item-wrap iconize-achiv-block-1">
+                      <span class="b-achiv-block__title">11
+                        <span class="b-achiv-block__title_small">лет</span>
+                      </span>
+                      <span class="b-achiv-block__text">успешной работы</span>
+                    </div>
+                  </div>
+                  <div class="b-achiv-block__item">
+                    <div class="b-achiv-block__item-wrap iconize-achiv-block-2">
+                      <span class="b-achiv-block__title">5772</span>
+                      <span class="b-achiv-block__text">довольных клиентов</span>
+                    </div>
+                  </div>
+                  <div class="b-achiv-block__item">
+                    <div class="b-achiv-block__item-wrap iconize-achiv-block-3">
+                      <span class="b-achiv-block__title">1352</span>
+                      <span class="b-achiv-block__text">товарных позиций в каталоге</span>
+                    </div>
+                  </div>
+                  <div class="b-achiv-block__item">
+                    <div class="b-achiv-block__item-wrap iconize-achiv-block-4">
+                      <span class="b-achiv-block__title">542</span>
+                      <span class="b-achiv-block__text">выполненных государственных и муниципальных контрактов</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <span class="b-about__title">Продукция собственного производства</span>
+          <p class="b-about__text">Сегодня компания успешно разрабатывает и производит широкий спектр собственных изделий из полимерных материалов. На предприятии налажен четкий контроль качества выпускаемых изделий и их сопровождение на рынке.</p>
+          <div class="b-about-products">
+            <div class="b-about-products__item">
+              <a href="#" class="b-about-products__item-link-wrap">
+                <img src="/f/i/catalog-menu-icons/3.png" alt="" class="b-about-products__item-img">
+              </a>
+              <span class="b-about-products__item-cont">
+                <span class="b-about-products__item-text">Лежачие полицейские</span>
+                <a href="#" class="b-about-products__item-link-spec link">ИДН-350</a>,
+                <a href="#" class="b-about-products__item-link-spec link">ИДН-500</a>,
+                <a href="#" class="b-about-products__item-link-spec link">ИДН-900</a>
+              </span>
+            </div>
+            <div class="b-about-products__item">
+              <a href="#" class="b-about-products__item-link-wrap link">
+                <img src="/f/i/catalog-menu-icons/23.png" alt="" class="b-about-products__item-img">
+                <span class="b-about-products__item-link">Резиновые колесоотбойники</span>
+              </a>
+            </div>
+            <div class="b-about-products__item">
+              <a href="#" class="b-about-products__item-link-wrap link">
+                <img src="/f/i/catalog-menu-icons/17.png" alt="" class="b-about-products__item-img">
+                <span class="b-about-products__item-link">Гибкие сигнальные столбики</span>
+              </a>
+            </div>
+            <div class="b-about-products__item">
+              <a href="#" class="b-about-products__item-link-wrap link">
+                <img src="/f/i/catalog-menu-icons/24.png" alt="" class="b-about-products__item-img">
+                <span class="b-about-products__item-link">Оградительные вехи</span>
+              </a>
+            </div>
+            <div class="b-about-products__item">
+              <a href="#" class="b-about-products__item-link-wrap link">
+                <img src="/f/i/catalog-menu-icons/11.png" alt="" class="b-about-products__item-img">
+                <span class="b-about-products__item-link">Делиниаторы</span>
+              </a>
+            </div>
+            <div class="b-about-products__item">
+              <a href="#" class="b-about-products__item-link-wrap">
+                <img src="/f/i/catalog-menu-icons/26.png" alt="" class="b-about-products__item-img">
+              </a>
+              <span class="b-about-products__item-cont">
+                <a href="#" class="b-about-products__item-link-spec link">Резиновая защита стен</a> и
+                <a href="#" class="b-about-products__item-link-spec link">углов</a>
+              </span>
+            </div>
+            <div class="b-about-products__item">
+              <a href="#" class="b-about-products__item-link-wrap link">
+                <img src="/f/i/catalog-menu-icons/25.png" alt="" class="b-about-products__item-img">
+                <span class="b-about-products__item-link">Дорожные конусы</span>
+              </a>
+            </div>
+            <div class="b-about-products__item">
+              <a href="#" class="b-about-products__item-link-wrap link">
+                <img src="/f/i/catalog-menu-icons/9.png" alt="" class="b-about-products__item-img">
+                <span class="b-about-products__item-link">Сферические зеркала</span>
+              </a>
+            </div>
+          </div>
+          <span class="b-about__title">Наши преимущества</span>
+          <span class="b-about__title b-about__title_small">Нам доверяют</span>
+          <p class="b-about__text">Среди наших постоянных <a href="#" class="link">заказчиков</a> такие крупные организации, как: ГУ ГИБДД МВД РФ, Росавтодор, ОАО «Газпром», сеть магазинов «ИКЕА», ОАО «РЖД», международный аэропорт «Домодедово», администрации более чем 30 городов.</p>
+          <span class="b-about__title b-about__title_small">Гарантии качества</span>
+          <p class="b-about__text">Мы и наши партнеры постоянно совершенствуем технологии изготовления всех видов продукции. На нашем предприятии налажен четкий контроль качества всех выпускаемых нами изделий и сопровождение их на рынке.</p>
+          <span class="b-about__title b-about__title_small">Быстрая доставка</span>
+          <p class="b-about__text">На наших складах всегда имеется ассортимент часто закупаемой продукции. Это дает нам возможность моментальной отгрузки заказа потребителю и быстрой <a href="#" class="link">доставки</a> в любую точку более чем 80 регионов России, стран СНГ и дальнего зарубежья.</p>
+          <span class="b-about__title">Государственные и муниципальные заказчики</span>
+          <p class="b-about__text">Наш отдел по работе с государственными и муниципальными заказчиками работает в соответствии с 44-ФЗ от 05 апреля 2013 "О контрактной системе в сфере закупок товаров, работ, услуг для обеспечения государственных и муниципальных нужд" , 223-ФЗ от 18 июля 2011г. "О закупках товаров, работ, услуг отдельными видами юридических лиц". 5 лет наша компания успешно сотрудничает с государственными и муниципальными заказчиками. Выполнено 542 муниципальных и государственных контрактов, а также контракт на поставку оборудования для организации дорожного движения в период проведения олимпийских игр в г. Сочи в 2014г.</p>
+          <div class="b-about-news">
+            <span class="b-about__title">Новости</span>
+            <div class="gallery-wrap">
+              <div class="gallery">
+                <div class="gallery__holder" style="height: 350px;">
+                  <div class="b-about-news__item">
+                    <span class="b-about-news__date">14 ноября 2013</span>
+                    <a href="#" class="b-about-news__title link">Новый гибкий столбик! Оцените</a>
+                    <p class="b-about__text">Разработан гибкий столбик нового образца с целью снижения затрат на транспортировку.</p>
+                  </div>
+                  <div class="b-about-news__item">
+                    <span class="b-about-news__date">06 сентября 2013</span>
+                    <a href="#" class="b-about-news__title link">Сегодня 10-летие нашей компании!</a>
+                    <p class="b-about__text">Все эти 10 лет мы работаем для Вас, наши уважаемые Клиенты, прислушиваемся к Вашим пожеланиям, и ценим обоснованную критику.</p>
+                  </div>
+                  <div class="b-about-news__item">
+                    <span class="b-about-news__date">05 марта 2013</span>
+                    <a href="#" class="b-about-news__title link">Мы участвуем в выставке EXPOTRAFFIC-2013</a>
+                    <p class="b-about__text">Приглашаем Вас посетить наш стенд на международной выставке EXPOTRAFFIC-2013, которая будет проходить в Экспоцентре в Москве.</p>
+                  </div>
+                  <div class="b-about-news__item">
+                    <span class="b-about-news__date">05 марта 2013</span>
+                    <a href="#" class="b-about-news__title link">Мы участвуем в выставке EXPOTRAFFIC-2013</a>
+                    <img src="/f/i/news.jpg" alt="" class="b-about-news__img">
+                  </div>
+                  <div class="b-about-news__item">
+                    <span class="b-about-news__date">06 сентября 2013</span>
+                    <a href="#" class="b-about-news__title link">Сегодня</a>
+                    <p class="b-about__text">Все эти 10 лет мы работаем для Вас, наши уважаемые Клиенты, прислушиваемся к Вашим пожеланиям, и ценим обоснованную критику.</p>
+                  </div>
+                  <div class="b-about-news__item">
+                    <span class="b-about-news__date">05 марта 2013</span>
+                    <a href="#" class="b-about-news__title link">Мы участвуем в выставке EXPOTRAFFIC-2013</a>
+                    <p class="b-about__text">Приглашаем Вас посетить наш стенд на международной выставке EXPOTRAFFIC-2013, которая будет проходить в Экспоцентре в Москве.</p>
+                  </div>
+                  <div class="b-about-news__item">
+                    <span class="b-about-news__date">05 марта 2013</span>
+                    <a href="#" class="b-about-news__title link">EXPOTRAFFIC-2013</a>
+                    <img src="/f/i/news.jpg" alt="" class="b-about-news__img">
+                  </div>
+                  <div class="b-about-news__item">
+                    <span class="b-about-news__date">05 марта 2013</span>
+                    <a href="#" class="b-about-news__title link">Мы участвуем в выставке EXPOTRAFFIC-2013</a>
+                    <p class="b-about__text">Приглашаем Вас посетить наш стенд на международной выставке EXPOTRAFFIC-2013, которая будет проходить в Экспоцентре в Москве.</p>
+                  </div>
+                  <div class="b-about-news__item">
+                    <span class="b-about-news__date">05 марта 2013</span>
+                    <a href="#" class="b-about-news__title link">Мы участвуем в выставке EXPOTRAFFIC-2013</a>
+                    <img src="/f/i/news.jpg" alt="" class="b-about-news__img">
+                  </div>
+                </div>
+              </div>
+              <span class="b-review-mask b-review-mask_about"></span>
+            </div>
+          </div>
+          <div class="b-about-certif">
+            <span class="b-about__title">Сертификаты и благодарственные письма</span>
+            <div class="gallery-wrap">
+              <div class="gallery">
+                <div class="gallery__holder" style="height: 420px;">
+                  <div class="b-about-certif__item">
+                    <a href="" class="b-about-certif__link link">
+                      <div class="b-about-certif__img-wrap">
+                        <img src="/f/i/certif/1.jpg" alt="" class="b-about-certif__img">
+                      </div>
+                      <span class="b-about-certif__text">Диплом «Доркомэкспо 2011»</span>
+                    </a>
+                  </div>
+                  <div class="b-about-certif__item">
+                    <a href="" class="b-about-certif__link link">
+                      <div class="b-about-certif__img-wrap">
+                        <img src="/f/i/certif/2.jpg" alt="" class="b-about-certif__img">
+                      </div>
+                      <span class="b-about-certif__text">Диплом ООО «Торговый дом Технология»</span>
+                    </a>
+                  </div>
+                  <div class="b-about-certif__item">
+                    <a href="" class="b-about-certif__link link">
+                      <div class="b-about-certif__img-wrap">
+                        <img src="/f/i/certif/3.jpg" alt="" class="b-about-certif__img">
+                      </div>
+                      <span class="b-about-certif__text">Диплом ООО «Технология»</span>
+                    </a>
+                  </div>
+                  <div class="b-about-certif__item">
+                    <a href="" class="b-about-certif__link link">
+                      <div class="b-about-certif__img-wrap">
+                        <img src="/f/i/certif/4.jpg" alt="" class="b-about-certif__img">
+                      </div>
+                      <span class="b-about-certif__text">Диплом «Дорога 2014»</span>
+                    </a>
+                  </div>
+                  <div class="b-about-certif__item">
+                    <a href="" class="b-about-certif__link link">
+                      <div class="b-about-certif__img-wrap">
+                        <img src="/f/i/certif/2.jpg" alt="" class="b-about-certif__img">
+                      </div>
+                      <span class="b-about-certif__text">Диплом ООО «Торговый дом Технология»</span>
+                    </a>
+                  </div>
+                  <div class="b-about-certif__item">
+                    <a href="" class="b-about-certif__link link">
+                      <div class="b-about-certif__img-wrap">
+                        <img src="/f/i/certif/3.jpg" alt="" class="b-about-certif__img">
+                      </div>
+                      <span class="b-about-certif__text">Диплом ООО «Технология»</span>
+                    </a>
+                  </div>
+                  <div class="b-about-certif__item">
+                    <a href="" class="b-about-certif__link link">
+                      <div class="b-about-certif__img-wrap">
+                        <img src="/f/i/certif/2.jpg" alt="" class="b-about-certif__img">
+                      </div>
+                      <span class="b-about-certif__text">Диплом ООО «Торговый дом Технология»</span>
+                    </a>
+                  </div>
+                  <div class="b-about-certif__item">
+                    <a href="" class="b-about-certif__link link">
+                      <div class="b-about-certif__img-wrap">
+                        <img src="/f/i/certif/3.jpg" alt="" class="b-about-certif__img">
+                      </div>
+                      <span class="b-about-certif__text">Диплом ООО «Технология»</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <span class="b-review-mask b-review-mask_about-sertif"></span>
+            </div>
+          </div>
+          <span class="b-about__title">Вакансии</span>
+          <span class="b-about-vacancy"><a href="#" class="link">Менеджер по работе с клиентам</a>
+          </span>
+          <span class="b-about-vacancy"><a href="#" class="link">Сотрудник склада</a>
+          </span>
         </div>
       </div>
-      <div class="b-achiv-block">
-        <div class="b-achiv-block__item">
-          <div class="b-achiv-block__item-wrap iconize-achiv-block-1">
-            <span class="b-achiv-block__title">11
-              <span class="b-achiv-block__title_small">лет</span>
-            </span>
-            <span class="b-achiv-block__text">успешной работы</span>
-          </div>
-        </div>
-        <div class="b-achiv-block__item">
-          <div class="b-achiv-block__item-wrap iconize-achiv-block-2">
-            <span class="b-achiv-block__title">5772</span>
-            <span class="b-achiv-block__text">довольных клиентов</span>
-          </div>
-        </div>
-        <div class="b-achiv-block__item">
-          <div class="b-achiv-block__item-wrap iconize-achiv-block-3">
-            <span class="b-achiv-block__title">1352</span>
-            <span class="b-achiv-block__text">товарных позиций в каталоге</span>
-          </div>
-        </div>
-        <div class="b-achiv-block__item">
-          <div class="b-achiv-block__item-wrap iconize-achiv-block-4">
-            <span class="b-achiv-block__title">542</span>
-            <span class="b-achiv-block__text">выполненных государственных и муниципальных контрактов</span>
-          </div>
-        </div>
-      </div>
-
     </div>
     <div class="b-footer">
       <div class="b-footer__col">
@@ -343,7 +414,6 @@
       </div>
     </div>
   </div>
-
   <div class="b-popups">
     <div class="b-catalog-popup" id="b-catalog-popup">
       <a href="#" class="b-catalog-popup__close blue-btn" onclick="fancy_close();"></a>

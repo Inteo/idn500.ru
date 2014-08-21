@@ -527,6 +527,12 @@ function gallerify() {
     if (off == 0) {
       off = $(this).offset().left;
     }
+    var total_width = 0;
+    $(this).children().find("[class*='_item']").each(function() {
+      total_width = total_width + $(this).width();
+    })
+    console.log(total_width);
+    $(this).find('.gallery__holder').width(total_width + $(this).children().find("[class*='_item']").width());
     var gwidth = $(window).width() - off,
       ghwidth = $(this).find('.gallery__holder').width();
     $(this).find('.gallery__holder').width(ghwidth);
