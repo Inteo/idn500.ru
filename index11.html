@@ -8,7 +8,6 @@
   <meta name="description" content="">
   <meta name="keywords" content="">
   <link rel="stylesheet" href="/f/css/main.css">
-  <link rel="stylesheet" href="/f/css/jquery.mCustomScrollbar.css">
   <!--[if lte IE 9]><link rel="stylesheet" href="f/css/ie.css"><![endif]-->
   <link href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Open+Sans:400,400italic,800,600&subset=all" rel="stylesheet">
   <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&subset=all' rel='stylesheet' type='text/css'>
@@ -16,13 +15,33 @@
   <link rel="shortcut icon" href="favicon.ico">
   <script src="/f/js/jquery-1.10.2.min.js"></script>
   <script src="/f/js/jquery.carouFredSel-6.2.1-packed.js"></script>
-  <script src="/f/js/jquery.mCustomScrollbar.js"></script>
 
   <script src="/f/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
   <script src="/f/js/jquery.touchSwipe.min.js"></script>
   <script src="/f/js/jquery.transit.min.js"></script>
   <script src="/f/js/common.js"></script>
   <!--[if lt IE 9]><script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script><![endif]-->
+  <script>
+  $(document).ready(function() {
+      $(".b-contacts-cities__item").click(function() {
+          var theClass = $(this).attr("class");
+          var theClasses = theClass.match(/\w+|"[^"]+"/g);
+          var str = theClasses.join(' ');
+          var num = parseInt(str.replace(/\D+/g,""));
+          var cls = ".b-contacts-address_" + num;
+          $('.b-contacts-address').each(function() {
+            $(".b-contacts-address").removeClass("b-contacts-address_active");
+          });
+          $('.b-contacts-cities__item').each(function() {
+            $(".b-contacts-cities__item").removeClass("switch-btn_active");
+            $(".b-contacts-cities__item").find(".iconize-map-marker").removeClass("iconize-map-marker_active");
+          });
+          $(this).addClass("switch-btn_active");
+          $(this).find(".iconize-map-marker").addClass("iconize-map-marker_active");
+          $(cls).addClass("b-contacts-address_active");
+          }) 
+      });
+  </script>
 </head>
 
 <body>
@@ -100,209 +119,178 @@
         </div>
       </div>
       <div class="b-content">
-        <span class="b-content__title">Партнеры</span>
-        <div class="b-partners">
-          <div class="b-partners__item">
-            <a href="#" class="b-partners__item-link ">
-              <span class="b-partners__item-ico b-partners__item-ico_1"></span>
-              <span class="b-partners__item-title">Сочи 2014</span>
-            </a>
-            <span class="b-partners__item-text">Выполнено</span>
-            <a href="#" class="b-partners__item-text-link">3 проекта</a>
-          </div>
-          <div class="b-partners__item">
-            <a href="#" class="b-partners__item-link">
-              <span class="b-partners__item-ico b-partners__item-ico_2"></span>
-              <span class="b-partners__item-title">Аэропорт
-                <br>«Домодедово»</span>
-            </a>
-          </div>
-          <div class="b-partners__item">
-            <a href="#" class="b-partners__item-link">
-              <span class="b-partners__item-ico b-partners__item-ico_3"></span>
-              <span class="b-partners__item-title">СлавНефть</span>
-            </a>
-          </div>
-          <div class="b-partners__item">
-            <a href="#" class="b-partners__item-link">
-              <span class="b-partners__item-ico b-partners__item-ico_4"></span>
-              <span class="b-partners__item-title">ОАО «РЖД»</span>
-            </a>
-          </div>
-          <div class="b-partners__item">
-            <a href="#" class="b-partners__item-link">
-              <span class="b-partners__item-ico b-partners__item-ico_5"></span>
-              <span class="b-partners__item-title">Metro Cash & Carry</span>
-            </a>
-          </div>
-          <div class="b-partners__item">
-            <a href="#" class="b-partners__item-link">
-              <span class="b-partners__item-ico b-partners__item-ico_6"></span>
-              <span class="b-partners__item-title">Tatneft</span>
-            </a>
-          </div>
-          <div class="b-partners__item">
-            <img src="/f/i/projects.png" class="b-partners__item-projects" alt="">
-            <span class="b-partners__item-projects-title">выполненных проекта</span>
-          </div>
-          <div class="b-partners__item">
-            <a href="#" class="b-partners__item-link">
-              <span class="b-partners__item-ico b-partners__item-ico_7"></span>
-              <span class="b-partners__item-title">Росспиртпром</span>
-            </a>
-          </div>
-          <div class="b-partners__item">
-            <a href="#" class="b-partners__item-link">
-              <span class="b-partners__item-ico b-partners__item-ico_8"></span>
-              <span class="b-partners__item-title">Росспиртпром</span>
-            </a>
-          </div>
-          <div class="b-partners__item">
-            <a href="#" class="b-partners__item-link">
-              <span class="b-partners__item-ico b-partners__item-ico_9"></span>
-              <span class="b-partners__item-title">Росспиртпром</span>
-            </a>
-          </div>
-          <div class="b-partners__item">
-            <a href="#" class="b-partners__item-link">
-              <span class="b-partners__item-ico b-partners__item-ico_10"></span>
-              <span class="b-partners__item-title">Газпром</span>
-            </a>
-          </div>
-          <div class="b-partners__item">
-            <a href="#" class="b-partners__item-link">
-              <span class="b-partners__item-ico b-partners__item-ico_11"></span>
-              <span class="b-partners__item-title">Nokian Tyres</span>
-            </a>
-          </div>
-          <div class="b-partners__item">
-            <a href="#" class="b-partners__item-link">
-              <span class="b-partners__item-ico b-partners__item-ico_12"></span>
-              <span class="b-partners__item-title">Renaissance
-                <br>Construction</span>
-            </a>
-          </div>
-          <div class="b-partners__item">
-            <a href="#" class="b-partners__item-link">
-              <span class="b-partners__item-ico b-partners__item-ico_13"></span>
-              <span class="b-partners__item-title">РосНефть</span>
-            </a>
-          </div>
-          <div class="b-partners__item">
-            <a href="#" class="b-partners__item-link">
-              <span class="b-partners__item-ico b-partners__item-ico_14"></span>
-              <span class="b-partners__item-title">МосГорТранс</span>
-            </a>
-          </div>
-          <div class="b-partners__item">
-            <a href="#" class="b-partners__item-link">
-              <span class="b-partners__item-ico b-partners__item-ico_15"></span>
-              <span class="b-partners__item-title">Kamaz</span>
-            </a>
-          </div>
-          <div class="b-partners__item">
-            <a href="#" class="b-partners__item-link">
-              <span class="b-partners__item-ico b-partners__item-ico_16"></span>
-              <span class="b-partners__item-title">Останкинский
-                <br>мясокомбинат</span>
-            </a>
-          </div>
-          <div class="b-partners__item">
-            <a href="#" class="b-partners__item-link">
-              <span class="b-partners__item-ico b-partners__item-ico_17"></span>
-              <span class="b-partners__item-title">Мясославль</span>
-            </a>
-          </div>
-          <div class="b-partners__item">
-            <a href="#" class="b-partners__item-link">
-              <span class="b-partners__item-ico b-partners__item-ico_18"></span>
-              <span class="b-partners__item-title">IKEA</span>
-            </a>
-          </div>
-        </div>
-        <div class="b-review">
-          <span class="b-review-title">Отзывы</span>
-          <div class="gallery-wrap">
-            <div class="gallery">
-              <div class="gallery__holder" style="width:4000px; height: 318px;">
-                <a href="#" class="b-review__item">
-                  <img src="/f/i/reviews/1.png" alt="">
-                </a>
-                <a href="#" class="b-review__item ">
-                  <img src="/f/i/reviews/2.png" alt="">
-                </a>
-                <a href="#" class="b-review__item ">
-                  <img src="/f/i/reviews/3.png" alt="">
-                </a>
-                <a href="#" class="b-review__item ">
-                  <img src="/f/i/reviews/4.png" alt="">
-                </a>
-                <a href="#" class="b-review__item ">
-                  <img src="/f/i/reviews/5.png" alt="">
-                </a>
-                <a href="#" class="b-review__item">
-                  <img src="/f/i/reviews/1.png" alt="">
-                </a>
-                <a href="#" class="b-review__item ">
-                  <img src="/f/i/reviews/2.png" alt="">
-                </a>
-                <a href="#" class="b-review__item ">
-                  <img src="/f/i/reviews/3.png" alt="">
-                </a>
-                <a href="#" class="b-review__item ">
-                  <img src="/f/i/reviews/4.png" alt="">
-                </a>
-                <a href="#" class="b-review__item ">
-                  <img src="/f/i/reviews/5.png" alt="">
-                </a>
-                <a href="#" class="b-review__item">
-                  <img src="/f/i/reviews/1.png" alt="">
-                </a>
-                <a href="#" class="b-review__item ">
-                  <img src="/f/i/reviews/2.png" alt="">
-                </a>
-                <a href="#" class="b-review__item ">
-                  <img src="/f/i/reviews/3.png" alt="">
-                </a>
-                <a href="#" class="b-review__item ">
-                  <img src="/f/i/reviews/4.png" alt="">
-                </a>
-                <a href="#" class="b-review__item ">
-                  <img src="/f/i/reviews/5.png" alt="">
-                </a>
-                <a href="#" class="b-review__item">
-                  <img src="/f/i/reviews/1.png" alt="">
-                </a>
-                <a href="#" class="b-review__item ">
-                  <img src="/f/i/reviews/2.png" alt="">
-                </a>
-                <a href="#" class="b-review__item ">
-                  <img src="/f/i/reviews/3.png" alt="">
-                </a>
-                <a href="#" class="b-review__item ">
-                  <img src="/f/i/reviews/4.png" alt="">
-                </a>
-                <a href="#" class="b-review__item ">
-                  <img src="/f/i/reviews/5.png" alt="">
-                </a>
-                <a href="#" class="b-review__item">
-                  <img src="/f/i/reviews/1.png" alt="">
-                </a>
-                <a href="#" class="b-review__item ">
-                  <img src="/f/i/reviews/2.png" alt="">
-                </a>
-                <a href="#" class="b-review__item ">
-                  <img src="/f/i/reviews/3.png" alt="">
-                </a>
-                <a href="#" class="b-review__item ">
-                  <img src="/f/i/reviews/4.png" alt="">
-                </a>
-                <a href="#" class="b-review__item ">
-                  <img src="/f/i/reviews/5.png" alt="">
-                </a>
-              </div>
+        <span class="b-content__title">Контакты</span>
+        <div class="b-contacts">
+          <div class="b-contacts-call-center clearfix">
+            <img src="/f/i/contact-image2.png" alt="" class="b-contacts-call-center__img">
+            <div class="b-contacts-call-center__wrap">
+              <span class="b-contacts-call-center__title">Единый call-центр</span>
+              <span class="b-contacts-call-center__text iconize-rus">Бесплатный звонок по России</span>
+              <span class="b-contacts-call-center__phone">8 800 707-99-27</span>
             </div>
-            <span class="b-review-mask"></span>
+          </div>
+          <div class="b-contacts-cities">
+            <span class="b-contacts-cities__item b-contacts-cities__item_1 switch-btn switch-btn_active">
+              <span class="iconize-map-marker iconize-map-marker_active"></span>
+              <span class="pseudo-dotted">Ярославль</span>
+            </span>
+            <span class="b-contacts-cities__item b-contacts-cities__item_2 switch-btn">
+              <span class="iconize-map-marker"></span>
+              <span class="pseudo-dotted">Москва</span>
+            </span>
+            <span class="b-contacts-cities__item b-contacts-cities__item_3 switch-btn">
+              <span class="iconize-map-marker"></span>
+              <span class="pseudo-dotted">Санкт-Петербург</span>
+            </span>
+            <span class="b-contacts-cities__item b-contacts-cities__item_4 switch-btn">
+              <span class="iconize-map-marker"></span>
+              <span class="pseudo-dotted">Новосибирск</span>
+            </span>
+            <span class="b-contacts-cities__item b-contacts-cities__item_5 switch-btn">
+              <span class="iconize-map-marker"></span>
+              <span class="pseudo-dotted">Екатеринбург</span>
+            </span>
+            <span class="b-contacts-cities__item b-contacts-cities__item_6 switch-btn">
+              <span class="iconize-map-marker"></span>
+              <span class="pseudo-dotted">Казань</span>
+            </span>
+            <span class="b-contacts-cities__item b-contacts-cities__item_7 switch-btn">
+              <span class="iconize-map-marker"></span>
+              <span class="pseudo-dotted">Ростов-на-Дону</span>
+            </span>
+          </div>
+          <div class="b-contacts-address b-contacts-address_1 b-contacts-address_active">
+            <span class="b-contacts-address__item">Адрес: 1
+              <span class="b-contacts-address__item-text">150049, г. Ярославль, пр-т Толбухина, д. 17а</span>
+            </span>
+            <span class="b-contacts-address__item">Тел./факс:
+              <span class="b-contacts-address__item-text">(4852) 45-74-42, 45-76-09</span>
+            </span>
+            <span class="b-contacts-address__item">Отдел логистики:
+              <span class="b-contacts-address__item-text">(4852) 45-99-27</span>
+            </span>
+            <span class="b-contacts-address__item">Отдел по работе с государственными и муниципальными заказчиками:
+              <span class="b-contacts-address__item-text">(4852) 58-07-15</span>
+            </span>
+            <span class="b-contacts-address__item">Электронная почта:<a href="#" class="b-contacts-address__item-link">info@idn500.ru</a>
+            </span>
+            <div class="b-contacts-address__map">
+              <img src="/f/i/map-sample.jpg" alt="">
+            </div>
+          </div>
+          <div class="b-contacts-address b-contacts-address_2">
+            <span class="b-contacts-address__item">Адрес: 2
+              <span class="b-contacts-address__item-text">150049, г. Ярославль, пр-т Толбухина, д. 17а</span>
+            </span>
+            <span class="b-contacts-address__item">Тел./факс:
+              <span class="b-contacts-address__item-text">(4852) 45-74-42, 45-76-09</span>
+            </span>
+            <span class="b-contacts-address__item">Отдел логистики:
+              <span class="b-contacts-address__item-text">(4852) 45-99-27</span>
+            </span>
+            <span class="b-contacts-address__item">Отдел по работе с государственными и муниципальными заказчиками:
+              <span class="b-contacts-address__item-text">(4852) 58-07-15</span>
+            </span>
+            <span class="b-contacts-address__item">Электронная почта:<a href="#" class="b-contacts-address__item-link">info@idn500.ru</a>
+            </span>
+            <div class="b-contacts-address__map">
+              <img src="/f/i/map-sample.jpg" alt="">
+            </div>
+          </div>
+          <div class="b-contacts-address b-contacts-address_3">
+            <span class="b-contacts-address__item">Адрес: 3
+              <span class="b-contacts-address__item-text">150049, г. Ярославль, пр-т Толбухина, д. 17а</span>
+            </span>
+            <span class="b-contacts-address__item">Тел./факс:
+              <span class="b-contacts-address__item-text">(4852) 45-74-42, 45-76-09</span>
+            </span>
+            <span class="b-contacts-address__item">Отдел логистики:
+              <span class="b-contacts-address__item-text">(4852) 45-99-27</span>
+            </span>
+            <span class="b-contacts-address__item">Отдел по работе с государственными и муниципальными заказчиками:
+              <span class="b-contacts-address__item-text">(4852) 58-07-15</span>
+            </span>
+            <span class="b-contacts-address__item">Электронная почта:<a href="#" class="b-contacts-address__item-link">info@idn500.ru</a>
+            </span>
+            <div class="b-contacts-address__map">
+              <img src="/f/i/map-sample.jpg" alt="">
+            </div>
+          </div>
+          <div class="b-contacts-address b-contacts-address_4">
+            <span class="b-contacts-address__item">Адрес: 4
+              <span class="b-contacts-address__item-text">150049, г. Ярославль, пр-т Толбухина, д. 17а</span>
+            </span>
+            <span class="b-contacts-address__item">Тел./факс:
+              <span class="b-contacts-address__item-text">(4852) 45-74-42, 45-76-09</span>
+            </span>
+            <span class="b-contacts-address__item">Отдел логистики:
+              <span class="b-contacts-address__item-text">(4852) 45-99-27</span>
+            </span>
+            <span class="b-contacts-address__item">Отдел по работе с государственными и муниципальными заказчиками:
+              <span class="b-contacts-address__item-text">(4852) 58-07-15</span>
+            </span>
+            <span class="b-contacts-address__item">Электронная почта:<a href="#" class="b-contacts-address__item-link">info@idn500.ru</a>
+            </span>
+            <div class="b-contacts-address__map">
+              <img src="/f/i/map-sample.jpg" alt="">
+            </div>
+          </div>
+          <div class="b-contacts-address b-contacts-address_5">
+            <span class="b-contacts-address__item">Адрес: 5
+              <span class="b-contacts-address__item-text">150049, г. Ярославль, пр-т Толбухина, д. 17а</span>
+            </span>
+            <span class="b-contacts-address__item">Тел./факс:
+              <span class="b-contacts-address__item-text">(4852) 45-74-42, 45-76-09</span>
+            </span>
+            <span class="b-contacts-address__item">Отдел логистики:
+              <span class="b-contacts-address__item-text">(4852) 45-99-27</span>
+            </span>
+            <span class="b-contacts-address__item">Отдел по работе с государственными и муниципальными заказчиками:
+              <span class="b-contacts-address__item-text">(4852) 58-07-15</span>
+            </span>
+            <span class="b-contacts-address__item">Электронная почта:<a href="#" class="b-contacts-address__item-link">info@idn500.ru</a>
+            </span>
+            <div class="b-contacts-address__map">
+              <img src="/f/i/map-sample.jpg" alt="">
+            </div>
+          </div>
+          <div class="b-contacts-address b-contacts-address_6">
+            <span class="b-contacts-address__item">Адрес: 6
+              <span class="b-contacts-address__item-text">150049, г. Ярославль, пр-т Толбухина, д. 17а</span>
+            </span>
+            <span class="b-contacts-address__item">Тел./факс:
+              <span class="b-contacts-address__item-text">(4852) 45-74-42, 45-76-09</span>
+            </span>
+            <span class="b-contacts-address__item">Отдел логистики:
+              <span class="b-contacts-address__item-text">(4852) 45-99-27</span>
+            </span>
+            <span class="b-contacts-address__item">Отдел по работе с государственными и муниципальными заказчиками:
+              <span class="b-contacts-address__item-text">(4852) 58-07-15</span>
+            </span>
+            <span class="b-contacts-address__item">Электронная почта:<a href="#" class="b-contacts-address__item-link">info@idn500.ru</a>
+            </span>
+            <div class="b-contacts-address__map">
+              <img src="/f/i/map-sample.jpg" alt="">
+            </div>
+          </div>
+          <div class="b-contacts-address b-contacts-address_7">
+            <span class="b-contacts-address__item">Адрес: 7
+              <span class="b-contacts-address__item-text">150049, г. Ярославль, пр-т Толбухина, д. 17а</span>
+            </span>
+            <span class="b-contacts-address__item">Тел./факс:
+              <span class="b-contacts-address__item-text">(4852) 45-74-42, 45-76-09</span>
+            </span>
+            <span class="b-contacts-address__item">Отдел логистики:
+              <span class="b-contacts-address__item-text">(4852) 45-99-27</span>
+            </span>
+            <span class="b-contacts-address__item">Отдел по работе с государственными и муниципальными заказчиками:
+              <span class="b-contacts-address__item-text">(4852) 58-07-15</span>
+            </span>
+            <span class="b-contacts-address__item">Электронная почта:<a href="#" class="b-contacts-address__item-link">info@idn500.ru</a>
+            </span>
+            <div class="b-contacts-address__map">
+              <img src="/f/i/map-sample.jpg" alt="">
+            </div>
           </div>
         </div>
       </div>
