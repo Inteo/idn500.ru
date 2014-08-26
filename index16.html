@@ -20,6 +20,19 @@
   <script src="/f/js/jquery.transit.min.js"></script>
   <script src="/f/js/common.js"></script>
   <!--[if lt IE 9]><script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script><![endif]-->
+  <script>
+  $(document).ready(function() {
+    $(".b-slider__holder ul").carouFredSel({
+      items: 1,
+      direction: "left",
+      auto: {
+        play: false
+      },
+      prev: ".b-slider__left",
+      next: ".b-slider__right",
+    });
+  });
+  </script>
 </head>
 
 <body>
@@ -153,7 +166,7 @@
             </div>
             <div class="b-product-tip iconize-clock">
               <span class="b-product-tip__text">Товар производится
-                <strong>под заказ </strong>в течении 2-3 рабочих дней с момента оформления заказа.</span>
+                <strong>под заказ</strong>в течении 2-3 рабочих дней с момента оформления заказа.</span>
             </div>
             <div class="b-product-cart">
               <div class="b-product-cart__price">
@@ -168,12 +181,100 @@
                 <input type="text" class="b-product-cart__qty-input grey-input" value="1">
                 <span class="b-product-cart__qty-counter grey-btn grey-btn_counter grey-btn_counter-plus">+</span>
               </div>
-              <input id="add-to-cart" type="submit"  class="b-product-cart__submit orange-btn orange-btn_cart" value="Добавить в корзину"/>
-              <label for="add-to-cart" class="iconize-cart">&nbsp;</label>
+              <div class="b-product-cart__submit-wrap">
+                <input id="add-to-cart" type="submit" class="b-product-cart__submit orange-btn orange-btn_cart" value="Добавить в корзину" />
+                <label for="add-to-cart" class="iconize-cart">&nbsp;</label>
+              </div>
             </div>
           </form>
           <div class="b-slider">
-
+            <div class="b-slider__wrap">
+              <div class="b-slider__holder">
+                <ul>
+                  <li class="b-slider__item">
+                    <img src="/f/i/img19.jpg" alt="" class="b-slider__item-img">
+                    <span class="b-slider__item-title">1.1</span>
+                  </li>
+                  <li class="b-slider__item">
+                    <img src="/f/i/img20.jpg" alt="" class="b-slider__item-img">
+                    <span class="b-slider__item-title">1.1</span>
+                  </li>
+                  <li class="b-slider__item">
+                    <img src="/f/i/img21.jpg" alt="" class="b-slider__item-img">
+                    <span class="b-slider__item-title">1.3.1</span>
+                  </li>
+                  <li class="b-slider__item">
+                    <img src="/f/i/img21.jpg" alt="" class="b-slider__item-img">
+                    <span class="b-slider__item-title">1.3.1</span>
+                  </li>
+                  <li class="b-slider__item">
+                    <img src="/f/i/img20.jpg" alt="" class="b-slider__item-img">
+                    <span class="b-slider__item-title">1.1</span>
+                  </li>
+                  <li class="b-slider__item">
+                    <img src="/f/i/img21.jpg" alt="" class="b-slider__item-img">
+                    <span class="b-slider__item-title">1.3.1</span>
+                  </li>
+                </ul>
+              </div>
+              <span class="b-slider__left"></span>
+              <span class="b-slider__right"></span>
+            </div>
+          </div>
+          <div class="clearfix"></div>
+          <div class="b-product-addit">
+            <div class="b-product-addit-links">
+              <a href="" class="b-product-addit__print dotted-link">
+                <span class="iconize-print"></span>Распечатать</a>
+              <a href="" class="b-product-addit__email dotted-link">
+                <span class="iconize-send-email"></span>Отправить на E-Mail</a>
+            </div>
+            <span class="title">Применение и назначение</span>
+            <p class="text">Устанавливаются в населённом пункте за 50—100 м, вне населённых пунктов за 150—300 м до начала опасного участка. Приближение к железнодорожному переезду, оборудованному шлагбаумом. Водитель обязан снизить скорость, оценить ситуацию. Этот знак дублируется только вне населённого пункта, второй знак устанавливается на расстоянии не менее 50 м до начала опасного участка.</p>
+            <span class="title">Дополнительные аксессуары</span>
+            <div class="b-product-tiles b-product-tiles_untitle">
+              <div class="b-product-tiles-wrap">
+                <div class="b-product-tiles__item">
+                  <a href="#" class="b-product-tiles__item-link">
+                    <img src="/f/i/img22.jpg" class="b-product-tiles__item-image">
+                    <span class="b-product-tiles__item-mask"></span>
+                    <span class="b-product-tiles__item-name">Стойка дорожного знака МП СДЗ-4,0</span>
+                    <span class="b-product-tiles__item-price">1440 &#8377</span>
+                    <div class="b-product-tiles__item-available">
+                      <span class="item-available iconize-available">В наличии</span>
+                    </div>
+                  </a>
+                </div>
+                <div class="b-product-tiles__item">
+                  <a href="#" class="b-product-tiles__item-link">
+                    <img src="/f/i/img22.jpg" class="b-product-tiles__item-image">
+                    <span class="b-product-tiles__item-mask"></span>
+                    <span class="b-product-tiles__item-name">Стойка дорожного знака МП СДЗ-4,0</span>
+                    <span class="b-product-tiles__item-price">1745 &#8377</span>
+                    <div class="b-product-tiles__item-available">
+                      <span class="item-available iconize-available">В наличии</span>
+                    </div>
+                  </a>
+                </div>
+                <div class="b-product-tiles__item">
+                  <a href="#" class="b-product-tiles__item-link">
+                    <img src="/f/i/img23.jpg" class="b-product-tiles__item-image">
+                    <span class="b-product-tiles__item-mask"></span>
+                    <span class="b-product-tiles__item-name">Крепление в сборе (коромысло одинарное)</span>
+                    <span class="b-product-tiles__item-price">72 &#8377</span>
+                    <div class="b-product-tiles__item-available">
+                      <span class="item-available iconize-available">В наличии</span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="b-product-tiles__mask"></div>
+              <div class="b-see-more-tiles">
+                <a href="#" class="b-see-more blue-btn">
+                  <span class="iconize-small-arrow">Смотреть все</span>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>

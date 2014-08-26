@@ -1367,9 +1367,14 @@ input[type='submit'].btn-block, input[type='reset'].btn-block, input[type='butto
 ---------------------------------------
 -----------------------------------------*/
 
-.dotted-link {
+.dotted-link, .dotted-link:focus {
   color: #0089d7;
   border-bottom: 1px dotted;
+  line-height: 16px;
+  outline: 0;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
 }
 .dotted-link:hover {
   text-decoration: none;
@@ -1449,7 +1454,7 @@ input[type='submit'].btn-block, input[type='reset'].btn-block, input[type='butto
   background-position: -48px -36px;
 }
 .iconize-idn {
-  margin-left: 70px;
+  padding-left: 70px;
 }
 .iconize-idn:before {
   left: -80px;
@@ -1457,6 +1462,20 @@ input[type='submit'].btn-block, input[type='reset'].btn-block, input[type='butto
   background-position: -102px 0;
   width: 71px;
   height: 20px;
+}
+.iconize-print:before {
+  width: 20px;
+  height: 16px;
+  left: -30px;
+  top: -15px;
+  background-position: -225px 0;
+}
+.iconize-send-email:before {
+  width: 20px;
+  height: 16px;
+  left: -30px;
+  top: -15px;
+  background-position: -245px 0;
 }
 .rub {
   font: 16px'PT Sans Narrow', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -3669,7 +3688,7 @@ input[type='submit'].btn-block, input[type='reset'].btn-block, input[type='butto
 .b-review-mask_about-certif {
   height: 440px;
 }
-.link_undecor {
+.link_undecor, .link_undecor:focus {
   text-decoration: none;
 }
 .b-advant_idn .iconize-advant_1:before {
@@ -4092,11 +4111,66 @@ input[type='submit'].btn-block, input[type='reset'].btn-block, input[type='butto
 }
 .b-slider {
   float: right;
-  width: 460px;
+  margin-top: 40px;
+  overflow: hidden;
+  position: relative;
   height: 460px;
   border: 3px solid #f6f9fb;
   border-radius: 10px;
+  margin-left: 10px;
+}
+.b-slider__wrap {
+  position: relative;
+  width: 450px;
+}
+.b-slider__holder {} .b-slider__holder ul, .b-slider__holder li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.b-slider__holder ul {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 999em;
+}
+.b-slider__item {
+  width: 444px;
+  height: 454px;
+  text-align: center;
+  display: block;
+  float: left;
+  position: relative;
+}
+.b-slider__item-img {
+  display: inline-block;
+  text-align: center;
   margin-top: 40px;
+}
+.b-slider__item-title {
+  font: bold 40px'PT Sans Narrow', 'Helvetica Neue', Helvetica, sans-serif;
+  display: block;
+  margin-top: 10px;
+}
+.b-slider__right {
+  background: url(/f/i/icons.png);
+  background-position: -259px -71px;
+  width: 25px;
+  height: 40px;
+  position: absolute;
+  top: 210px;
+  left: 8px;
+  cursor: pointer;
+}
+.b-slider__left {
+  background: url(/f/i/icons.png);
+  background-position: -283px -71px;
+  width: 25px;
+  height: 40px;
+  position: absolute;
+  top: 210px;
+  right: 8px;
+  cursor: pointer;
 }
 .b-params {
   margin-top: 20px;
@@ -4193,6 +4267,22 @@ input[type='submit'].btn-block, input[type='reset'].btn-block, input[type='butto
 }
 .b-product-cart {
   margin-top: 25px;
+  text-align: justify;
+  margin-bottom: -10px;
+}
+@media (max-width: 1279px) {
+  .b-product-cart {
+    max-width: 320px;
+  }
+  .b-product-cart__submit-wrap {
+    margin-top: 12px !important;
+  }
+}
+.b-product-cart:after {
+  display: inline-block;
+  width: 100%;
+  height: 0;
+  content: '';
 }
 .b-product-cart__price {
   display: inline-block;
@@ -4214,7 +4304,6 @@ input[type='submit'].btn-block, input[type='reset'].btn-block, input[type='butto
 .b-product-cart__qty {
   display: inline-block;
   vertical-align: top;
-  margin-left: 50px;
 }
 .b-product-cart__qty-counter {
   width: 40px;
@@ -4233,13 +4322,30 @@ input[type='submit'].btn-block, input[type='reset'].btn-block, input[type='butto
   display: block;
   margin-bottom: 10px;
 }
+.b-product-cart__submit-wrap {
+  position: relative;
+  display: inline-block;
+  margin-top: 32px;
+}
 .b-product-cart__submit {
   padding: 7px 15px 10px 43px;
-  margin-top: 32px;
-  margin-left: 15px;
   display: inline-block;
 }
 .b-product-cart__submit + label {
   left: -202px;
   top: -3px;
+}
+.b-product-addit {
+
+}
+.b-product-addit-links {
+  margin-bottom: 25px;
+}
+.b-product-addit__print {
+  margin-left: 30px;
+
+}
+.b-product-addit__email {
+  margin-left: 40px;
+
 }
