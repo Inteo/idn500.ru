@@ -299,6 +299,23 @@ function isChecked(id) {
 
 $(document).ready(function() {
 
+
+
+  $("[class*=_counter]").click(function(){
+   
+    var value =  parseInt($(this).parent().find("[class*=-input]").val());
+ console.log(value);
+    if($(this).is("[class*=-plus]")){
+      console.log(value + 1);
+      $(this).parent().find("[class*=-input]").val(value + 1);
+    }
+    else if($(this).is("[class*=-minus]") && value > 1){
+      console.log(value - 1);
+      $(this).parent().find("[class*=-input]").val(value - 1);
+    }
+  });
+
+
   $("input[type=number]").keydown(function(e) {
     // Allow: backspace, delete, tab, escape, enter and .
     if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 190]) !== -1 ||
@@ -440,6 +457,7 @@ $(document).ready(function() {
     }
   });
 
+
   $(".b-contact-popup__write, .b-contact-popup__call").click(function() {
     $(".b-contact-popup__message-send").hide();
     if ($(".b-contact-popup__write, .b-contact-popup__call").hasClass("active-btn")) {
@@ -473,10 +491,13 @@ $(document).ready(function() {
     $(".b-contact-popup__message-send").show();
   })
 
+  $(".expend-link").click(function(){
+     $(this).parent(".b-expand").addClass("b-expand_active");
+  });
+
   see_more_button_list();
   see_more_button_tiles();
   gallerify();
-
 });
 
 $(window).resize(function() {
@@ -490,21 +511,21 @@ function fancy_close() {
 }
 
 function see_more_button_list() {
-  $(".b-product-list").each(function(i) {
+  $(".b-product-list:not(.b-product-list_full)").each(function(i) {
     var total_height = 860;
-
+console.log("sldf");
     if ($(this).height() > total_height) {
       $(this).find(".b-see-more").show();
-      $(this).find(".b-product-list-wrap").removeClass("b-product-list-wrap_unmasked");
+      $(this).find(".b-product-list-wrap").addClass("b-product-list-wrap_masked");
     } else if ($(this).height() < total_height) {
       $(this).find(".b-see-more").hide();
-      $(this).find(".b-product-list-wrap").addClass("b-product-list-wrap_unmasked");
+      $(this).find(".b-product-list-wrap").removeClass("b-product-list-wrap_masked");
     }
   });
 }
 
 function see_more_button_tiles() {
-  $(".b-product-tiles").each(function(i) {
+  $(".b-product-tiles:not(.b-product-tiles_full)").each(function(i) {
 
     var total_width = 0;
     $(this).find(".b-product-tiles__item").each(function(i) {
