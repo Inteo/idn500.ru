@@ -8,6 +8,7 @@
   <meta name="description" content="">
   <meta name="keywords" content="">
   <link rel="stylesheet" href="/f/css/main.css">
+  <link rel="stylesheet" href="/f/css/jquery.mCustomScrollbar.css">
   <!--[if lte IE 9]><link rel="stylesheet" href="f/css/ie.css"><![endif]-->
   <link href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Open+Sans:400,400italic,800,600&subset=all" rel="stylesheet">
   <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&subset=all' rel='stylesheet' type='text/css'>
@@ -18,6 +19,7 @@
   <script src="/f/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
   <script src="/f/js/jquery.touchSwipe.min.js"></script>
   <script src="/f/js/jquery.transit.min.js"></script>
+  <script src="/f/js/jquery.mCustomScrollbar.js"></script>
   <script src="/f/js/common.js"></script>
   <!--[if lt IE 9]><script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script><![endif]-->
   <script>
@@ -110,63 +112,105 @@
         </div>
       </div>
       <div class="b-content">
-        <div class="b-path"><a class="link" href="#">Дорожные знаки</a>→<a class="link" href="#">По ГОСТу</a>→</div>
-        <span class="b-content__title" id="idn">1.1. Железнодорожный переезд со шлагбаумом</span>
+        <div class="b-path"><a class="link" href="#">Оборудования для паркинга</a>→<a class="link" href="#">Гибкие столбики</a>→</div>
+        <span class="b-content__title" id="idn">Столбик разделительный гибкий 750мм</span>
         <div class="clearfix"></div>
         <div class="b-product">
           <form class="b-params">
             <div class="b-params__left">
-              <span class="b-params__title title title_small">Тип пленки
-                <a href="#" class="b-params__hint"></a>
-              </span>
-              <div class="b-params-radio-wrap">
-                <input id="params1" class="b-params-radio radio" type="radio" name="params_left" checked />
-                <label class="b-params-label label" for="params1">«А» Коммерческая</label>
+              <span class="b-params__title title title_small">Характеристики товара</span>
+              <div class="b-params__info-row info-row">
+                <span class="b-params__info-name-wrap info-name-wrap">
+                  <span class="b-params__info-name info-name">Высота</span>
+                  <span class="b-params__info-line info-line"></span>
+                </span>
+                <span class="b-params__info-value info-value">750
+                  <span>мм</span>
+                </span>
               </div>
-              <div class="b-params-radio-wrap">
-                <input id="params2" class="b-params-radio radio" type="radio" name="params_left" />
-                <label class="b-params-label label" for="params2">«А» Инженерная</label>
+              <div class="b-params__info-row info-row">
+                <span class="b-params__info-name-wrap info-name-wrap">
+                  <span class="b-params__info-name info-name">Диаметр основания</span>
+                  <span class="b-params__info-line info-line"></span>
+                </span>
+                <span class="b-params__info-value info-value">200
+                  <span>мм</span>
+                </span>
               </div>
-              <div class="b-params-radio-wrap">
-                <input id="params3" class="b-params-radio radio" type="radio" name="params_left" />
-                <label class="b-params-label label" for="params3">«Б» Высокоинтенсивная</label>
+              <div class="b-params__info-row info-row">
+                <span class="b-params__info-name-wrap info-name-wrap">
+                  <span class="b-params__info-name info-name">Диаметр основной части</span>
+                  <span class="b-params__info-line info-line"></span>
+                </span>
+                <span class="b-params__info-value info-value">100
+                  <span>мм</span>
+                </span>
               </div>
-              <div class="b-params-radio-wrap">
-                <input id="params4" class="b-params-radio radio" type="radio" name="params_left" />
-                <label class="b-params-label label" for="params4">«Б» Алмазная</label>
+              <div class="b-params__info-row info-row">
+                <span class="b-params__info-name-wrap info-name-wrap">
+                  <span class="b-params__info-name info-name">Количество отверстий</span>
+                  <span class="b-params__info-line info-line"></span>
+                </span>
+                <span class="b-params__info-value info-value">3</span>
               </div>
-              <div class="b-params-radio-wrap">
-                <input id="params5" class="b-params-radio radio" type="radio" name="params_left" />
-                <label class="b-params-label label" for="params5">«Б» Алмазная флуорисцентная</label>
+              <div class="b-params__info-row info-row">
+                <span class="b-params__info-name-wrap info-name-wrap">
+                  <span class="b-params__info-name info-name">Материал изготовления</span>
+                  <span class="b-params__info-line info-line"></span>
+                </span>
+                <span class="b-params__info-value info-value">Резина</span>
               </div>
             </div>
             <div class="b-params__right">
-              <span class="b-params__title title title_small">Типоразмер
-                <a href="#" class="b-params__hint"></a>
-              </span>
-              <div class="b-params-radio-wrap">
-                <input id="params6" class="b-params-radio radio" type="radio" name="params_right" checked />
-                <label class="b-params-label label" for="params6">1-ый типоразмер</label>
+              <span class="b-params__title title title_small">Транспортные характеристики</span>
+              <div class="b-params__info-row info-row">
+                <span class="b-params__info-name-wrap info-name-wrap">
+                  <span class="b-params__info-name info-name">Масса</span>
+                  <span class="b-params__info-line info-line"></span>
+                </span>
+                <span class="b-params__info-value info-value">0,8
+                  <span>кг</span>
+                </span>
               </div>
-              <div class="b-params-radio-wrap">
-                <input id="params7" class="b-params-radio radio" type="radio" name="params_right" />
-                <label class="b-params-label label" for="params7">2-ый типоразмер</label>
+              <div class="b-params__info-row info-row">
+                <span class="b-params__info-name-wrap info-name-wrap">
+                  <span class="b-params__info-name info-name">Расчетный объем</span>
+                  <span class="b-params__info-line info-line"></span>
+                </span>
+                <span class="b-params__info-value info-value">0,009
+                  <span>м<sup>3</sup>
+                  </span>
+                </span>
               </div>
-              <div class="b-params-radio-wrap">
-                <input id="params8" class="b-params-radio radio" type="radio" name="params_right" />
-                <label class="b-params-label label" for="params8">3-ый типоразмер</label>
+              <div class="b-params__info-row info-row">
+                <span class="b-params__info-name-wrap info-name-wrap">
+                  <span class="b-params__info-name info-name">Тип упаковки</span>
+                  <span class="b-params__info-line info-line"></span>
+                </span>
+                <span class="b-params__info-value info-value">Коробка</span>
               </div>
-              <input id="params9" class="b-params-check checkbox" type="checkbox" name="params_check" />
-              <label class="b-params-label label" for="params9">Флуорисцентный фон</label>
+              <div class="b-params__info-row info-row">
+                <span class="b-params__info-name-wrap info-name-wrap">
+                  <span class="b-params__info-name info-name">Количество шт. упаковке</span>
+                  <span class="b-params__info-line info-line"></span>
+                </span>
+                <span class="b-params__info-value info-value">15
+                  <span>шт.</span>
+                </span>
+              </div>
+              <div class="b-params__info-row info-row">
+                <span class="b-params__info-name-wrap info-name-wrap">
+                  <span class="b-params__info-name info-name">Жесткая упаковка</span>
+                  <span class="b-params__info-line info-line"></span>
+                </span>
+                <span class="b-params__info-value info-value">Не требуется</span>
+              </div>
             </div>
+            <div class="b-params__right"></div>
             <div class="clearfix"></div>
             <div class="b-gost iconize-gost">
               <span class="b-gost__title">Товар соответствует ГОСТу</span>
-              <a href="#" class="b-gost__link link">Р 52290-2004</a>
-            </div>
-            <div class="b-product-tip iconize-clock">
-              <span class="b-product-tip__text">Товар производится
-                <strong>под заказ</strong>в течении 2-3 рабочих дней с момента оформления заказа.</span>
+              <a href="#" class="b-gost__link link">12555-2</a>
             </div>
             <div class="b-product-cart">
               <div class="b-product-cart__price">
@@ -186,39 +230,39 @@
                 <label for="add-to-cart" class="iconize-cart">&nbsp;</label>
               </div>
             </div>
-             <div class="b-product-addit-links">
+            <div class="b-product-addit-links">
               <a href="" class="b-product-addit__print dotted-link">
                 <span class="iconize-print"></span>Распечатать</a>
               <a href="" class="b-product-addit__email dotted-link">
                 <span class="iconize-send-email"></span>Отправить на E-Mail</a>
             </div>
           </form>
-           <div class="b-slider">
+          <div class="b-slider b-slider_big">
             <div class="b-slider__wrap">
               <div class="b-slider__holder">
                 <ul>
                   <li class="b-slider__item">
-                    <img src="/f/i/img19.jpg" alt="" class="b-slider__item-img">
+                    <img src="/f/i/img24.jpg" alt="" class="b-slider__item-img">
                     <span class="b-slider__item-title">1.1</span>
                   </li>
                   <li class="b-slider__item">
-                    <img src="/f/i/img20.jpg" alt="" class="b-slider__item-img">
+                    <img src="/f/i/img24.jpg" alt="" class="b-slider__item-img">
                     <span class="b-slider__item-title">1.1</span>
                   </li>
                   <li class="b-slider__item">
-                    <img src="/f/i/img21.jpg" alt="" class="b-slider__item-img">
+                    <img src="/f/i/img24.jpg" alt="" class="b-slider__item-img">
                     <span class="b-slider__item-title">1.3.1</span>
                   </li>
                   <li class="b-slider__item">
-                    <img src="/f/i/img21.jpg" alt="" class="b-slider__item-img">
+                    <img src="/f/i/img24.jpg" alt="" class="b-slider__item-img">
                     <span class="b-slider__item-title">1.3.1</span>
                   </li>
                   <li class="b-slider__item">
-                    <img src="/f/i/img20.jpg" alt="" class="b-slider__item-img">
+                    <img src="/f/i/img24.jpg" alt="" class="b-slider__item-img">
                     <span class="b-slider__item-title">1.1</span>
                   </li>
                   <li class="b-slider__item">
-                    <img src="/f/i/img21.jpg" alt="" class="b-slider__item-img">
+                    <img src="/f/i/img24.jpg" alt="" class="b-slider__item-img">
                     <span class="b-slider__item-title">1.3.1</span>
                   </li>
                 </ul>
@@ -228,260 +272,71 @@
             </div>
           </div>
           <div class="clearfix"></div>
-          <div class="b-product-addit">
+          <div class="b-product-addit b-product-addit_lifted">
+            <span class="title">Описание</span>
+            <p class="text">Гибкие парковочные столбики производятся из эластичного полиуретана, придающего изделию хорошую упругость и гибкость. В стандартном исполнении они имеют яркую красно-оранжевую окраску, а также покрытие из высокоинтенсивной световозвращающей пленки, что делает их хорошо заметными для водителей как в светлое, так и в темное время суток. Могут быть стационарно установлены на дорожное полотно или же использоваться в качестве временных ограждений для дорожных или строительных работ, мест проведения каких-либо мероприятий, резервирования парковочных мест.</p>
+            <span class="title">Преимущества и технологии</span>
+            <div class="b-product-addit__left">
+              <p class="text iconize-pointed-plus">
+                <strong>Устойчивость</strong> к воздействию реагентов, моющих средств и растворителей</p>
+              <p class="text iconize-pointed-plus">Максимальная
+                <strong>ударостойкость</strong>
+              </p>
+              <p class="text iconize-pointed-plus">Великолепная
+                <strong>видимость</strong> днем и ночью</p>
+              <p class="text iconize-pointed-plus">
+                <strong>Компактная упаковка</strong>, а значит дешевая перевозка и хранение</p>
+              <p class="text iconize-pointed-plus">
+                <strong>2 варианта</strong> крепления (3 отверстия 12мм и 3 отверстия 5мм)</p>
+            </div>
+            <div class="b-product-addit__right">
+              <p class="text iconize-pointed-plus">
+                <strong>Основание</strong> из твердого износостойкого пластика</p>
+              <p class="text iconize-pointed-plus">
+                <strong>Простая и удобная</strong> сборка, монтаж и замена</p>
+              <p class="text iconize-pointed-plus">
+                <strong>Не повреждает</strong> автомобиль при контакте</p>
+              <p class="text iconize-pointed-plus">
+                <strong>Пригодны</strong> для использования во всех климатических зонах РФ</p>
+            </div>
+            <div class="clearfix"></div>
             <span class="title">Применение и назначение</span>
-            <p class="text">Устанавливаются в населённом пункте за 50—100 м, вне населённых пунктов за 150—300 м до начала опасного участка. Приближение к железнодорожному переезду, оборудованному шлагбаумом. Водитель обязан снизить скорость, оценить ситуацию. Этот знак дублируется только вне населённого пункта, второй знак устанавливается на расстоянии не менее 50 м до начала опасного участка.</p>
-            <span class="title">Дополнительные аксессуары</span>
-            <div class="b-product-tiles b-product-tiles_untitle b-product-tiles_full">
-              <div class="b-product-tiles-wrap">
-              <div class="b-product-tiles__item-wrap">
-                <div class="b-product-tiles__item">
-                  <a href="#" class="b-product-tiles__item-link">
-                    <img src="/f/i/img22.jpg" class="b-product-tiles__item-image">
-                    <span class="b-product-tiles__item-mask"></span>
-                    <span class="b-product-tiles__item-name">Стойка дорожного знака МП СДЗ-4,0</span>
-                    <span class="b-product-tiles__item-price">1440 &#8377</span>
-                    <div class="b-product-tiles__item-available">
-                      <span class="item-available iconize-available">В наличии</span>
+            <p class="text">Если на такой столбик случайно наедет транспортное средство, то благодаря своей упругости, он легко вернет свою первоначальную форму. Благодаря этой особенности гибкие столбики имеют очень широкую область применения и могут использоваться для:</p>
+            <p class="text text_pointed">Обозначения мест, предназначенных для парковки транспортных средств</p>
+            <p class="text text_pointed">Обозначения опасных поворотов</p>
+            <p class="text text_pointed">Разграничения полос движения на дороге</p>
+            <p class="text text_pointed">Обозначения мест, отведенных для прохода людей в торговых центрах, аэропортах, на складах</p>
+            <p class="text text_pointed">Ограждения мест проведения строительных работ</p>
+            
+            <div class="b-product-gallery">
+              <div class="gallery-wrap">
+                <div class="gallery">
+                  <div class="gallery__holder" style="height: 230px;">
+                    <div class="b-product-gallery__item gallery__item">
+                      <img src="/f/i/img25.jpg" alt="" class="b-product-gallery__img">
+                    </div><div class="b-product-gallery__item gallery__item">
+                      <img src="/f/i/img26.jpg" alt="" class="b-product-gallery__img">
+                    </div><div class="b-product-gallery__item gallery__item">
+                      <img src="/f/i/img27.jpg" alt="" class="b-product-gallery__img">
+                    </div><div class="b-product-gallery__item gallery__item">
+                      <img src="/f/i/img25.jpg" alt="" class="b-product-gallery__img">
+                    </div><div class="b-product-gallery__item gallery__item">
+                      <img src="/f/i/img27.jpg" alt="" class="b-product-gallery__img">
+                    </div><div class="b-product-gallery__item gallery__item">
+                      <img src="/f/i/img26.jpg" alt="" class="b-product-gallery__img">
+                    </div><div class="b-product-gallery__item gallery__item">
+                      <img src="/f/i/img27.jpg" alt="" class="b-product-gallery__img">
+                    </div><div class="b-product-gallery__item gallery__item">
+                      <img src="/f/i/img25.jpg" alt="" class="b-product-gallery__img">
                     </div>
-                    <div class="b-product-tiles__qty">
-                      <span class="b-product-tiles__qty-counter grey-btn grey-btn_counter grey-btn_counter-minus">-</span>
-                      <input type="text" class="b-product-tiles__qty-input grey-input" value="1">
-                      <span class="b-product-tiles__qty-counter grey-btn grey-btn_counter grey-btn_counter-plus">+</span>
-                    </div>
-                    <div class="b-product-tiles__add-wrap">
-                      <span type="submit" id="add-to-cart" class="b-product-tiles__add orange-btn iconize-cart orange-btn_cart">В корзину</span>
-                    </div>
-                    <span class="b-product-tiles__in-cart">Товар в
-                      <span class="link">корзине</span>
-                    </span>
-                  </a>
+                  </div>
                 </div>
-                </div>
-                <div class="b-product-tiles__item-wrap">
-                <div class="b-product-tiles__item b-product-tiles__item_in-cart">
-                  <a href="#" class="b-product-tiles__item-link">
-                    <img src="/f/i/img22.jpg" class="b-product-tiles__item-image">
-                    <span class="b-product-tiles__item-mask"></span>
-                    <span class="b-product-tiles__item-name">Стойка дорожного знака МП СДЗ-4,0</span>
-                    <span class="b-product-tiles__item-price">1745 &#8377</span>
-                    <div class="b-product-tiles__item-available">
-                      <span class="item-available iconize-available">В наличии</span>
-                    </div>
-                    <div class="b-product-tiles__qty">
-                      <span class="b-product-tiles__qty-counter grey-btn grey-btn_counter grey-btn_counter-minus">-</span>
-                      <input type="text" class="b-product-tiles__qty-input grey-input" value="1">
-                      <span class="b-product-tiles__qty-counter grey-btn grey-btn_counter grey-btn_counter-plus">+</span>
-                    </div>
-                    <div class="b-product-tiles__add-wrap">
-                      <span type="submit" id="add-to-cart" class="b-product-tiles__add orange-btn iconize-cart orange-btn_cart">В корзину</span>
-                    </div>
-                    <span class="b-product-tiles__in-cart">Товар в
-                      <span class="link">корзине</span>
-                    </span>
-                  </a>
-                </div>
-                </div>
-                <div class="b-product-tiles__item-wrap">
-                <div class="b-product-tiles__item">
-                  <a href="#" class="b-product-tiles__item-link">
-                    <img src="/f/i/img23.jpg" class="b-product-tiles__item-image">
-                    <span class="b-product-tiles__item-mask"></span>
-                    <span class="b-product-tiles__item-name">Крепление в сборе (коромысло одинарное)</span>
-                    <span class="b-product-tiles__item-price">72 &#8377</span>
-                    <div class="b-product-tiles__item-available">
-                      <span class="item-available iconize-available">В наличии</span>
-                    </div>
-                    <div class="b-product-tiles__qty">
-                      <span class="b-product-tiles__qty-counter grey-btn grey-btn_counter grey-btn_counter-minus">-</span>
-                      <input type="text" class="b-product-tiles__qty-input grey-input" value="1">
-                      <span class="b-product-tiles__qty-counter grey-btn grey-btn_counter grey-btn_counter-plus">+</span>
-                    </div>
-                    <div class="b-product-tiles__add-wrap">
-                      <span type="submit" id="add-to-cart" class="b-product-tiles__add orange-btn iconize-cart orange-btn_cart">В корзину</span>
-                    </div>
-                    <span class="b-product-tiles__in-cart">Товар в
-                      <span class="link">корзине</span>
-                    </span>
-                  </a>
-                </div>
-                </div>
-                <div class="b-product-tiles__item-wrap">
-                <div class="b-product-tiles__item">
-                  <a href="#" class="b-product-tiles__item-link">
-                    <img src="/f/i/img23.jpg" class="b-product-tiles__item-image">
-                    <span class="b-product-tiles__item-mask"></span>
-                    <span class="b-product-tiles__item-name">Крепление в сборе (коромысло одинарное)</span>
-                    <span class="b-product-tiles__item-price">72 &#8377</span>
-                    <div class="b-product-tiles__item-available">
-                      <span class="item-available iconize-available">В наличии</span>
-                    </div>
-                    <div class="b-product-tiles__qty">
-                      <span class="b-product-tiles__qty-counter grey-btn grey-btn_counter grey-btn_counter-minus">-</span>
-                      <input type="text" class="b-product-tiles__qty-input grey-input" value="1">
-                      <span class="b-product-tiles__qty-counter grey-btn grey-btn_counter grey-btn_counter-plus">+</span>
-                    </div>
-                    <div class="b-product-tiles__add-wrap">
-                      <span type="submit" id="add-to-cart" class="b-product-tiles__add orange-btn iconize-cart orange-btn_cart">В корзину</span>
-                    </div>
-                    <span class="b-product-tiles__in-cart">Товар в
-                      <span class="link">корзине</span>
-                    </span>
-                  </a>
-                </div>
-                </div>
-                <div class="b-product-tiles__item-wrap">
-                <div class="b-product-tiles__item">
-                  <a href="#" class="b-product-tiles__item-link">
-                    <img src="/f/i/img23.jpg" class="b-product-tiles__item-image">
-                    <span class="b-product-tiles__item-mask"></span>
-                    <span class="b-product-tiles__item-name">Крепление в сборе (коромысло одинарное)</span>
-                    <span class="b-product-tiles__item-price">72 &#8377</span>
-                    <div class="b-product-tiles__item-available">
-                      <span class="item-available iconize-available">В наличии</span>
-                    </div>
-                    <div class="b-product-tiles__qty">
-                      <span class="b-product-tiles__qty-counter grey-btn grey-btn_counter grey-btn_counter-minus">-</span>
-                      <input type="text" class="b-product-tiles__qty-input grey-input" value="1">
-                      <span class="b-product-tiles__qty-counter grey-btn grey-btn_counter grey-btn_counter-plus">+</span>
-                    </div>
-                    <div class="b-product-tiles__add-wrap">
-                      <span type="submit" id="add-to-cart" class="b-product-tiles__add orange-btn iconize-cart orange-btn_cart">В корзину</span>
-                    </div>
-                    <span class="b-product-tiles__in-cart">Товар в
-                      <span class="link">корзине</span>
-                    </span>
-                  </a>
-                </div>
-                </div>
-                <div class="b-product-tiles__item-wrap">
-                <div class="b-product-tiles__item">
-                  <a href="#" class="b-product-tiles__item-link">
-                    <img src="/f/i/img23.jpg" class="b-product-tiles__item-image">
-                    <span class="b-product-tiles__item-mask"></span>
-                    <span class="b-product-tiles__item-name">Крепление в сборе (коромысло одинарное)</span>
-                    <span class="b-product-tiles__item-price">72 &#8377</span>
-                    <div class="b-product-tiles__item-available">
-                      <span class="item-available iconize-available">В наличии</span>
-                    </div>
-                    <div class="b-product-tiles__qty">
-                      <span class="b-product-tiles__qty-counter grey-btn grey-btn_counter grey-btn_counter-minus">-</span>
-                      <input type="text" class="b-product-tiles__qty-input grey-input" value="1">
-                      <span class="b-product-tiles__qty-counter grey-btn grey-btn_counter grey-btn_counter-plus">+</span>
-                    </div>
-                    <div class="b-product-tiles__add-wrap">
-                      <span type="submit" id="add-to-cart" class="b-product-tiles__add orange-btn iconize-cart orange-btn_cart">В корзину</span>
-                    </div>
-                    <span class="b-product-tiles__in-cart">Товар в
-                      <span class="link">корзине</span>
-                    </span>
-                  </a>
-                </div>
-                </div>
-                <div class="b-product-tiles__item-wrap">
-                <div class="b-product-tiles__item">
-                  <a href="#" class="b-product-tiles__item-link">
-                    <img src="/f/i/img23.jpg" class="b-product-tiles__item-image">
-                    <span class="b-product-tiles__item-mask"></span>
-                    <span class="b-product-tiles__item-name">Крепление в сборе (коромысло одинарное)</span>
-                    <span class="b-product-tiles__item-price">72 &#8377</span>
-                    <div class="b-product-tiles__item-available">
-                      <span class="item-available iconize-available">В наличии</span>
-                    </div>
-                    <div class="b-product-tiles__qty">
-                      <span class="b-product-tiles__qty-counter grey-btn grey-btn_counter grey-btn_counter-minus">-</span>
-                      <input type="text" class="b-product-tiles__qty-input grey-input" value="1">
-                      <span class="b-product-tiles__qty-counter grey-btn grey-btn_counter grey-btn_counter-plus">+</span>
-                    </div>
-                    <div class="b-product-tiles__add-wrap">
-                      <span type="submit" id="add-to-cart" class="b-product-tiles__add orange-btn iconize-cart orange-btn_cart">В корзину</span>
-                    </div>
-                    <span class="b-product-tiles__in-cart">Товар в
-                      <span class="link">корзине</span>
-                    </span>
-                  </a>
-                </div>
-                </div>
-                <div class="b-product-tiles__item-wrap">
-                <div class="b-product-tiles__item">
-                  <a href="#" class="b-product-tiles__item-link">
-                    <img src="/f/i/img23.jpg" class="b-product-tiles__item-image">
-                    <span class="b-product-tiles__item-mask"></span>
-                    <span class="b-product-tiles__item-name">Крепление в сборе (коромысло одинарное)</span>
-                    <span class="b-product-tiles__item-price">72 &#8377</span>
-                    <div class="b-product-tiles__item-available">
-                      <span class="item-available iconize-available">В наличии</span>
-                    </div>
-                    <div class="b-product-tiles__qty">
-                      <span class="b-product-tiles__qty-counter grey-btn grey-btn_counter grey-btn_counter-minus">-</span>
-                      <input type="text" class="b-product-tiles__qty-input grey-input" value="1">
-                      <span class="b-product-tiles__qty-counter grey-btn grey-btn_counter grey-btn_counter-plus">+</span>
-                    </div>
-                    <div class="b-product-tiles__add-wrap">
-                      <span type="submit" id="add-to-cart" class="b-product-tiles__add orange-btn iconize-cart orange-btn_cart">В корзину</span>
-                    </div>
-                    <span class="b-product-tiles__in-cart">Товар в
-                      <span class="link">корзине</span>
-                    </span>
-                  </a>
-                </div>
-                </div>
-                <div class="b-product-tiles__item-wrap">
-                <div class="b-product-tiles__item">
-                  <a href="#" class="b-product-tiles__item-link">
-                    <img src="/f/i/img23.jpg" class="b-product-tiles__item-image">
-                    <span class="b-product-tiles__item-mask"></span>
-                    <span class="b-product-tiles__item-name">Крепление в сборе (коромысло одинарное)</span>
-                    <span class="b-product-tiles__item-price">72 &#8377</span>
-                    <div class="b-product-tiles__item-available">
-                      <span class="item-available iconize-available">В наличии</span>
-                    </div>
-                    <div class="b-product-tiles__qty">
-                      <span class="b-product-tiles__qty-counter grey-btn grey-btn_counter grey-btn_counter-minus">-</span>
-                      <input type="text" class="b-product-tiles__qty-input grey-input" value="1">
-                      <span class="b-product-tiles__qty-counter grey-btn grey-btn_counter grey-btn_counter-plus">+</span>
-                    </div>
-                    <div class="b-product-tiles__add-wrap">
-                      <span type="submit" id="add-to-cart" class="b-product-tiles__add orange-btn iconize-cart orange-btn_cart">В корзину</span>
-                    </div>
-                    <span class="b-product-tiles__in-cart">Товар в
-                      <span class="link">корзине</span>
-                    </span>
-                  </a>
-                </div>
-                </div>
-                <div class="b-product-tiles__item-wrap">
-                <div class="b-product-tiles__item">
-                  <a href="#" class="b-product-tiles__item-link">
-                    <img src="/f/i/img23.jpg" class="b-product-tiles__item-image">
-                    <span class="b-product-tiles__item-mask"></span>
-                    <span class="b-product-tiles__item-name">Крепление в сборе (коромысло одинарное)</span>
-                    <span class="b-product-tiles__item-price">72 &#8377</span>
-                    <div class="b-product-tiles__item-available">
-                      <span class="item-available iconize-available">В наличии</span>
-                    </div>
-                    <div class="b-product-tiles__qty">
-                      <span class="b-product-tiles__qty-counter grey-btn grey-btn_counter grey-btn_counter-minus">-</span>
-                      <input type="text" class="b-product-tiles__qty-input grey-input" value="1">
-                      <span class="b-product-tiles__qty-counter grey-btn grey-btn_counter grey-btn_counter-plus">+</span>
-                    </div>
-                    <div class="b-product-tiles__add-wrap">
-                      <span type="submit" id="add-to-cart" class="b-product-tiles__add orange-btn iconize-cart orange-btn_cart">В корзину</span>
-                    </div>
-                    <span class="b-product-tiles__in-cart">Товар в
-                      <span class="link">корзине</span>
-                    </span>
-                  </a>
-                </div>
-                </div>
-              </div>
-              <div class="b-product-tiles__mask"></div>
-              <div class="b-see-more-tiles">
-                <a href="#" class="b-see-more blue-btn">
-                  <span class="iconize-small-arrow">Смотреть все</span>
-                </a>
+                <span class="b-product-gallery__mask gallery__mask"></span>
               </div>
             </div>
+            <span class="title">Монтаж и установка</span>
+            <p class="text">Гибкие столбики устанавливается на твердую поверхность с помощью анкерных болтов. Для установки Вам необходимо пробурить три отверстия и соответственно закрепить столбик с помощью анкерных болтов.
+              <span class="link">Анкерные болты</span> Вы так же можете приобрести в нашей компании. Также при необходимости наши бригады осуществят монтаж. Сроки и стоимость работ уточняйте у менеджеров.</p>
           </div>
         </div>
       </div>

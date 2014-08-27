@@ -299,18 +299,14 @@ function isChecked(id) {
 
 $(document).ready(function() {
 
-
-
-  $("[class*=_counter]").click(function(){
    
-    var value =  parseInt($(this).parent().find("[class*=-input]").val());
- console.log(value);
-    if($(this).is("[class*=-plus]")){
-      console.log(value + 1);
+
+  $("[class*=_counter]").click(function() {
+
+    var value = parseInt($(this).parent().find("[class*=-input]").val());
+    if ($(this).is("[class*=-plus]")) {
       $(this).parent().find("[class*=-input]").val(value + 1);
-    }
-    else if($(this).is("[class*=-minus]") && value > 1){
-      console.log(value - 1);
+    } else if ($(this).is("[class*=-minus]") && value > 1) {
       $(this).parent().find("[class*=-input]").val(value - 1);
     }
   });
@@ -491,8 +487,8 @@ $(document).ready(function() {
     $(".b-contact-popup__message-send").show();
   })
 
-  $(".expend-link").click(function(){
-     $(this).parent(".b-expand").addClass("b-expand_active");
+  $(".expend-link").click(function() {
+    $(this).parent(".b-expand").addClass("b-expand_active");
   });
 
   see_more_button_list();
@@ -513,7 +509,6 @@ function fancy_close() {
 function see_more_button_list() {
   $(".b-product-list:not(.b-product-list_full)").each(function(i) {
     var total_height = 860;
-console.log("sldf");
     if ($(this).height() > total_height) {
       $(this).find(".b-see-more").show();
       $(this).find(".b-product-list-wrap").addClass("b-product-list-wrap_masked");
@@ -549,20 +544,25 @@ function gallerify() {
       off = $(this).offset().left;
     }
     var total_width = 0;
+    var margins = 0;
+    var gallery_width = $(this).parent(".gallery-wrap").width();
     $(this).children().find("[class*='_item']").each(function() {
       total_width = total_width + $(this).width();
+      margins = margins + parseInt($(this).css("margin-left")) + parseInt($(this).css("margin-right"));
     })
-    console.log(total_width);
-    $(this).find('.gallery__holder').width(total_width + $(this).children().find("[class*='_item']").width());
+
+    $(this).find(".gallery__holder").width(total_width + margins);
     var gwidth = $(window).width() - off,
-      ghwidth = $(this).find('.gallery__holder').width();
-    $(this).find('.gallery__holder').width(ghwidth);
-    $(this).width(gwidth);
+      ghwidth = $(this).find(".gallery__holder").width();
+    $(this).find(".gallery__holder").width(ghwidth);
+    /*$(this).width(gwidth);*/
+    $(this).width(gallery_width);
     $(this).mCustomScrollbar({
       axis: "x",
       scrollbarPosition: "inside",
       scrollInertia: 200,
       autoDraggerLength: false
+      
     });
   });
 }
