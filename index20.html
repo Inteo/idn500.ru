@@ -8,6 +8,7 @@
   <meta name="description" content="">
   <meta name="keywords" content="">
   <link rel="stylesheet" href="/f/css/main.css">
+  <link rel="stylesheet" href="/f/css/jquery.mCustomScrollbar.css">
   <!--[if lte IE 9]><link rel="stylesheet" href="f/css/ie.css"><![endif]-->
   <link href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Open+Sans:400,400italic,800,600&subset=all" rel="stylesheet">
   <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&subset=all' rel='stylesheet' type='text/css'>
@@ -18,36 +19,14 @@
   <script src="/f/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
   <script src="/f/js/jquery.touchSwipe.min.js"></script>
   <script src="/f/js/jquery.transit.min.js"></script>
+  <script src="/f/js/jquery.mCustomScrollbar.js"></script>
   <script src="/f/js/common.js"></script>
   <!--[if lt IE 9]><script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script><![endif]-->
   <script>
-  $(document).ready(function() {
-    $(".b-idn-calc-popup-switch__item").click(function() {
-      var theClass = $(this).attr("class");
-      var theClasses = theClass.match(/\w+|"[^"]+"/g);
-      var str = theClasses.join(' ');
-      var num = parseInt(str.replace(/\D+/g, ""));
-      var cls = ".b-idn-calc-popup-complect_" + num;
-      $('.b-idn-calc-popup-complect').each(function() {
-        $(".b-idn-calc-popup-complect").removeClass("b-idn-calc-popup-complect_active");
-      });
-      $('.b-idn-calc-popup-switch__item').each(function() {
-        $(".b-idn-calc-popup-switch__item").removeClass("b-idn-calc-popup-switch__item_active");
-      });
-      $(this).addClass("b-idn-calc-popup-switch__item_active");
-      $(cls).addClass("b-idn-calc-popup-complect_active");
-    })
-  });
-  $(".b-calc__btn").fancybox({
-    padding: 0,
-    minWidth: 960,
-    minHeight: 720,
-    scrolling: 'no',
-    helpers: {
-      overlay: {
-        locked: true
-      }
-    }
+  $(function() {
+
+    var dd1 = new DropDown($('#dd1'));
+    var dd2 = new DropDown($('#dd2'));
   });
   </script>
 </head>
@@ -96,6 +75,8 @@
                 </li>
                 <li><a class="b-app-pay-succsess-popup-link" href="#b-app-pay-succsess-popup">Заявка принята (ВРЕМЕННАЯ!!!)</a>
                 </li>
+                <li><a class="b-add-cart-popup-link" href="#b-add-cart-popup">Товар добавлен в корзину (ВРЕМЕННАЯ!!!)</a>
+                </li>
               </ul>
             </div>
           </div>
@@ -127,305 +108,281 @@
         </div>
       </div>
       <div class="b-content">
-        <div class="b-path"><a class="link" href="#">Лежачие полицейские </a>→</div>
-        <span class="b-content__title" id="idn">ИДН-500</span>
-        <div class="b-calc clearfix">
-          <img src="/f/i/idn500.png" alt="" class="b-calc__img">
-          <div class="b-calc-wrap">
-            <p class="b-calc__text">ИДН-500 производится в соответствии с основными требованиями и нормами <a href="#" class="link">ГОСТ Р52605-2006</a> от 01.01.2008 г., а по основным показателям превосходят его в несколько раз. В обязательном порядке отверстия армируются специальными шайбами с целью предотвращения их «вырывания» с места установки. Устанавливаются на автодорогах общего пользования.</p>
-            <a href="#b-idn-calc-popup" class="b-calc__btn orange-btn">
-              <span class="iconize-idn"></span>Рассчитать стоимость</a>
-            <span class="b-calc__hint">Калькулятор поможет Вам рассчитать точную стоимость лежачего полицейского в зависимости от ширины дороги.</span>
-          </div>
-        </div>
-        <div class="b-product-list b-product-list_untitle b-product-list_full">
-          <div class="b-product-list-wrap clearfix">
-            <div class="b-product-list__title">
-              <div class="b-product-list__title-wrap">
-                <div class="b-product-list__title-name">Наименование товара и характеристики</div>
-                <div class="b-product-list__title-item b-product-list__title-item_available">Наличие</div>
-                <div class="b-product-list__title-item b-product-list__title-item_price">Стоимость с НДС</div>
-                <div class="b-product-list__title-item b-product-list__title-item_qty"></div>
+        <span class="b-content__title" id="idn">Корзина</span>
+        <div class="b-cart">
+          <div class="b-product-list b-product-list_untitle b-product-list_full">
+            <div class="b-product-list-wrap clearfix">
+              <div class="b-product-list__title">
+                <div class="b-product-list__title-wrap">
+                  <div class="b-product-list__title-name">Наименование товара и характеристики</div>
+                  <div class="b-product-list__title-item b-product-list__title-item_ship">Кол-во товара и характеристики груза</div>
+                  <div class="b-product-list__title-item b-product-list__title-item_price">Стоимость с НДС</div>
+                </div>
               </div>
-            </div>
-
-            <div class="b-product-list__item">
-              <div class="b-product-list__item-wrap">
-                <a href="#" class="b-product-list__item-link">
-                  <div class="b-product-list__item-detail">
-                    <img src="/f/i/img16.jpg" class="b-product-list__item-image">
-                    <div class="b-product-list__item-info">
-                      <span class="b-product-list__item-name">ИДН-500-1, Россия</span>
-                      <div class="b-product-list__item-info-row">
-                        <span class="b-product-list__item-info-name-wrap">
-                          <span class="b-product-list__item-info-name">Габариты (ДхШхВ)</span>
-                          <span class="b-product-list__item-info-line"></span>
-                        </span>
-                        <span class="b-product-list__item-info-value">500х500х58 мм</span>
-                      </div>
-                      <div class="b-product-list__item-info-row">
-                        <span class="b-product-list__item-info-name-wrap">
-                          <span class="b-product-list__item-info-name">Масса</span>
-                          <span class="b-product-list__item-info-line"></span>
-                        </span>
-                        <span class="b-product-list__item-info-value">14 кг</span>
-                      </div>
-                      <div class="b-product-list__item-info-row">
-                        <span class="b-product-list__item-info-name-wrap">
-                          <span class="b-product-list__item-info-name">Производитель</span>
-                          <span class="b-product-list__item-info-line"></span>
-                        </span>
-                        <span class="b-product-list__item-info-value">Россия</span>
+              <div class="b-product-list__item">
+                <div class="b-product-list__item-wrap">
+                  <a href="#" class="b-product-list__item-link">
+                    <div class="b-product-list__item-detail">
+                      <img src="/f/i/img16.jpg" class="b-product-list__item-image">
+                      <div class="b-product-list__item-info">
+                        <span class="b-product-list__item-name">ИДН-500-2, Россия</span>
+                        <span class="item-available item-available_unback iconize-available">В наличии</span>
+                        <div class="b-product-list__item-info-row">
+                          <span class="b-product-list__item-info-name-wrap">
+                            <span class="b-product-list__item-info-name">Габариты (ДхШхВ)</span>
+                            <span class="b-product-list__item-info-line"></span>
+                          </span>
+                          <span class="b-product-list__item-info-value info-value">250 х 500 х 58 <span class="info-value-small">мм</span></span>
+                        </div>
+                        <div class="b-product-list__item-info-row">
+                          <span class="b-product-list__item-info-name-wrap">
+                            <span class="b-product-list__item-info-name">Масса</span>
+                            <span class="b-product-list__item-info-line"></span>
+                          </span>
+                          <span class="b-product-list__item-info-value info-value">7 <span class="info-value-small">кг</span></span>
+                        </div>
+                        <div class="b-product-list__item-info-row">
+                          <span class="b-product-list__item-info-name-wrap">
+                            <span class="b-product-list__item-info-name">Производитель</span>
+                            <span class="b-product-list__item-info-line"></span>
+                          </span>
+                          <span class="b-product-list__item-info-value">Россия</span>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div class="b-product-list__item-cell b-product-list__item-cell_available">
-                    <span class="item-available item-available_unback iconize-available">В наличии</span>
-                  </div>
-                  <div class="b-product-list__item-cell b-product-list__item-cell_price">1400 &#8377</div>
-                  <div class="b-product-list__item-cell b-product-list__item-cell_qty">
-                    <span class="b-product-list__item-qty-counter grey-btn grey-btn_counter grey-btn_counter-minus">-</span>
-                    <input type="text" class="b-product-list__item-qty-input grey-input" value="1">
-                    <span class="b-product-list__item-qty-counter grey-btn grey-btn_counter grey-btn_counter-plus">+</span>
-                    <span class="orange-btn orange-btn_cart iconize-cart">В корзину</span>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="b-product-list__item">
-              <div class="b-product-list__item-wrap">
-                <a href="#" class="b-product-list__item-link">
-                  <div class="b-product-list__item-detail">
-                    <img src="/f/i/img17.jpg" class="b-product-list__item-image">
-                    <div class="b-product-list__item-info">
-                      <span class="b-product-list__item-name">ИДН-500-2, Россия</span>
+                    <div class="b-product-list__item-cell b-product-list__item-cell_shipment b-product-list__item-cell_shipment-detail">
+                      <span class="b-product-list__item-qty-counter grey-btn grey-btn_counter grey-btn_counter-minus">-</span>
+                      <input class="b-product-list__item-qty-input grey-input" type="text" value="2">
+                      <span class="b-product-list__item-qty-counter grey-btn grey-btn_counter grey-btn_counter-plus">+</span>
+                      <span class="b-product-list__item-qty__text">шт</span>
                       <div class="b-product-list__item-info-row">
                         <span class="b-product-list__item-info-name-wrap">
-                          <span class="b-product-list__item-info-name">Габариты (ДхШхВ)</span>
+                          <span class="b-product-list__item-info-name">Масса груза
+                          </span>
                           <span class="b-product-list__item-info-line"></span>
                         </span>
-                        <span class="b-product-list__item-info-value">500х500х58 мм</span>
+                        <span class="b-product-list__item-info-value info-value">14 
+                          <span class="info-value-small">кг</span>
+                          <span class="info-value-grey">(2 х 7 кг)</span>
+                        </span>
                       </div>
                       <div class="b-product-list__item-info-row">
                         <span class="b-product-list__item-info-name-wrap">
-                          <span class="b-product-list__item-info-name">Масса</span>
+                          <span class="b-product-list__item-info-name">Объем груза
+                          </span>
                           <span class="b-product-list__item-info-line"></span>
                         </span>
-                        <span class="b-product-list__item-info-value">13 кг</span>
-                      </div>
-                      <div class="b-product-list__item-info-row">
-                        <span class="b-product-list__item-info-name-wrap">
-                          <span class="b-product-list__item-info-name">Производитель</span>
-                          <span class="b-product-list__item-info-line"></span>
+                        <span class="b-product-list__item-info-value info-value">0.16
+                          <span class="info-value-small">m<sup>3</sup>
+                            <span class="info-value-grey">(5 х 0,08
+                              <span class="info-value-small">м<sup>3</sup>
+                              </span>)</span>
+                          </span>
                         </span>
-                        <span class="b-product-list__item-info-value">Россия</span>
                       </div>
                     </div>
-                  </div>
-                  <div class="b-product-list__item-cell b-product-list__item-cell_available">
-                    <span class="item-available item-available_unback iconize-available">В наличии</span>
-                  </div>
-                  <div class="b-product-list__item-cell b-product-list__item-cell_price">700 &#8377</div>
-                  <div class="b-product-list__item-cell b-product-list__item-cell_qty">
-                    <span class="b-product-list__item-qty-counter grey-btn grey-btn_counter grey-btn_counter-minus">-</span>
-                    <input type="text" class="b-product-list__item-qty-input grey-input" value="1">
-                    <span class="b-product-list__item-qty-counter grey-btn grey-btn_counter grey-btn_counter-plus">+</span>
-                    <span class="orange-btn orange-btn_cart iconize-cart">В корзину</span>
-                  </div>
-                </a>
+                    <div class="b-product-list__item-cell b-product-list__item-cell_price">
+                      <span class="b-product-list__item-price">1400
+                        <span>&#8377</span>
+                      </span>
+                      <span class="b-product-list__item-price-detail">2 х 700
+                        <span>&#8377</span>
+                      </span>
+                    </div>
+                  </a>
+                </div>
               </div>
-            </div>
-            <div class="b-product-list__item">
-              <div class="b-product-list__item-wrap">
-                <a href="#" class="b-product-list__item-link">
-                  <div class="b-product-list__item-detail">
-                    <img src="/f/i/img16.jpg" class="b-product-list__item-image">
-                    <div class="b-product-list__item-info">
-                      <span class="b-product-list__item-name">ИДН-500-1, Китай</span>
-                      <div class="b-product-list__item-info-row">
-                        <span class="b-product-list__item-info-name-wrap">
-                          <span class="b-product-list__item-info-name">Габариты (ДхШхВ)</span>
-                          <span class="b-product-list__item-info-line"></span>
-                        </span>
-                        <span class="b-product-list__item-info-value">500х500х58 мм</span>
+              <div class="b-product-list__item b-product-list__item_sign">
+                <div class="b-product-list__item-wrap">
+                  <a href="#" class="b-product-list__item-link">
+                    <div class="b-product-list__item-detail">
+                      <div class="b-product-list__item-image-wrap">
+                        <img src="/f/i/img28.jpg" class="b-product-list__item-image">
+                        <span class="b-product-list__item-image-title">1.1</span>
                       </div>
-                      <div class="b-product-list__item-info-row">
-                        <span class="b-product-list__item-info-name-wrap">
-                          <span class="b-product-list__item-info-name">Масса</span>
-                          <span class="b-product-list__item-info-line"></span>
-                        </span>
-                        <span class="b-product-list__item-info-value">13 кг</span>
-                      </div>
-                      <div class="b-product-list__item-info-row">
-                        <span class="b-product-list__item-info-name-wrap">
-                          <span class="b-product-list__item-info-name">Производитель</span>
-                          <span class="b-product-list__item-info-line"></span>
-                        </span>
-                        <span class="b-product-list__item-info-value">Китай</span>
+                      <div class="b-product-list__item-info">
+                        <span class="b-product-list__item-name">1.1 Железнодорожный переезд со шлагбаумом</span>
+                        <span class="item-available item-available_unback iconize-available iconize-available_false">Под заказ</span>
+                        <div class="b-product-list__item-info-row">
+                          <span class="b-product-list__item-info-name-wrap">
+                            <span class="b-product-list__item-info-name">Типоразмер
+                              <span class="b-hint-size-popup-link iconize-hint iconize-hint_top"></span>
+                            </span>
+                            <span class="b-product-list__item-info-line"></span>
+                          </span>
+                          <div class="b-product-list__item-info-value">
+                            <div id="dd1" class="wrapper-dropdown-3 switch-btn" tabindex="1">
+                              <span class="dotted-link">2-ой типоразмер</span>
+                              <ul class="dropdown">
+                                <li>
+                                  <span>1-ый типоразмер</span>
+                                </li>
+                                <li>
+                                  <span>2-ой типоразмер</span>
+                                </li>
+                                <li>
+                                  <span>3-ий типоразмер</span>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="b-product-list__item-info-row">
+                          <span class="b-product-list__item-info-name-wrap">
+                            <span class="b-product-list__item-info-name">Тип пленки
+                              <span class="iconize-hint b-hint-type-popup-link iconize-hint_top"></span>
+                            </span>
+                            <span class="b-product-list__item-info-line"></span>
+                          </span>
+                          <div class="b-product-list__item-info-value">
+                            <div id="dd2" class="wrapper-dropdown-3 switch-btn" tabindex="1">
+                              <span class="dotted-link">«А» Коммерческая</span>
+                              <ul class="dropdown">
+                                <li>
+                                  <span>«А» Коммерческая</span>
+                                </li>
+                                <li>
+                                  <span>«А» Инженерная</span>
+                                </li>
+                                <li>
+                                  <span>«Б» Высокоинтенсивная</span>
+                                </li>
+                                <li>
+                                  <span>«В» Алмазная</span>
+                                </li>
+                                <li>
+                                  <span>«В» Алмазная флуоресцентная</span>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="b-product-list__item-info-row">
+                          <span class="b-product-list__item-info-name-wrap">
+                            <span class="b-product-list__item-info-name">Флюорисцентный фон</span>
+                            <span class="b-product-list__item-info-line"></span>
+                          </span>
+                          <div class="b-product-list__item-info-value">
+                            <input id="params1" class="b-params-check checkbox" type="checkbox" name="params_check">
+                            <label class="b-params-label label" for="params1">Добавить</label>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div class="b-product-list__item-cell b-product-list__item-cell_available">
-                    <span class="item-available item-available_unback iconize-available">В наличии</span>
-                  </div>
-                  <div class="b-product-list__item-cell b-product-list__item-cell_price">1190 &#8377</div>
-                  <div class="b-product-list__item-cell b-product-list__item-cell_qty">
-                    <span class="b-product-list__item-qty-counter grey-btn grey-btn_counter grey-btn_counter-minus">-</span>
-                    <input type="text" class="b-product-list__item-qty-input grey-input" value="1">
-                    <span class="b-product-list__item-qty-counter grey-btn grey-btn_counter grey-btn_counter-plus">+</span>
-                    <span class="orange-btn orange-btn_cart iconize-cart">В корзину</span>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="b-product-list__item">
-              <div class="b-product-list__item-wrap">
-                <a href="#" class="b-product-list__item-link">
-                  <div class="b-product-list__item-detail">
-                    <img src="/f/i/img17.jpg" class="b-product-list__item-image">
-                    <div class="b-product-list__item-info">
-                      <span class="b-product-list__item-name">ИДН-500-2, Китай</span>
+                    <div class="b-product-list__item-cell b-product-list__item-cell_shipment">
+                      <span class="b-product-list__item-qty-counter grey-btn grey-btn_counter grey-btn_counter-minus">-</span>
+                      <input class="b-product-list__item-qty-input grey-input" type="text" value="1">
+                      <span class="b-product-list__item-qty-counter grey-btn grey-btn_counter grey-btn_counter-plus">+</span>
+                      <span class="b-product-list__item-qty__text">шт</span>
                       <div class="b-product-list__item-info-row">
                         <span class="b-product-list__item-info-name-wrap">
-                          <span class="b-product-list__item-info-name">Габариты (ДхШхВ)</span>
+                          <span class="b-product-list__item-info-name">Масса груза
+                          </span>
                           <span class="b-product-list__item-info-line"></span>
                         </span>
-                        <span class="b-product-list__item-info-value">500х500х58 мм</span>
+                        <span class="b-product-list__item-info-value info-value">1
+                          <span class="info-value-small">кг</span>
+                        </span>
                       </div>
                       <div class="b-product-list__item-info-row">
                         <span class="b-product-list__item-info-name-wrap">
-                          <span class="b-product-list__item-info-name">Масса</span>
+                          <span class="b-product-list__item-info-name">Объем груза
+                          </span>
                           <span class="b-product-list__item-info-line"></span>
                         </span>
-                        <span class="b-product-list__item-info-value">13 кг</span>
-                      </div>
-                      <div class="b-product-list__item-info-row">
-                        <span class="b-product-list__item-info-name-wrap">
-                          <span class="b-product-list__item-info-name">Производитель</span>
-                          <span class="b-product-list__item-info-line"></span>
+                        <span class="b-product-list__item-info-value info-value">0.06
+                          <span class="info-value-small">m<sup>3</sup>
+                          </span>
                         </span>
-                        <span class="b-product-list__item-info-value">Китай</span>
                       </div>
                     </div>
-                  </div>
-                  <div class="b-product-list__item-cell b-product-list__item-cell_available">
-                    <span class="item-available item-available_unback iconize-available">В наличии</span>
-                  </div>
-                  <div class="b-product-list__item-cell b-product-list__item-cell_price">600 &#8377</div>
-                  <div class="b-product-list__item-cell b-product-list__item-cell_qty">
-                    <span class="b-product-list__item-qty-counter grey-btn grey-btn_counter grey-btn_counter-minus">-</span>
-                    <input type="text" class="b-product-list__item-qty-input grey-input" value="1">
-                    <span class="b-product-list__item-qty-counter grey-btn grey-btn_counter grey-btn_counter-plus">+</span>
-                    <span class="orange-btn orange-btn_cart iconize-cart">В корзину</span>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <span class="b-product__title b-product__title_undecor">Дополнительные аксессуары</span>
-        <div class="b-product-list b-product-list_untitle b-product-list_full">
-          <div class="b-product-list-wrap  clearfix">
-            <div class="b-product-list__title">
-              <div class="b-product-list__title-wrap">
-                <div class="b-product-list__title-name">Наименование товара и характеристики</div>
-                <div class="b-product-list__title-item b-product-list__title-item_available">Наличие</div>
-                <div class="b-product-list__title-item b-product-list__title-item_price">Стоимость с НДС</div>
-                <div class="b-product-list__title-item b-product-list__title-item_qty"></div>
-              </div>
-            </div>
-            <div class="b-product-list__item">
-              <div class="b-product-list__item-wrap">
-                <a href="#" class="b-product-list__item-link">
-                  <div class="b-product-list__item-detail">
-                    <img src="/f/i/img18.jpg" class="b-product-list__item-image">
-                    <div class="b-product-list__item-info">
-                      <span class="b-product-list__item-name">Анкерный болт</span>
+                    <div class="b-product-list__item-cell b-product-list__item-cell_price">
+                      <span class="b-product-list__item-price">1400
+                        <span>&#8377</span>
+                      </span>
                     </div>
-                  </div>
-                  <div class="b-product-list__item-cell b-product-list__item-cell_available">
-                    <span class="item-available item-available_unback iconize-available">В наличии</span>
-                  </div>
-                  <div class="b-product-list__item-cell b-product-list__item-cell_price">30 &#8377</div>
-                  <div class="b-product-list__item-cell b-product-list__item-cell_qty">
-                    <span class="b-product-list__item-qty-counter grey-btn grey-btn_counter grey-btn_counter-minus">-</span>
-                    <input type="text" class="b-product-list__item-qty-input grey-input" value="1">
-                    <span class="b-product-list__item-qty-counter grey-btn grey-btn_counter grey-btn_counter-plus">+</span>
-                    <span class="orange-btn orange-btn_cart iconize-cart">В корзину</span>
-                  </div>
-                </a>
+                  </a>
+                </div>
+              </div>
+              <div class="b-product-list__item">
+                <div class="b-product-list__item-wrap">
+                  <a href="#" class="b-product-list__item-link">
+                    <div class="b-product-list__item-detail">
+                      <img src="/f/i/img16.jpg" class="b-product-list__item-image">
+                      <div class="b-product-list__item-info">
+                        <span class="b-product-list__item-name">ИДН-500-1, Россия</span>
+                        <span class="item-available item-available_unback iconize-available">В наличии</span>
+                        <div class="b-product-list__item-info-row">
+                          <span class="b-product-list__item-info-name-wrap">
+                            <span class="b-product-list__item-info-name">Габариты (ДхШхВ)</span>
+                            <span class="b-product-list__item-info-line"></span>
+                          </span>
+                          <span class="b-product-list__item-info-value">500х500х58 <span class="info-value-small">мм</span> </span>
+                        </div>
+                        <div class="b-product-list__item-info-row">
+                          <span class="b-product-list__item-info-name-wrap">
+                            <span class="b-product-list__item-info-name">Масса</span>
+                            <span class="b-product-list__item-info-line"></span>
+                          </span>
+                          <span class="b-product-list__item-info-value">14 <span class="info-value-small">кг</span></span>
+                        </div>
+                        <div class="b-product-list__item-info-row">
+                          <span class="b-product-list__item-info-name-wrap">
+                            <span class="b-product-list__item-info-name">Производитель</span>
+                            <span class="b-product-list__item-info-line"></span>
+                          </span>
+                          <span class="b-product-list__item-info-value">Россия</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="b-product-list__item-cell b-product-list__item-cell_shipment b-product-list__item-cell_shipment-detail">
+                      <span class="b-product-list__item-qty-counter grey-btn grey-btn_counter grey-btn_counter-minus">-</span>
+                      <input class="b-product-list__item-qty-input grey-input" type="text" value="5">
+                      <span class="b-product-list__item-qty-counter grey-btn grey-btn_counter grey-btn_counter-plus">+</span>
+                      <span class="b-product-list__item-qty__text">шт</span>
+                      <div class="b-product-list__item-info-row">
+                        <span class="b-product-list__item-info-name-wrap">
+                          <span class="b-product-list__item-info-name">Масса груза
+                          </span>
+                          <span class="b-product-list__item-info-line"></span>
+                        </span>
+                        <span class="b-product-list__item-info-value info-value">70
+                          <span class="info-value-small">кг</span>
+                          <span class="info-value-grey">(5 х 14 кг)</span>
+                        </span>
+                      </div>
+                      <div class="b-product-list__item-info-row">
+                        <span class="b-product-list__item-info-name-wrap">
+                          <span class="b-product-list__item-info-name">Объем груза
+                          </span>
+                          <span class="b-product-list__item-info-line"></span>
+                        </span>
+                        <span class="b-product-list__item-info-value info-value">0.16
+                          <span class="info-value-small">m<sup>3</sup>
+                            <span class="info-value-grey">(5 х 0,08
+                              <span class="info-value-small">м<sup>3</sup>
+                              </span>)</span>
+                          </span>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="b-product-list__item-cell b-product-list__item-cell_price">
+                      <span class="b-product-list__item-price">7000
+                        <span>&#8377</span>
+                      </span>
+                      <span class="b-product-list__item-price-detail">5 х 1400
+                        <span>&#8377</span>
+                      </span>
+                    </div>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="b-advant b-advant_idn">
-          <span class="b-advant__title">Преимущества и технологии</span>
-          <div class="b-advant__wrap">
-            <div class="b-advant__item iconize-advant iconize-advant_1">
-              <span class="b-advant__item-title">Высококачественная резина</span>
-              <p class="b-advant__item-text">Изделия изготовлены из резины повышенной износостойкости, без включения отходов.</p>
-            </div>
-            <div class="b-advant__item iconize-advant iconize-advant_2">
-              <span class="b-advant__item-title">Надежный клей</span>
-              <p class="b-advant__item-text">Специальный клеевой состав надежно удерживает световозвращающую пленку на поверхности ИДН.</p>
-            </div>
-            <div class="b-advant__item iconize-advant iconize-advant_3">
-              <span class="b-advant__item-title">Отверстия армированы шайбам</span>
-              <p class="b-advant__item-text">Крепежные отверстия армированы шайбами, вваренными в тело изделия на этапе его вулканизации (надежное крепление к дорожному покрытию, отсутствие эффекта «вырывания» ИДН).</p>
-            </div>
-            <div class="b-advant__item iconize-advant iconize-advant_4">
-              <span class="b-advant__item-title">Светоотражающий материал 3М</span>
-              <p class="b-advant__item-text">Световозвращающий материал 3М на верхней части изделия обеспечивает хорошую видимость ИДН в тёмное время суток. По степени светоотражения изделия превосходят требования ГОСТ в два раза.</p>
-            </div>
-            <div class="b-advant__item iconize-advant iconize-advant_5">
-              <span class="b-advant__item-title">Минимум пустот</span>
-              <p class="b-advant__item-text">С нижней стороны изделие имеет минимум пустот. Это важно для придания необходимой жесткости изделия и предотвращения его преждевременного разрушения при ежедневных нагрузках. Мы не экономим на материале!</p>
-            </div>
-            <div class="b-advant__item iconize-advant iconize-advant_6">
-              <span class="b-advant__item-title">Прочная конструкция</span>
-              <p class="b-advant__item-text">Соединение типа «шип-паз» обеспечивают высокую целостность конструкции.</p>
-            </div>
+          <div class="b-checkout">
+            <a href="#" class="b-checkout__btn orange-btn"><span class="iconize-cart2"></span>Оформить заказ<span class="iconize-r-arrow"></span></a>
+            <a class="b-checkout__print dotted-link" href="#"><span class="iconize-print"></span>Распечатать заказ</a>
           </div>
-        </div>
-        <span class="title">Применение и назначение</span>
-        <p class="text">ИДН широко применяется на участках дороги с повышенной аварийной опасностью, а также возле школ, больниц, гипермаркетов, дошкольных учреждений, нерегулируемых перекрёстках и т.д.</p>
-        <span class="title title_small title_bot">Допускается устройство ИДН:</span>
-        <p class="text text_pointed">на улицах районного и местного значения, боковых и местных проездах магистралей;</p>
-        <p class="text text_pointed">в жилых кварталах, обозначенных дорожными знаками 5.38—5.39 «Жилая зона», «Конец жилой зоны»;</p>
-        <p class="text text_pointed">перед воротами гаражей, внеуличных стояночных площадок, выездами с территорий автозаправочных комплексов, на дорогах и проездах парковых зон.</p>
-        <span class="title title_small title_bot">Не допускается устройство ИДН:</span>
-        <div class="b-expand">
-          <div class="b-expend__holder">
-            <p class="text text_pointed">на участках дорог при наличии на них движения троллейбусов;</p>
-            <p class="text text_pointed">на участках улиц, имеющих продольный уклон более 50%;</p>
-            <p class="text text_pointed">на остановочных площадках общественного транспорта или около них</p>
-            <p class="text text_pointed">на мостах;</p>
-            <p class="text text_pointed">на путепроводах;</p>
-            <p class="text text_pointed">на эстакадах;</p>
-            <p class="text text_pointed">в транспортных тоннелях и проездах под путепроводами;</p>
-            <span class="b-expend__mask"></span>
-          </div>
-          <span class="dotted-link expend-link">Читать дальше</span>
-        </div>
-        <span class="title">Монтаж и установка</span>
-        <div class="file">
-          <div class="file__title"><a class="link" href="#">Инструкция по монтажу и эксплуатации искусственных дорожных неровностей (ИДН) производства ООО «Технология», г. Ярославль</a>
-          </div>
-          <div class="file__size">.doc, 540 Кб</div>
-        </div>
-        <p class="text">Инструкция составлена в соответствии с требованиями ГОСТ Р 52605-2006 Технические средства организации дорожного движения «Искусственные дорожные неровности». ИДН производства ООО «Технология» является долговременным инженерным сооружением, предназначенным для использования в различных климатических условиях, в том числе и там, где предусмотрена механическая уборка снега в зимний период, а также механизированная уборка улиц.</p>
-        <p class="text text_untop">В 99% случаев крепление ИДН производится в асфальтобетонное покрытие, уверенное прикрепление к которому является весьма проблематичной задачей. Это связано с мягкостью материала, особенно в летнее время. В каталогах производителей крепежа не существует специальных моделей для асфальта, поэтому наша компания совместно с рядом ведущих производителей крепежных материалов таких как Fischer, Sormat, а также с многочисленными монтажными организациями в разных регионах, на протяжении нескольких лет опытным путем пробовали различные виды креплений ИДН. На сегодняшний день существует два принципиально различных типа крепления: механический и химический.</p>
-        <div class="b-expand">
-          <div class="b-expend__holder">
-            <p class="text text_pointed">Сооружаемая искусственная дорожная неровность должна располагаться перпендикулярно оси проезжей части дороги, исключать возможность ее объезда.</p>
-            <p class="text text_pointed">ИДН рекомендуется располагать в местах с максимальной освещенностью (вблизи мачт освещения).</p>
-            <p class="text text_pointed">Сооружаемая искусственная дорожная неровность должна располагаться перпендикулярно оси проезжей части дороги, исключать возможность ее объезда.</p>
-            <p class="text text_pointed">ИДН рекомендуется располагать в местах с максимальной освещенностью (вблизи мачт освещения).</p>
-            <p class="text text_pointed">Сооружаемая искусственная дорожная неровность должна располагаться перпендикулярно оси проезжей части дороги, исключать возможность ее объезда.</p>
-            <p class="text text_pointed">ИДН рекомендуется располагать в местах с максимальной освещенностью (вблизи мачт освещения).</p>
-            <span class="b-expend__mask"></span>
-          </div>
-          <span class="dotted-link expend-link">Читать дальше</span>
         </div>
       </div>
     </div>
@@ -490,6 +447,103 @@
     </div>
   </div>
   <div class="b-popups">
+    <div class="b-hint-size-popup" id="b-hint-size-popup">
+      <a href="#" class="b-popup__close iconize-popup-close" onclick="fancy_close();"></a>
+      <span class="title">Типоразмеры дорожного знака</span>
+      <div class="b-hint-size-popup-table">
+        <div class="b-hint-size-popup-table-title">
+          <div class="b-hint-size-popup-table-title-wrap">
+            <span class="b-hint-size-popup-table-title__cell b-hint-size-popup-table-title__cell_first">Типоразмер знака</span>
+            <span class="b-hint-size-popup-table-title__cell">Применение знака
+              <strong>вне населенных пунктов</strong>
+            </span>
+            <span class="b-hint-size-popup-table-title__cell">Применение знака
+              <strong>в населенных пунктов</strong>
+            </span>
+          </div>
+        </div>
+        <div class="b-hint-size-popup-table-row">
+          <div class="b-hint-size-popup-table-row-wrap">
+            <span class="b-hint-size-popup-table__cell b-hint-size-popup-table__cell_first">1-ый типоразмер</span>
+            <span class="b-hint-size-popup-table__cell">Дороги с одной полосой</span>
+            <span class="b-hint-size-popup-table__cell">Дороги местного значения</span>
+          </div>
+        </div>
+        <div class="b-hint-size-popup-table-row">
+          <div class="b-hint-size-popup-table-row-wrap">
+            <span class="b-hint-size-popup-table__cell b-hint-size-popup-table__cell_first">2-ой типоразмер</span>
+            <span class="b-hint-size-popup-table__cell">Дороги с двумя и тремя полосами</span>
+            <span class="b-hint-size-popup-table__cell">Магистральные дороги</span>
+          </div>
+        </div>
+        <div class="b-hint-size-popup-table-row">
+          <div class="b-hint-size-popup-table-row-wrap">
+            <span class="b-hint-size-popup-table__cell b-hint-size-popup-table__cell_first">3-ий типоразмер</span>
+            <span class="b-hint-size-popup-table__cell">Дороги с четырьмя и более полосами и автомагистрали</span>
+            <span class="b-hint-size-popup-table__cell">Скоростные дороги</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="b-hint-type-popup" id="b-hint-type-popup">
+      <a href="#" class="b-popup__close iconize-popup-close" onclick="fancy_close();"></a>
+      <span class="title">Типы светоотражающей пленки</span>
+      <div class="b-hint-type-popup-items">
+        <div class="b-hint-type-popup__item iconize-skin-type iconize-skin-type_1">
+          <span class="b-hint-type-popup__item-title">Тип «А» Коммерческая</span>
+          <p class="text">Наиболее популярная и доступна по цене. Светоотражающая способность средняя. Применяется для знаков на дорогах с низкой и средней интенсивностью, с общим количеством полос в одну сторону не более 4-х, уровень фонового освещения низкий.</p>
+          <span class="serv-life">Срок службы:
+            <span>до 5 лет</span>
+          </span>
+        </div>
+        <div class="b-hint-type-popup__item iconize-skin-type iconize-skin-type_2">
+          <span class="b-hint-type-popup__item-title">Тип «А» Инженерная</span>
+          <p class="text">Светоотражающие пленки с оптической системой из микропризм. Имеет более высокую интенсивность светоотражения. Предназначена для изготовления дорожных знаков, устанавливаемых на автомагистралях, международных и автомобильных дорогах всех технических категорий.</p>
+          <span class="serv-life">Срок службы:
+            <span>7-9 лет</span>
+          </span>
+          <span class="b-hint-type-popup__item-gost iconize-gost2">Соответствует<a href="#" class="link">ГОСТ Р 52290-2004</a>
+          </span>
+        </div>
+        <div class="b-hint-type-popup__item iconize-skin-type iconize-skin-type_3">
+          <span class="b-hint-type-popup__item-title">Тип «Б» Высокоинтенсивная</span>
+          <p class="text">Светоотражающие пленки с высокой степенью световозвращения имеющие оптическую систему из сферических линз (микростеклошариков), сгруппированных в ячейки. Обладает высокой степенью световозвращения. Знаки с данным типом пленки устанавливают в населенных пунктах на дорогах с числом полос четыре и более, а также на автомагистралях вне населенных пунктов, также с числом полос 4 и более.</p>
+          <span class="serv-life">Срок службы:
+            <span>7-10 лет</span>
+          </span>
+          <span class="b-hint-type-popup__item-gost iconize-gost2">Соответствует<a href="#" class="link">ГОСТ Р 52290-2004</a>
+          </span>
+        </div>
+        <div class="b-hint-type-popup__item iconize-skin-type iconize-skin-type_4">
+          <span class="b-hint-type-popup__item-title">Тип «В» Алмазная</span>
+          <p class="text">Пленки на основе микропризм, обеспечивающая максимально высокий уровень светоовозврата, превышающий соответствующие требования ГОСТ. Используются для изготовления временных знаков, а так же для дорожных знаков на сложных участках автомагистралей, дороги с количеством полос 4 и более.</p>
+          <span class="serv-life">Срок службы:
+            <span>7-10 лет</span>
+          </span>
+          <span class="b-hint-type-popup__item-gost iconize-gost2">Соответствует<a href="#" class="link">ГОСТ Р 52290-2004</a>
+          </span>
+        </div>
+        <div class="b-hint-type-popup__item iconize-skin-type iconize-skin-type_5">
+          <span class="b-hint-type-popup__item-title">Тип «В» Алмазная флуоресцентная</span>
+          <p class="text">Пленки совмещают в себе качества призматической световозвращающей пленки и стойкий желто-зеленый цвет. Данное сочетание круглосуточно обеспечивает наиболее высокий уровень видимости дорожного знака. Предназначены для изготовления постоянных и временных дорожных знаков, эксплуатируемых в суровых условиях окружающей среды. Пленка является наилучшим материалом для изготовления дорожных знаков, устанавливаемых в зоне пешеходных переходов.</p>
+          <span class="serv-life">Срок службы:
+            <span>7-10 лет</span>
+          </span>
+          <span class="b-hint-type-popup__item-gost iconize-gost2">Соответствует<a href="#" class="link">ГОСТ Р 52290-2004</a>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="b-add-cart-popup" id="b-add-cart-popup">
+      <a href="#" class="b-popup__close iconize-popup-close" onclick="fancy_close();"></a>
+      <span class="b-add-cart-popup__title">Товар добавлен в корзину</span>
+      <div class="b-add-cart-popup__img-wrap">
+        <img src="/f/i/car.png" alt="" class="b-add-cart-popup__img">
+      </div>
+      <div class="b-add-cart-popup__order-wrap"><a href="#" class="b-add-cart-popup__order orange-btn">Оформить заказ<span class="iconize-small-arrow iconize-small-arrow_orange"></span></a>
+      </div>
+      <span class="b-add-cart-popup__order-link dotted-link">Продолжить покупки</span>
+    </div>
     <div class="b-catalog-popup" id="b-catalog-popup">
       <a href="#" class="b-catalog-popup__close blue-btn" onclick="fancy_close();"></a>
       <div class="b-search">
