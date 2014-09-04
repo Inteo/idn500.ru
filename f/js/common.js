@@ -415,19 +415,24 @@
      }
    });
 
+  $(document).on("click", ".fancy-close", function(event){
+    $.fancybox.close();
+    return false;
+  });
+
    $(".modal-inline").fancybox({
-     type: 'inline',
-     fixed: false,
-     title: '',
-     padding: 0,
-     autoResize: false,
-     autoCenter: false,
-     fitToView: false,
-     helpers: {
-       overlay: {
-         fixed: false
-       }
-     }
+    type: 'inline',
+    fixed: false,
+    title: '',
+    padding: 0,
+    autoResize: false,
+    autoCenter: false,
+    fitToView: false,
+    helpers: {
+      overlay: {
+        fixed: false
+      }
+    }
    });
 
    $('.b-search__input').each(function() {
@@ -467,15 +472,20 @@
    });
 
    $(".b-search__catalog-btn").fancybox({
-     padding: 0,
-     maxWidth: 1300,
-     minHeight: 520,
-     scrolling: 'no',
-     helpers: {
-       overlay: {
-         locked: true
-       }
-     }
+    padding: 0,
+    fixed: false,
+    maxWidth: 1300,
+    width: '100%',
+    height: 'auto',
+    autoCenter: false,
+    autoResize: true,
+    fitToView: true,
+    wrapCSS: 'fancy_tall',
+    helpers: {
+      overlay: {
+        fixed: false
+      }
+    }
    });
 
    $(".b-app-pay-popup-link").fancybox({
@@ -502,20 +512,7 @@
      }
    });
 
-   $(".b-header__contact-us").fancybox({
-     padding: 0,
-     minWidth: 690,
-     minHeight: 240,
-     scrolling: 'no',
-     helpers: {
-       overlay: {
-         locked: true
-       }
-     },
-     'afterLoad': function() {
-       $(this.outer).parent().parent().addClass("fancy-top");
-     }
-   });
+
 
    $(".b-add-cart-popup-link").fancybox({
      padding: 0,
