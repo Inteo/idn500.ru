@@ -3363,7 +3363,6 @@ input[type='submit'].btn-block, input[type='reset'].btn-block, input[type='butto
   display: table;
   width: 100%;
   height: 40px;
-  margin-top: 35px;
   border-radius: 10px;
   background: #f6f9fb;
 }
