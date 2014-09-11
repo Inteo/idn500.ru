@@ -100,356 +100,104 @@
         </div>
       </div>
       <div class="b-content">
-        <div class="b-path"><a class="link" href="#">Оборудования для паркинга</a>→<a class="link" href="#">Гибкие столбики</a>→</div>
-        <span class="b-content__title" id="idn">Дорожные знаки по ГОСТу</span>
-        <div class="b-signs">
-          <div class="b-signs-switch">
-            <span class="b-signs-switch__item switch-btn switch-btn_active">Все знаки
-              <span class="item-qty item-qty_active">23</span>
-            </span>
-            <a href="#" class="b-signs-switch__item switch-btn">
-              <span class="dotted-link">Предупреждающие знаки</span>
-              <span class="item-qty">54</span>
-            </a>
-            <a href="#" class="b-signs-switch__item switch-btn">
-              <span class="dotted-link">Знаки приоритета</span>
-              <span class="item-qty">12</span>
-            </a>
-            <a href="#" class="b-signs-switch__item switch-btn">
-              <span class="dotted-link">Запрещающие знаки</span>
-              <span class="item-qty">55</span>
-            </a>
-            <a href="#" class="b-signs-switch__item switch-btn">
-              <span class="dotted-link">Предписывающие знаки</span>
-              <span class="item-qty">123</span>
-            </a>
-            <a href="#" class="b-signs-switch__item switch-btn">
-              <span class="dotted-link">Знаки особых предписаний</span>
-              <span class="item-qty">22</span>
-            </a>
-            <a href="#" class="b-signs-switch__item switch-btn">
-              <span class="dotted-link">Информационные знаки</span>
-              <span class="item-qty">4</span>
-            </a>
-            <a href="#" class="b-signs-switch__item switch-btn">
-              <span class="dotted-link">Знаки сервиса</span>
-              <span class="item-qty">76</span>
-            </a>
-            <a href="#" class="b-signs-switch__item switch-btn">
-              <span class="dotted-link">Знаки дополнительной информации (таблички)</span>
-              <span class="item-qty">12</span>
+        <span class="b-content__title" id="idn">Оформление заказа</span>
+        <form class="b-order">
+          <span class="title">Контактные данные</span>
+          <div class="b-order-input-wrap">
+            <input type="text" class="b-order__input input-text" value="" placeholder="Организация">
+            <input type="text" class="b-order__input input-text" value="" placeholder="Контактное лицо">
+            <input type="text" class="b-order__input input-text b-order__input_phone" value="" placeholder="Телефон">
+            <input type="text" class="b-order__input input-text b-order__input_email" value="" placeholder="Электронная почта">
+          </div>
+          <div class="b-order__file file">
+            <div class="file__title"><a class="link" href="#">Реквизиты ОАО «РЖД»</a>
+              <span class="file__close iconize-close"></span>
+            </div>
+            <div class="file__size">.doc, 540 Кб</div>
+          </div>
+          <div class="b-order__add-file add-file clearfix">
+            <span class="add-file-btn grey-btn iconize-plus"></span>
+            <span class="add-file-label">Прикрепить реквизиты</span>
+          </div>
+          <span class="title">Способ оплаты</span>
+          <div class="b-order__radio-wrap">
+            <div class="radio-wrap">
+              <input id="pay1" class="radio" type="radio" name="pay" checked />
+              <label class="label" for="pay1">Оплата по безналичному рассчету</label>
+            </div>
+            <div class="radio-wrap">
+              <input id="pay2" class="radio" type="radio" name="pay" />
+              <label class="label" for="pay2">Оплата по квитанции</label>
+            </div>
+          </div>
+          <span class="title">Доставка</span>
+          <input type="text" class="b-order__input input-text" value="" placeholder="Адрес доставки">
+          <span class="title title_small title_small-order">Способ доставки</span>
+          <div class="b-order__radio-wrap">
+            <div class="radio-wrap">
+              <input id="ship1" class="radio" type="radio" name="ship" checked />
+              <label class="label" for="ship1">по Москве</label>
+            </div>
+            <div class="radio-wrap">
+              <input id="ship2" class="radio" type="radio" name="ship" />
+              <label class="label" for="ship2">по России</label>
+            </div>
+            <div class="b-order-ship">
+              <p class="text">Выберите 2-3 варианта транспортных компаний на ваше усмотрение. Доставка до терминала транспортной компании бесплатно.</p>
+              <div class="check-wrap">
+                <input id="ship3" class="b-order__check checkbox" type="checkbox" name="ship_check" checked/>
+                <label class="label" for="ship3">Деловые линии</label>
+              </div>
+              <div class="check-wrap">
+                <input id="ship7" class="b-order__check checkbox" type="checkbox" name="ship_check" />
+                <label class="label" for="ship7">Байкал-Сервис</label>
+              </div>
+              <div class="check-wrap">
+                <input id="ship11" class="b-order__check checkbox" type="checkbox" name="ship_check" />
+                <label class="label" for="ship11">Энергия</label>
+              </div>
+              <div class="check-wrap">
+                <input id="ship4" class="b-order__check checkbox" type="checkbox" name="ship_check" />
+                <label class="label" for="ship4">ЖелДорЭкспедиция</label>
+              </div>
+              <div class="check-wrap">
+                <input id="ship8" class="b-order__check checkbox" type="checkbox" name="ship_check" />
+                <label class="label" for="ship8">КИТ</label>
+              </div>
+              <div class="check-wrap">
+                <input id="ship12" class="b-order__check checkbox" type="checkbox" name="ship_check" />
+                <label class="label" for="ship12">Восточный экспресс</label>
+              </div>
+              <div class="check-wrap">
+                <input id="ship5" class="b-order__check checkbox" type="checkbox" name="ship_check" />
+                <label class="label" for="ship5">ПЭК</label>
+              </div>
+              <div class="check-wrap">
+                <input id="ship9" class="b-order__check checkbox" type="checkbox" name="ship_check" />
+                <label class="label" for="ship9">ТЭС</label>
+              </div>
+              <div class="check-wrap">
+                <input id="ship13" class="b-order__check checkbox" type="checkbox" name="ship_check" />
+                <label class="label" for="ship13">Солнечный магадан</label>
+              </div>
+              <div class="check-wrap">
+                <input id="ship6" class="b-order__check checkbox" type="checkbox" name="ship_check" />
+                <label class="label" for="ship6">Автотрейдинг</label>
+              </div>
+              <div class="check-wrap">
+                <input id="ship10" class="b-order__check checkbox" type="checkbox" name="ship_check" />
+                <label class="label" for="ship10">РАТЭК</label>
+              </div>
+              <span class="b-order__text text iconize-warning">Окончательное решение о выборе транспортной компании остается за отделом логистики нашей компании.</span>
+            </div>
+            <span class="title">Дополнительно</span>
+            <textarea class="b-order__textarea input-text input-text_area" placeholder="Укажите комментарий к заказу, если необходимо."></textarea>
+            <a href="#" class="b-order__btn orange-btn">
+              Отправить заявку
+              <span class="iconize-r-arrow2"></span>
             </a>
           </div>
-          <div class="b-product-tiles b-product-tiles_full b-product-tiles_signs">
-          <div class="b-product__view">
-              <span class="b-product__view-text">Вид:</span>
-              <a href="/index18.html#signs" class="b-product__view-button b-product__view-button_list "></a>
-              <a href="#" class="b-product__view-button b-product__view-button_tiles b-product__view-button_active"></a>
-            </div>
-
-            <span id="signs" class="b-product__title b-product__title_undecor">Все знаки</span>
-              <div class="b-product-tiles-wrap clearfix">
-              <div class="b-product-tip">
-                <span class="b-product-tip__text iconize-warning">Все дорожные знаки изготавливаются по заказу в течении 2-3 рабочих дней. Все цены на странице указаны для
-                  <span class="iconize-hint hint-size b-hint-size-popup-link">
-                    <span class="dotted-link">2-ого типоразмера</span>
-                  </span>
-                  и
-                   <span class="iconize-hint hint-type b-hint-type-popup-link">
-                    <span class="dotted-link">пленки коммерческого типа</span>
-                  </span>
-                </span>
-              </div>
-              <div class="b-product-tiles__item-wrap">
-                <div class="b-product-tiles__item">
-                  <a href="#" class="b-product-tiles__item-link">
-                    <img src="/f/i/img28.jpg" class="b-product-tiles__item-image">
-                    <span class="b-product-tiles__item-mask"></span>
-                    <span class="b-product-tiles__item-name">1.1 Железнодорожный переезд со шлагбаумом</span>
-                    <span class="b-product-tiles__item-detail">2-ой типоразмер, коммерческая пленка «А»</span>
-                    <span  class="b-product-tiles__item-change">
-                      <span class="b-product-tiles__item-change-btn grey-btn iconize-pencil"></span>
-                      Изменить
-                    </span>
-                    <span class="b-product-tiles__item-price">1440 &#8377</span>
-                    <div class="b-product-tiles__qty">
-                      <span class="b-product-tiles__qty-counter grey-btn grey-btn_counter grey-btn_counter-minus">-</span>
-                      <input type="text" class="b-product-tiles__qty-input grey-input" value="1">
-                      <span class="b-product-tiles__qty-counter grey-btn grey-btn_counter grey-btn_counter-plus">+</span>
-                    </div>
-                    <div class="b-product-tiles__add-wrap">
-                      <span type="submit" id="add-to-cart" class="b-product-tiles__add orange-btn iconize-cart orange-btn_cart">В корзину</span>
-                    </div>
-                    <span class="b-product-tiles__in-cart">Товар в
-                      <span class="link">корзине</span>
-                    </span>
-                  </a>
-                </div>
-                </div>
-                <div class="b-product-tiles__item-wrap">
-                <div class="b-product-tiles__item b-product-tiles__item_in-cart">
-                  <a href="#" class="b-product-tiles__item-link">
-                    <img src="/f/i/img29.jpg" class="b-product-tiles__item-image">
-                    <span class="b-product-tiles__item-mask"></span>
-                    <span class="b-product-tiles__item-name">1.2 Железнодорожный переезд без шлагбаума</span>
-                    <span class="b-product-tiles__item-detail">2-ой типоразмер, коммерческая пленка «А»</span>
-                    <span  class="b-product-tiles__item-change">
-                      <span class="b-product-tiles__item-change-btn grey-btn iconize-pencil"></span>
-                      Изменить
-                    </span>
-                    <span class="b-product-tiles__item-price">740 &#8377</span>
-                    <div class="b-product-tiles__qty">
-                      <span class="b-product-tiles__qty-counter grey-btn grey-btn_counter grey-btn_counter-minus">-</span>
-                      <input type="text" class="b-product-tiles__qty-input grey-input" value="1">
-                      <span class="b-product-tiles__qty-counter grey-btn grey-btn_counter grey-btn_counter-plus">+</span>
-                    </div>
-                    <div class="b-product-tiles__add-wrap">
-                      <span type="submit" id="add-to-cart" class="b-product-tiles__add orange-btn iconize-cart orange-btn_cart">В корзину</span>
-                    </div>
-                    <span class="b-product-tiles__in-cart">Товар в
-                      <span class="link">корзине</span>
-                    </span>
-                  </a>
-                </div>
-                </div>
-                <div class="b-product-tiles__item-wrap">
-                <div class="b-product-tiles__item">
-                  <a href="#" class="b-product-tiles__item-link">
-                    <img src="/f/i/img30.jpg" class="b-product-tiles__item-image">
-                    <span class="b-product-tiles__item-mask"></span>
-                    <span class="b-product-tiles__item-name">1.3.1 Однопутная железная дорога</span>
-                    <span class="b-product-tiles__item-detail">2-ой типоразмер, коммерческая пленка «А»</span>
-                    <span  class="b-product-tiles__item-change">
-                      <span class="b-product-tiles__item-change-btn grey-btn iconize-pencil"></span>
-                      Изменить
-                    </span>
-                    <span class="b-product-tiles__item-price">1020 &#8377</span>
-                    <div class="b-product-tiles__qty">
-                      <span class="b-product-tiles__qty-counter grey-btn grey-btn_counter grey-btn_counter-minus">-</span>
-                      <input type="text" class="b-product-tiles__qty-input grey-input" value="1">
-                      <span class="b-product-tiles__qty-counter grey-btn grey-btn_counter grey-btn_counter-plus">+</span>
-                    </div>
-                    <div class="b-product-tiles__add-wrap">
-                      <span type="submit" id="add-to-cart" class="b-product-tiles__add orange-btn iconize-cart orange-btn_cart">В корзину</span>
-                    </div>
-                    <span class="b-product-tiles__in-cart">Товар в
-                      <span class="link">корзине</span>
-                    </span>
-                  </a>
-                </div>
-                </div>
-                <div class="b-product-tiles__item-wrap">
-                <div class="b-product-tiles__item">
-                  <a href="#" class="b-product-tiles__item-link">
-                    <img src="/f/i/img31.jpg" class="b-product-tiles__item-image">
-                    <span class="b-product-tiles__item-mask"></span>
-                    <span class="b-product-tiles__item-name">1.3.2 Многопутная железная дорога</span>
-                    <span class="b-product-tiles__item-detail">2-ой типоразмер, коммерческая пленка «А»</span>
-                    <span  class="b-product-tiles__item-change">
-                      <span class="b-product-tiles__item-change-btn grey-btn iconize-pencil"></span>
-                      Изменить
-                    </span>
-                    <span class="b-product-tiles__item-price">860 &#8377</span>
-                    <div class="b-product-tiles__qty">
-                      <span class="b-product-tiles__qty-counter grey-btn grey-btn_counter grey-btn_counter-minus">-</span>
-                      <input type="text" class="b-product-tiles__qty-input grey-input" value="1">
-                      <span class="b-product-tiles__qty-counter grey-btn grey-btn_counter grey-btn_counter-plus">+</span>
-                    </div>
-                    <div class="b-product-tiles__add-wrap">
-                      <span type="submit" id="add-to-cart" class="b-product-tiles__add orange-btn iconize-cart orange-btn_cart">В корзину</span>
-                    </div>
-                    <span class="b-product-tiles__in-cart">Товар в
-                      <span class="link">корзине</span>
-                    </span>
-                  </a>
-                </div>
-                </div>
-                 <div class="b-product-tiles__item-wrap">
-                <div class="b-product-tiles__item">
-                  <a href="#" class="b-product-tiles__item-link">
-                    <img src="/f/i/img32.jpg" class="b-product-tiles__item-image">
-                    <span class="b-product-tiles__item-mask"></span>
-                    <span class="b-product-tiles__item-name">1.4.1 Приближение к железнодорожному переезду</span>
-                    <span class="b-product-tiles__item-detail">2-ой типоразмер, коммерческая пленка «А»</span>
-                    <span  class="b-product-tiles__item-change">
-                      <span class="b-product-tiles__item-change-btn grey-btn iconize-pencil"></span>
-                      Изменить
-                    </span>
-                    <span class="b-product-tiles__item-price">72 &#8377</span>
-                    <div class="b-product-tiles__qty">
-                      <span class="b-product-tiles__qty-counter grey-btn grey-btn_counter grey-btn_counter-minus">-</span>
-                      <input type="text" class="b-product-tiles__qty-input grey-input" value="1">
-                      <span class="b-product-tiles__qty-counter grey-btn grey-btn_counter grey-btn_counter-plus">+</span>
-                    </div>
-                    <div class="b-product-tiles__add-wrap">
-                      <span type="submit" id="add-to-cart" class="b-product-tiles__add orange-btn iconize-cart orange-btn_cart">В корзину</span>
-                    </div>
-                    <span class="b-product-tiles__in-cart">Товар в
-                      <span class="link">корзине</span>
-                    </span>
-                  </a>
-                </div>
-                </div>
-                <div class="b-product-tiles__item-wrap">
-                <div class="b-product-tiles__item">
-                  <a href="#" class="b-product-tiles__item-link">
-                    <img src="/f/i/img32.jpg" class="b-product-tiles__item-image">
-                    <span class="b-product-tiles__item-mask"></span>
-                    <span class="b-product-tiles__item-name">1.4.1 Приближение к железнодорожному переезду</span>
-                    <span class="b-product-tiles__item-detail">2-ой типоразмер, коммерческая пленка «А»</span>
-                    <span  class="b-product-tiles__item-change">
-                      <span class="b-product-tiles__item-change-btn grey-btn iconize-pencil"></span>
-                      Изменить
-                    </span>
-                    <span class="b-product-tiles__item-price">72 &#8377</span>
-                    <div class="b-product-tiles__qty">
-                      <span class="b-product-tiles__qty-counter grey-btn grey-btn_counter grey-btn_counter-minus">-</span>
-                      <input type="text" class="b-product-tiles__qty-input grey-input" value="1">
-                      <span class="b-product-tiles__qty-counter grey-btn grey-btn_counter grey-btn_counter-plus">+</span>
-                    </div>
-                    <div class="b-product-tiles__add-wrap">
-                      <span type="submit" id="add-to-cart" class="b-product-tiles__add orange-btn iconize-cart orange-btn_cart">В корзину</span>
-                    </div>
-                    <span class="b-product-tiles__in-cart">Товар в
-                      <span class="link">корзине</span>
-                    </span>
-                  </a>
-                </div>
-                </div>
-                <div class="b-product-tiles__item-wrap">
-                <div class="b-product-tiles__item">
-                  <a href="#" class="b-product-tiles__item-link">
-                    <img src="/f/i/img32.jpg" class="b-product-tiles__item-image">
-                    <span class="b-product-tiles__item-mask"></span>
-                    <span class="b-product-tiles__item-name">1.4.1 Приближение к железнодорожному переезду</span>
-                    <span class="b-product-tiles__item-detail">2-ой типоразмер, коммерческая пленка «А»</span>
-                    <span  class="b-product-tiles__item-change">
-                      <span class="b-product-tiles__item-change-btn grey-btn iconize-pencil"></span>
-                      Изменить
-                    </span>
-                    <span class="b-product-tiles__item-price">72 &#8377</span>
-                    <div class="b-product-tiles__qty">
-                      <span class="b-product-tiles__qty-counter grey-btn grey-btn_counter grey-btn_counter-minus">-</span>
-                      <input type="text" class="b-product-tiles__qty-input grey-input" value="1">
-                      <span class="b-product-tiles__qty-counter grey-btn grey-btn_counter grey-btn_counter-plus">+</span>
-                    </div>
-                    <div class="b-product-tiles__add-wrap">
-                      <span type="submit" id="add-to-cart" class="b-product-tiles__add orange-btn iconize-cart orange-btn_cart">В корзину</span>
-                    </div>
-                    <span class="b-product-tiles__in-cart">Товар в
-                      <span class="link">корзине</span>
-                    </span>
-                  </a>
-                </div>
-                </div>
-                <div class="b-product-tiles__item-wrap">
-                <div class="b-product-tiles__item">
-                  <a href="#" class="b-product-tiles__item-link">
-                    <img src="/f/i/img32.jpg" class="b-product-tiles__item-image">
-                    <span class="b-product-tiles__item-mask"></span>
-                    <span class="b-product-tiles__item-name">1.4.1 Приближение к железнодорожному переезду</span>
-                    <span class="b-product-tiles__item-detail">2-ой типоразмер, коммерческая пленка «А»</span>
-                    <span  class="b-product-tiles__item-change">
-                      <span class="b-product-tiles__item-change-btn grey-btn iconize-pencil"></span>
-                      Изменить
-                    </span>
-                    <span class="b-product-tiles__item-price">72 &#8377</span>
-                    <div class="b-product-tiles__qty">
-                      <span class="b-product-tiles__qty-counter grey-btn grey-btn_counter grey-btn_counter-minus">-</span>
-                      <input type="text" class="b-product-tiles__qty-input grey-input" value="1">
-                      <span class="b-product-tiles__qty-counter grey-btn grey-btn_counter grey-btn_counter-plus">+</span>
-                    </div>
-                    <div class="b-product-tiles__add-wrap">
-                      <span type="submit" id="add-to-cart" class="b-product-tiles__add orange-btn iconize-cart orange-btn_cart">В корзину</span>
-                    </div>
-                    <span class="b-product-tiles__in-cart">Товар в
-                      <span class="link">корзине</span>
-                    </span>
-                  </a>
-                </div>
-                </div>
-                <div class="b-product-tiles__item-wrap">
-                <div class="b-product-tiles__item">
-                  <a href="#" class="b-product-tiles__item-link">
-                    <img src="/f/i/img32.jpg" class="b-product-tiles__item-image">
-                    <span class="b-product-tiles__item-mask"></span>
-                    <span class="b-product-tiles__item-name">1.4.1 Приближение к железнодорожному переезду</span>
-                    <span class="b-product-tiles__item-detail">2-ой типоразмер, коммерческая пленка «А»</span>
-                    <span  class="b-product-tiles__item-change">
-                      <span class="b-product-tiles__item-change-btn grey-btn iconize-pencil"></span>
-                      Изменить
-                    </span>
-                    <span class="b-product-tiles__item-price">72 &#8377</span>
-                    <div class="b-product-tiles__qty">
-                      <span class="b-product-tiles__qty-counter grey-btn grey-btn_counter grey-btn_counter-minus">-</span>
-                      <input type="text" class="b-product-tiles__qty-input grey-input" value="1">
-                      <span class="b-product-tiles__qty-counter grey-btn grey-btn_counter grey-btn_counter-plus">+</span>
-                    </div>
-                    <div class="b-product-tiles__add-wrap">
-                      <span type="submit" id="add-to-cart" class="b-product-tiles__add orange-btn iconize-cart orange-btn_cart">В корзину</span>
-                    </div>
-                    <span class="b-product-tiles__in-cart">Товар в
-                      <span class="link">корзине</span>
-                    </span>
-                  </a>
-                </div>
-                </div>
-                <div class="b-product-tiles__item-wrap">
-                <div class="b-product-tiles__item">
-                  <a href="#" class="b-product-tiles__item-link">
-                    <img src="/f/i/img32.jpg" class="b-product-tiles__item-image">
-                    <span class="b-product-tiles__item-mask"></span>
-                    <span class="b-product-tiles__item-name">1.4.1 Приближение к железнодорожному переезду</span>
-                    <span class="b-product-tiles__item-detail">2-ой типоразмер, коммерческая пленка «А»</span>
-                    <span  class="b-product-tiles__item-change">
-                      <span class="b-product-tiles__item-change-btn grey-btn iconize-pencil"></span>
-                      Изменить
-                    </span>
-                    <span class="b-product-tiles__item-price">72 &#8377</span>
-                    <div class="b-product-tiles__qty">
-                      <span class="b-product-tiles__qty-counter grey-btn grey-btn_counter grey-btn_counter-minus">-</span>
-                      <input type="text" class="b-product-tiles__qty-input grey-input" value="1">
-                      <span class="b-product-tiles__qty-counter grey-btn grey-btn_counter grey-btn_counter-plus">+</span>
-                    </div>
-                    <div class="b-product-tiles__add-wrap">
-                      <span type="submit" id="add-to-cart" class="b-product-tiles__add orange-btn iconize-cart orange-btn_cart">В корзину</span>
-                    </div>
-                    <span class="b-product-tiles__in-cart">Товар в
-                      <span class="link">корзине</span>
-                    </span>
-                  </a>
-                </div>
-                </div>
-                <div class="b-product-tiles__item-wrap">
-                <div class="b-product-tiles__item">
-                  <a href="#" class="b-product-tiles__item-link">
-                    <img src="/f/i/img32.jpg" class="b-product-tiles__item-image">
-                    <span class="b-product-tiles__item-mask"></span>
-                    <span class="b-product-tiles__item-name">1.4.1 Приближение к железнодорожному переезду</span>
-                    <span class="b-product-tiles__item-detail">2-ой типоразмер, коммерческая пленка «А»</span>
-                    <span  class="b-product-tiles__item-change">
-                      <span class="b-product-tiles__item-change-btn grey-btn iconize-pencil"></span>
-                      Изменить
-                    </span>
-                    <span class="b-product-tiles__item-price">72 &#8377</span>
-                    <div class="b-product-tiles__qty">
-                      <span class="b-product-tiles__qty-counter grey-btn grey-btn_counter grey-btn_counter-minus">-</span>
-                      <input type="text" class="b-product-tiles__qty-input grey-input" value="1">
-                      <span class="b-product-tiles__qty-counter grey-btn grey-btn_counter grey-btn_counter-plus">+</span>
-                    </div>
-                    <div class="b-product-tiles__add-wrap">
-                      <span type="submit" id="add-to-cart" class="b-product-tiles__add orange-btn iconize-cart orange-btn_cart">В корзину</span>
-                    </div>
-                    <span class="b-product-tiles__in-cart">Товар в
-                      <span class="link">корзине</span>
-                    </span>
-                  </a>
-                </div>
-                </div>
-
-              </div>
-            </div>
-        </div>
+        </form>
       </div>
     </div>
     <div class="b-footer">
@@ -513,7 +261,7 @@
     </div>
   </div>
   <div class="b-popups">
-  <div class="b-hint-size-popup" id="b-hint-size-popup">
+    <div class="b-hint-size-popup" id="b-hint-size-popup">
       <a href="#" class="b-popup__close iconize-close" onclick="fancy_close();"></a>
       <span class="title">Типоразмеры дорожного знака</span>
       <div class="b-hint-size-popup-table">
@@ -529,25 +277,25 @@
           </div>
         </div>
         <div class="b-hint-size-popup-table-row">
-        <div class="b-hint-size-popup-table-row-wrap">
-          <span class="b-hint-size-popup-table__cell b-hint-size-popup-table__cell_first">1-ый типоразмер</span>
-          <span class="b-hint-size-popup-table__cell">Дороги с одной полосой</span>
-          <span class="b-hint-size-popup-table__cell">Дороги местного значения</span>
+          <div class="b-hint-size-popup-table-row-wrap">
+            <span class="b-hint-size-popup-table__cell b-hint-size-popup-table__cell_first">1-ый типоразмер</span>
+            <span class="b-hint-size-popup-table__cell">Дороги с одной полосой</span>
+            <span class="b-hint-size-popup-table__cell">Дороги местного значения</span>
+          </div>
         </div>
+        <div class="b-hint-size-popup-table-row">
+          <div class="b-hint-size-popup-table-row-wrap">
+            <span class="b-hint-size-popup-table__cell b-hint-size-popup-table__cell_first">2-ой типоразмер</span>
+            <span class="b-hint-size-popup-table__cell">Дороги с двумя и тремя полосами</span>
+            <span class="b-hint-size-popup-table__cell">Магистральные дороги</span>
+          </div>
         </div>
-          <div class="b-hint-size-popup-table-row">
-        <div class="b-hint-size-popup-table-row-wrap">
-          <span class="b-hint-size-popup-table__cell b-hint-size-popup-table__cell_first">2-ой типоразмер</span>
-          <span class="b-hint-size-popup-table__cell">Дороги с двумя и тремя полосами</span>
-          <span class="b-hint-size-popup-table__cell">Магистральные дороги</span>
-        </div>
-        </div>
-          <div class="b-hint-size-popup-table-row">
-        <div class="b-hint-size-popup-table-row-wrap">
-          <span class="b-hint-size-popup-table__cell b-hint-size-popup-table__cell_first">3-ий типоразмер</span>
-          <span class="b-hint-size-popup-table__cell">Дороги с четырьмя и более полосами и автомагистрали</span>
-          <span class="b-hint-size-popup-table__cell">Скоростные дороги</span>
-        </div>
+        <div class="b-hint-size-popup-table-row">
+          <div class="b-hint-size-popup-table-row-wrap">
+            <span class="b-hint-size-popup-table__cell b-hint-size-popup-table__cell_first">3-ий типоразмер</span>
+            <span class="b-hint-size-popup-table__cell">Дороги с четырьмя и более полосами и автомагистрали</span>
+            <span class="b-hint-size-popup-table__cell">Скоростные дороги</span>
+          </div>
         </div>
       </div>
     </div>
@@ -555,35 +303,49 @@
       <a href="#" class="b-popup__close iconize-close" onclick="fancy_close();"></a>
       <span class="title">Типы светоотражающей пленки</span>
       <div class="b-hint-type-popup-items">
-      <div class="b-hint-type-popup__item iconize-skin-type iconize-skin-type_1">
-        <span class="b-hint-type-popup__item-title">Тип «А» Коммерческая</span>
-        <p class="text">Наиболее популярная и доступна по цене. Светоотражающая способность средняя. Применяется для знаков на дорогах с низкой и средней интенсивностью, с общим количеством полос в одну сторону не более 4-х, уровень фонового освещения низкий.</p>
-        <span class="serv-life">Срок службы: <span>до 5 лет</span></span>
-      </div>
-      <div class="b-hint-type-popup__item iconize-skin-type iconize-skin-type_2">
-        <span class="b-hint-type-popup__item-title">Тип «А» Инженерная</span>
-        <p class="text">Светоотражающие пленки с оптической системой из микропризм. Имеет более высокую интенсивность светоотражения. Предназначена для изготовления дорожных знаков, устанавливаемых на автомагистралях, международных и автомобильных дорогах всех технических категорий.</p>
-        <span class="serv-life">Срок службы: <span>7-9 лет</span></span>
-        <span class="b-hint-type-popup__item-gost iconize-gost2">Соответствует<a href="#" class="link">ГОСТ Р 52290-2004</a></span>
-      </div>
-      <div class="b-hint-type-popup__item iconize-skin-type iconize-skin-type_3">
-        <span class="b-hint-type-popup__item-title">Тип «Б» Высокоинтенсивная</span>
-        <p class="text">Светоотражающие пленки с высокой степенью световозвращения имеющие оптическую систему из сферических линз (микростеклошариков), сгруппированных в ячейки. Обладает высокой степенью световозвращения. Знаки с данным типом пленки устанавливают в населенных пунктах на дорогах с числом полос четыре и более, а также на автомагистралях вне населенных пунктов, также с числом полос 4 и более.</p>
-        <span class="serv-life">Срок службы: <span> 7-10 лет</span></span>
-        <span class="b-hint-type-popup__item-gost iconize-gost2">Соответствует<a href="#" class="link">ГОСТ Р 52290-2004</a></span>
-      </div>
-      <div class="b-hint-type-popup__item iconize-skin-type iconize-skin-type_4">
-        <span class="b-hint-type-popup__item-title">Тип «В» Алмазная</span>
-        <p class="text">Пленки на основе микропризм, обеспечивающая максимально высокий уровень светоовозврата, превышающий соответствующие требования ГОСТ. Используются для изготовления временных знаков, а так же для дорожных знаков на сложных участках автомагистралей, дороги с количеством полос 4 и более.</p>
-        <span class="serv-life">Срок службы: <span>7-10 лет</span></span>
-        <span class="b-hint-type-popup__item-gost iconize-gost2">Соответствует<a href="#" class="link">ГОСТ Р 52290-2004</a></span>
-      </div>
-      <div class="b-hint-type-popup__item iconize-skin-type iconize-skin-type_5">
-        <span class="b-hint-type-popup__item-title">Тип «В» Алмазная флуоресцентная </span>
-        <p class="text">Пленки совмещают в себе качества призматической световозвращающей пленки и стойкий желто-зеленый цвет. Данное сочетание круглосуточно обеспечивает наиболее высокий уровень видимости дорожного знака. Предназначены для изготовления постоянных и временных дорожных знаков, эксплуатируемых в суровых условиях окружающей среды. Пленка является наилучшим материалом для изготовления дорожных знаков, устанавливаемых в зоне пешеходных переходов.</p>
-        <span class="serv-life">Срок службы: <span>7-10 лет</span></span>
-        <span class="b-hint-type-popup__item-gost iconize-gost2">Соответствует<a href="#" class="link">ГОСТ Р 52290-2004</a></span>
-      </div>
+        <div class="b-hint-type-popup__item iconize-skin-type iconize-skin-type_1">
+          <span class="b-hint-type-popup__item-title">Тип «А» Коммерческая</span>
+          <p class="text">Наиболее популярная и доступна по цене. Светоотражающая способность средняя. Применяется для знаков на дорогах с низкой и средней интенсивностью, с общим количеством полос в одну сторону не более 4-х, уровень фонового освещения низкий.</p>
+          <span class="serv-life">Срок службы:
+            <span>до 5 лет</span>
+          </span>
+        </div>
+        <div class="b-hint-type-popup__item iconize-skin-type iconize-skin-type_2">
+          <span class="b-hint-type-popup__item-title">Тип «А» Инженерная</span>
+          <p class="text">Светоотражающие пленки с оптической системой из микропризм. Имеет более высокую интенсивность светоотражения. Предназначена для изготовления дорожных знаков, устанавливаемых на автомагистралях, международных и автомобильных дорогах всех технических категорий.</p>
+          <span class="serv-life">Срок службы:
+            <span>7-9 лет</span>
+          </span>
+          <span class="b-hint-type-popup__item-gost iconize-gost2">Соответствует<a href="#" class="link">ГОСТ Р 52290-2004</a>
+          </span>
+        </div>
+        <div class="b-hint-type-popup__item iconize-skin-type iconize-skin-type_3">
+          <span class="b-hint-type-popup__item-title">Тип «Б» Высокоинтенсивная</span>
+          <p class="text">Светоотражающие пленки с высокой степенью световозвращения имеющие оптическую систему из сферических линз (микростеклошариков), сгруппированных в ячейки. Обладает высокой степенью световозвращения. Знаки с данным типом пленки устанавливают в населенных пунктах на дорогах с числом полос четыре и более, а также на автомагистралях вне населенных пунктов, также с числом полос 4 и более.</p>
+          <span class="serv-life">Срок службы:
+            <span>7-10 лет</span>
+          </span>
+          <span class="b-hint-type-popup__item-gost iconize-gost2">Соответствует<a href="#" class="link">ГОСТ Р 52290-2004</a>
+          </span>
+        </div>
+        <div class="b-hint-type-popup__item iconize-skin-type iconize-skin-type_4">
+          <span class="b-hint-type-popup__item-title">Тип «В» Алмазная</span>
+          <p class="text">Пленки на основе микропризм, обеспечивающая максимально высокий уровень светоовозврата, превышающий соответствующие требования ГОСТ. Используются для изготовления временных знаков, а так же для дорожных знаков на сложных участках автомагистралей, дороги с количеством полос 4 и более.</p>
+          <span class="serv-life">Срок службы:
+            <span>7-10 лет</span>
+          </span>
+          <span class="b-hint-type-popup__item-gost iconize-gost2">Соответствует<a href="#" class="link">ГОСТ Р 52290-2004</a>
+          </span>
+        </div>
+        <div class="b-hint-type-popup__item iconize-skin-type iconize-skin-type_5">
+          <span class="b-hint-type-popup__item-title">Тип «В» Алмазная флуоресцентная</span>
+          <p class="text">Пленки совмещают в себе качества призматической световозвращающей пленки и стойкий желто-зеленый цвет. Данное сочетание круглосуточно обеспечивает наиболее высокий уровень видимости дорожного знака. Предназначены для изготовления постоянных и временных дорожных знаков, эксплуатируемых в суровых условиях окружающей среды. Пленка является наилучшим материалом для изготовления дорожных знаков, устанавливаемых в зоне пешеходных переходов.</p>
+          <span class="serv-life">Срок службы:
+            <span>7-10 лет</span>
+          </span>
+          <span class="b-hint-type-popup__item-gost iconize-gost2">Соответствует<a href="#" class="link">ГОСТ Р 52290-2004</a>
+          </span>
+        </div>
       </div>
     </div>
     <div class="b-add-cart-popup" id="b-add-cart-popup">

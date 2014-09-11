@@ -517,6 +517,7 @@
    });
 
    $(".b-search__catalog-btn").fancybox({
+
     padding: 0,
     fixed: false,
     maxWidth: 1300,
@@ -536,6 +537,7 @@
    $(".b-app-pay-popup-link").fancybox({
      padding: 0,
      maxWidth: 780,
+     minWidth: 780,
      maxHeight: 970,
      scrolling: 'no',
      helpers: {
@@ -548,6 +550,7 @@
    $(".b-app-pay-succsess-popup-link").fancybox({
      padding: 0,
      minWidth: 780,
+     maxWidth: 780,
      maxHeight: 250,
      scrolling: 'no',
      helpers: {
@@ -557,11 +560,10 @@
      }
    });
 
-
-
    $(".b-add-cart-popup-link").fancybox({
      padding: 0,
      minWidth: 310,
+     maxWidth: 310,
      minHeight: 420,
      scrolling: 'no',
      helpers: {
