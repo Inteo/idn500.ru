@@ -2930,7 +2930,6 @@ input[type='submit'].btn-block, input[type='reset'].btn-block, input[type='butto
 }
 .b-see-more, .b-see-more:focus {
   font: bold 16px 'PT Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  display: none;
   padding: 9px 19px 11px;
   border-radius: 5px;
   -webkit-box-shadow: 0 -2px 0 0 #004972 inset;
@@ -2950,7 +2949,6 @@ input[type='submit'].btn-block, input[type='reset'].btn-block, input[type='butto
   padding-bottom: 9px;
 }
 .b-see-more-list .b-see-more {
-  display: block;
   position: absolute;
   left: 40px;
   bottom: 0px;
