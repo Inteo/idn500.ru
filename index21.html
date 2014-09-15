@@ -1,0 +1,913 @@
+<!doctype html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Idn500</title>
+  <meta name="viewport" content="width=1010">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <link rel="stylesheet" href="/f/css/main.css">
+  <link rel="stylesheet" href="/f/css/jquery.mCustomScrollbar.css">
+  <!--[if lte IE 9]><link rel="stylesheet" href="f/css/ie.css"><![endif]-->
+  <link href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Open+Sans:400,400italic,800,600&subset=all" rel="stylesheet">
+  <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&subset=all' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/f/fancybox/jquery.fancybox.css?v=2.1.5" media="screen">
+  <link rel="shortcut icon" href="favicon.ico">
+  <script src="/f/js/jquery-1.10.2.min.js"></script>
+  <script src="/f/js/jquery.carouFredSel-6.2.1-packed.js"></script>
+  <script src="/f/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+  <script src="/f/js/jquery.touchSwipe.min.js"></script>
+  <script src="/f/js/jquery.transit.min.js"></script>
+  <script src="/f/js/jquery.mCustomScrollbar.js"></script>
+  <script src="/f/js/common.js"></script>
+  <!--[if lt IE 9]><script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script><![endif]-->
+</head>
+
+<body>
+  <div class="b-main">
+    <div class="b-main__wrap clearfix">
+      <div class="b-header">
+        <div class="b-header__wrap">
+          <div class="b-header__logo">
+            <a href="/">
+              <img src="/f/i/logo.png" alt="">
+            </a>
+          </div>
+          <div class="b-header__content clearfix">
+            <div class="b-header__cart">
+              <a href="#" class="b-header__cart-link">
+                <span class="iconize-cart2">12</span>
+                <div class="b-header__cart-text">
+                  <span class="b-header__cart-title">Корзина</span>
+                  <span class="b-header__cart-price">42 000 &#8377</span>
+                </div>
+              </a>
+            </div>
+            <div class="b-header__contacts">
+              <div class="b-header__phone">
+                <span class="b-header__free-call">Бесплатный звонок по России</span>
+                <span class="b-header__number">8 800 707-99-27</span>
+                <a href="#b-contact-popup" class="modal-inline b-header__contact-us iconize-callback dotted-link">Связаться с нами</a>
+              </div>
+            </div>
+            <div class="b-header__menu">
+              <ul>
+                <li><a href="#">О компании</a>
+                </li>
+                <li><a href="#">Партнеры</a>
+                </li>
+                <li><a href="#">Сферы деятельности</a>
+                </li>
+                <li><a href="#">Доставка</a>
+                </li>
+                <li><a href="#">Вопрос-ответ</a>
+                </li>
+                <li><a class="b-app-pay-popup-link" href="#b-app-pay-popup">Заявка на расчет (ВРЕМЕННАЯ!!!)</a>
+                </li>
+                <li><a class="b-app-pay-succsess-popup-link" href="#b-app-pay-succsess-popup">Заявка принята (ВРЕМЕННАЯ!!!)</a>
+                </li>
+                <li><a class="b-add-cart-popup-link" href="#b-add-cart-popup">Товар добавлен в корзину (ВРЕМЕННАЯ!!!)</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="b-search">
+          <div class="b-search__wrap">
+
+            <div class="b-search__catalog-btn-wrap">
+              <a class="b-search__catalog-btn blue-btn" href="#b-catalog-popup">
+                <span class="iconize-logo"></span>Весь каталог
+                <span class="iconize-r-arrow"></span>
+              </a>
+            </div>
+            <div class="b-search__form">
+              <form class="b-search__form-wrap">
+                <div class="b-search__input-wrap">
+                  <label for="input-name" class="input-hint">
+                    <span class="input-hint input-hint_bold">Поиск по товару</span>, например <a href="#" class="dotted-link input-hint_link "> Лежачий полицейский</a>
+                  </label>
+                  <input class="b-search__input" type="text" id="input-name" value="">
+                  <span class="clear-text"></span>
+                </div>
+                <div class="b-search__submit-wrap">
+                  <input type="submit" class="b-search__submit grey-btn" value="Найти">
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="b-content">
+        <span class="b-content__title" id="idn">Оформление заказа</span>
+        <form class="b-order">
+          <span class="title">Контактные данные</span>
+          <div class="b-order-input-wrap">
+            <input type="text" class="b-order__input input-text" value="" placeholder="Организация">
+            <input type="text" class="b-order__input input-text" value="" placeholder="Контактное лицо">
+            <input type="text" class="b-order__input input-text b-order__input_phone" value="" placeholder="Телефон">
+            <input type="text" class="b-order__input input-text b-order__input_email" value="" placeholder="Электронная почта">
+          </div>
+          <div class="b-order__file file">
+            <div class="file__title"><a class="link" href="#">Реквизиты ОАО «РЖД»</a>
+              <span class="file__close iconize-close"></span>
+            </div>
+            <div class="file__size">.doc, 540 Кб</div>
+          </div>
+          <div class="b-order__add-file add-file clearfix">
+            <span class="add-file-btn grey-btn iconize-plus"></span>
+            <span class="add-file-label">Прикрепить реквизиты</span>
+          </div>
+          <span class="title">Способ оплаты</span>
+          <div class="b-order__radio-wrap">
+            <div class="radio-wrap">
+              <input id="pay1" class="radio" type="radio" name="pay" checked />
+              <label class="label" for="pay1">Оплата по безналичному рассчету</label>
+            </div>
+            <div class="radio-wrap">
+              <input id="pay2" class="radio" type="radio" name="pay" />
+              <label class="label" for="pay2">Оплата по квитанции</label>
+            </div>
+          </div>
+          <span class="title">Доставка</span>
+          <input type="text" class="b-order__input input-text" value="" placeholder="Адрес доставки">
+          <span class="title title_small title_small-order">Способ доставки</span>
+          <div class="b-order__radio-wrap">
+            <div class="radio-wrap">
+              <input id="ship1" class="radio" type="radio" name="ship" checked />
+              <label class="label" for="ship1">по Москве</label>
+            </div>
+            <div class="radio-wrap">
+              <input id="ship2" class="radio" type="radio" name="ship" />
+              <label class="label" for="ship2">по России</label>
+            </div>
+            <div class="b-order-ship">
+              <p class="text">Выберите 2-3 варианта транспортных компаний на ваше усмотрение. Доставка до терминала транспортной компании бесплатно.</p>
+              <div class="check-wrap">
+                <input id="ship3" class="b-order__check checkbox" type="checkbox" name="ship_check" checked/>
+                <label class="label" for="ship3">Деловые линии</label>
+              </div>
+              <div class="check-wrap">
+                <input id="ship7" class="b-order__check checkbox" type="checkbox" name="ship_check" />
+                <label class="label" for="ship7">Байкал-Сервис</label>
+              </div>
+              <div class="check-wrap">
+                <input id="ship11" class="b-order__check checkbox" type="checkbox" name="ship_check" />
+                <label class="label" for="ship11">Энергия</label>
+              </div>
+              <div class="check-wrap">
+                <input id="ship4" class="b-order__check checkbox" type="checkbox" name="ship_check" />
+                <label class="label" for="ship4">ЖелДорЭкспедиция</label>
+              </div>
+              <div class="check-wrap">
+                <input id="ship8" class="b-order__check checkbox" type="checkbox" name="ship_check" />
+                <label class="label" for="ship8">КИТ</label>
+              </div>
+              <div class="check-wrap">
+                <input id="ship12" class="b-order__check checkbox" type="checkbox" name="ship_check" />
+                <label class="label" for="ship12">Восточный экспресс</label>
+              </div>
+              <div class="check-wrap">
+                <input id="ship5" class="b-order__check checkbox" type="checkbox" name="ship_check" />
+                <label class="label" for="ship5">ПЭК</label>
+              </div>
+              <div class="check-wrap">
+                <input id="ship9" class="b-order__check checkbox" type="checkbox" name="ship_check" />
+                <label class="label" for="ship9">ТЭС</label>
+              </div>
+              <div class="check-wrap">
+                <input id="ship13" class="b-order__check checkbox" type="checkbox" name="ship_check" />
+                <label class="label" for="ship13">Солнечный магадан</label>
+              </div>
+              <div class="check-wrap">
+                <input id="ship6" class="b-order__check checkbox" type="checkbox" name="ship_check" />
+                <label class="label" for="ship6">Автотрейдинг</label>
+              </div>
+              <div class="check-wrap">
+                <input id="ship10" class="b-order__check checkbox" type="checkbox" name="ship_check" />
+                <label class="label" for="ship10">РАТЭК</label>
+              </div>
+              <span class="b-order__text text iconize-warning">Окончательное решение о выборе транспортной компании остается за отделом логистики нашей компании.</span>
+            </div>
+            <span class="title">Дополнительно</span>
+            <textarea class="b-order__textarea input-text input-text_area" placeholder="Укажите комментарий к заказу, если необходимо."></textarea>
+            <a href="#" class="b-order__btn orange-btn">
+              Отправить заявку
+              <span class="iconize-r-arrow2"></span>
+            </a>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="b-footer">
+      <div class="b-footer__col">
+        <span class="b-footer__col-title"><a href="#">О компании</a>
+        </span>
+        <br>
+        <a href="#" class="b-footer__link">Новости</a>
+        <br>
+        <a href="#" class="b-footer__link">Сертификаты и благодарности</a>
+        <br>
+        <a href="#" class="b-footer__link">Вакансии</a>
+        <br>
+        <a href="#" class="b-footer__link">Партнеры</a>
+        <br>
+      </div>
+      <div class="b-footer__col">
+        <span class="b-footer__col-title"><a href="#">Сферы деятельности</a>
+        </span>
+        <br>
+        <a href="#" class="b-footer__link">Дорожное строительство</a>
+        <br>
+        <a href="#" class="b-footer__link">Общественно-массовые мероприятия</a>
+        <br>
+        <a href="#" class="b-footer__link">Зоны проведения дорожных работ</a>
+        <br>
+        <a href="#" class="b-footer__link">Парковка</a>
+        <br>
+        <a href="#" class="b-footer__link">Склады</a>
+        <br>
+      </div>
+      <div class="b-footer__col">
+        <span class="b-footer__col-title"><a href="#">Вопрос-ответ</a>
+        </span>
+        <br>
+        <a href="#" class="b-footer__link">ГОСТы</a>
+        <br>
+        <a href="#" class="b-footer__link">Полезные статьи</a>
+        <br>
+        <a href="#" class="b-footer__link">Доставка</a>
+        <br>
+      </div>
+      <div class="b-footer__col">
+        <span class="b-footer__col-title"><a href="#">Контакты</a>
+        </span>
+        <br>
+        <a href="#" class="b-footer__link">Дилеры</a>
+        <br>
+      </div>
+      <div class="b-footer__col b-footer__col_last">
+        <span class="b-footer__col-title">Будь в курсе наших скидок!</span>
+        <form class="b-footer__form">
+          <input type="text" class="b-footer__input" placeholder="Ваш E-Mail">
+          <input type="submit" class="b-footer__submit btn" value="Подписаться">
+        </form>
+        <div class="b-footer__made-by">
+          <a href="#">Создание сайта</a>
+          <span>-</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="b-popups">
+    <div class="b-hint-size-popup" id="b-hint-size-popup">
+      <a href="#" class="b-popup__close iconize-close" onclick="fancy_close();"></a>
+      <span class="title">Типоразмеры дорожного знака</span>
+      <div class="b-hint-size-popup-table">
+        <div class="b-hint-size-popup-table-title">
+          <div class="b-hint-size-popup-table-title-wrap">
+            <span class="b-hint-size-popup-table-title__cell b-hint-size-popup-table-title__cell_first">Типоразмер знака</span>
+            <span class="b-hint-size-popup-table-title__cell">Применение знака
+              <strong>вне населенных пунктов</strong>
+            </span>
+            <span class="b-hint-size-popup-table-title__cell">Применение знака
+              <strong>в населенных пунктов</strong>
+            </span>
+          </div>
+        </div>
+        <div class="b-hint-size-popup-table-row">
+          <div class="b-hint-size-popup-table-row-wrap">
+            <span class="b-hint-size-popup-table__cell b-hint-size-popup-table__cell_first">1-ый типоразмер</span>
+            <span class="b-hint-size-popup-table__cell">Дороги с одной полосой</span>
+            <span class="b-hint-size-popup-table__cell">Дороги местного значения</span>
+          </div>
+        </div>
+        <div class="b-hint-size-popup-table-row">
+          <div class="b-hint-size-popup-table-row-wrap">
+            <span class="b-hint-size-popup-table__cell b-hint-size-popup-table__cell_first">2-ой типоразмер</span>
+            <span class="b-hint-size-popup-table__cell">Дороги с двумя и тремя полосами</span>
+            <span class="b-hint-size-popup-table__cell">Магистральные дороги</span>
+          </div>
+        </div>
+        <div class="b-hint-size-popup-table-row">
+          <div class="b-hint-size-popup-table-row-wrap">
+            <span class="b-hint-size-popup-table__cell b-hint-size-popup-table__cell_first">3-ий типоразмер</span>
+            <span class="b-hint-size-popup-table__cell">Дороги с четырьмя и более полосами и автомагистрали</span>
+            <span class="b-hint-size-popup-table__cell">Скоростные дороги</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="b-hint-type-popup" id="b-hint-type-popup">
+      <a href="#" class="b-popup__close iconize-close" onclick="fancy_close();"></a>
+      <span class="title">Типы светоотражающей пленки</span>
+      <div class="b-hint-type-popup-items">
+        <div class="b-hint-type-popup__item iconize-skin-type iconize-skin-type_1">
+          <span class="b-hint-type-popup__item-title">Тип «А» Коммерческая</span>
+          <p class="text">Наиболее популярная и доступна по цене. Светоотражающая способность средняя. Применяется для знаков на дорогах с низкой и средней интенсивностью, с общим количеством полос в одну сторону не более 4-х, уровень фонового освещения низкий.</p>
+          <span class="serv-life">Срок службы:
+            <span>до 5 лет</span>
+          </span>
+        </div>
+        <div class="b-hint-type-popup__item iconize-skin-type iconize-skin-type_2">
+          <span class="b-hint-type-popup__item-title">Тип «А» Инженерная</span>
+          <p class="text">Светоотражающие пленки с оптической системой из микропризм. Имеет более высокую интенсивность светоотражения. Предназначена для изготовления дорожных знаков, устанавливаемых на автомагистралях, международных и автомобильных дорогах всех технических категорий.</p>
+          <span class="serv-life">Срок службы:
+            <span>7-9 лет</span>
+          </span>
+          <span class="b-hint-type-popup__item-gost iconize-gost2">Соответствует<a href="#" class="link">ГОСТ Р 52290-2004</a>
+          </span>
+        </div>
+        <div class="b-hint-type-popup__item iconize-skin-type iconize-skin-type_3">
+          <span class="b-hint-type-popup__item-title">Тип «Б» Высокоинтенсивная</span>
+          <p class="text">Светоотражающие пленки с высокой степенью световозвращения имеющие оптическую систему из сферических линз (микростеклошариков), сгруппированных в ячейки. Обладает высокой степенью световозвращения. Знаки с данным типом пленки устанавливают в населенных пунктах на дорогах с числом полос четыре и более, а также на автомагистралях вне населенных пунктов, также с числом полос 4 и более.</p>
+          <span class="serv-life">Срок службы:
+            <span>7-10 лет</span>
+          </span>
+          <span class="b-hint-type-popup__item-gost iconize-gost2">Соответствует<a href="#" class="link">ГОСТ Р 52290-2004</a>
+          </span>
+        </div>
+        <div class="b-hint-type-popup__item iconize-skin-type iconize-skin-type_4">
+          <span class="b-hint-type-popup__item-title">Тип «В» Алмазная</span>
+          <p class="text">Пленки на основе микропризм, обеспечивающая максимально высокий уровень светоовозврата, превышающий соответствующие требования ГОСТ. Используются для изготовления временных знаков, а так же для дорожных знаков на сложных участках автомагистралей, дороги с количеством полос 4 и более.</p>
+          <span class="serv-life">Срок службы:
+            <span>7-10 лет</span>
+          </span>
+          <span class="b-hint-type-popup__item-gost iconize-gost2">Соответствует<a href="#" class="link">ГОСТ Р 52290-2004</a>
+          </span>
+        </div>
+        <div class="b-hint-type-popup__item iconize-skin-type iconize-skin-type_5">
+          <span class="b-hint-type-popup__item-title">Тип «В» Алмазная флуоресцентная</span>
+          <p class="text">Пленки совмещают в себе качества призматической световозвращающей пленки и стойкий желто-зеленый цвет. Данное сочетание круглосуточно обеспечивает наиболее высокий уровень видимости дорожного знака. Предназначены для изготовления постоянных и временных дорожных знаков, эксплуатируемых в суровых условиях окружающей среды. Пленка является наилучшим материалом для изготовления дорожных знаков, устанавливаемых в зоне пешеходных переходов.</p>
+          <span class="serv-life">Срок службы:
+            <span>7-10 лет</span>
+          </span>
+          <span class="b-hint-type-popup__item-gost iconize-gost2">Соответствует<a href="#" class="link">ГОСТ Р 52290-2004</a>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="b-add-cart-popup" id="b-add-cart-popup">
+      <a href="#" class="b-popup__close iconize-close" onclick="fancy_close();"></a>
+      <span class="b-add-cart-popup__title">Товар добавлен в корзину</span>
+      <div class="b-add-cart-popup__img-wrap">
+        <img src="/f/i/car.png" alt="" class="b-add-cart-popup__img">
+      </div>
+      <div class="b-add-cart-popup__order-wrap"><a href="#" class="b-add-cart-popup__order orange-btn">Оформить заказ<span class="iconize-small-arrow iconize-small-arrow_orange"></span></a>
+      </div>
+      <span class="b-add-cart-popup__order-link dotted-link">Продолжить покупки</span>
+    </div>
+    <div class="b-catalog-popup" id="b-catalog-popup">
+      <a href="#" class="b-catalog-popup__close blue-btn" onclick="fancy_close();"></a>
+      <div class="b-search">
+        <div class="b-search__wrap">
+          <div class="b-search__form">
+            <form class="b-search__form-wrap">
+              <div class="b-search__input-wrap">
+                <label for="input-name" class="input-hint">
+                  <span class="input-hint input-hint_bold">Поиск по товару</span>, например <a href="#" class="dotted-link input-hint_link "> Лежачий полицейский</a>
+                </label>
+                <input class="b-search__input" type="text" id="input-name" value="">
+                <span class="clear-text"></span>
+              </div>
+              <div class="b-search__submit-wrap">
+                <input type="submit" class="b-search__submit grey-btn" value="Найти">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="b-catalog-popup__menu clearfix">
+        <div class="b-catalog-popup__menu-col">
+          <div class="b-catalog-popup__menu-item">
+            <a href="#" class="b-catalog-popup__menu-link">
+              <img src="/f/i/catalog-menu-icons/1.jpg" class="b-catalog-popup__menu-image" alt="">
+              <span class="b-catalog-popup__menu-text">Оборудование для паркинга</span>
+            </a>
+            <div class="b-catalog-popup__submenu">
+              <div class="b-catalog-popup__submenu-item"><a href="#" class="b-catalog-popup__submenu-link">Парковочные столбики</a>
+              </div>
+              <div class="b-catalog-popup__submenu-item"><a href="#" class="b-catalog-popup__submenu-link">Гибкие столбики</a>
+              </div>
+              <div class="b-catalog-popup__submenu-item"><a href="#" class="b-catalog-popup__submenu-link">Защита углов</a>
+              </div>
+              <div class="b-catalog-popup__submenu-item"><a href="#" class="b-catalog-popup__submenu-link">Защита стен</a>
+              </div>
+              <div class="b-catalog-popup__submenu-item"><a href="#" class="b-catalog-popup__submenu-link">Резиновые колесоотбойники</a>
+              </div>
+              <div class="b-catalog-popup__submenu-item"><a href="#" class="b-catalog-popup__submenu-link">Cъезд с бордюра</a>
+              </div>
+              <div class="b-catalog-popup__submenu-item"><a href="#" class="b-catalog-popup__submenu-link">Металлические колесоотбойники</a>
+              </div>
+              <div class="b-catalog-popup__submenu-item"><a href="#" class="b-catalog-popup__submenu-link">Блокиратор парковочного места</a>
+              </div>
+              <div class="b-catalog-popup__submenu-item"><a href="#" class="b-catalog-popup__submenu-link">Аксессуары</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="b-catalog-popup__menu-col">
+          <div class="b-catalog-popup__menu-item">
+            <a href="#" class="b-catalog-popup__menu-link">
+              <img src="/f/i/catalog-menu-icons/2.jpg" class="b-catalog-popup__menu-image" alt="">
+              <span class="b-catalog-popup__menu-text">Средства ограждения</span>
+            </a>
+            <div class="b-catalog-popup__submenu">
+              <div class="b-catalog-popup__submenu-item"><a href="#" class="b-catalog-popup__submenu-link">Конусы сигнальные</a>
+              </div>
+              <div class="b-catalog-popup__submenu-item"><a href="#" class="b-catalog-popup__submenu-link">Барьеры водоналивные</a>
+              </div>
+              <div class="b-catalog-popup__submenu-item"><a href="#" class="b-catalog-popup__submenu-link">Веха оградительная</a>
+              </div>
+              <div class="b-catalog-popup__submenu-item"><a href="#" class="b-catalog-popup__submenu-link">Ограждение дорожное «Солдатик»</a>
+              </div>
+              <div class="b-catalog-popup__submenu-item"><a href="#" class="b-catalog-popup__submenu-link">Передвижные секции «Барьер»</a>
+              </div>
+              <div class="b-catalog-popup__submenu-item"><a href="#" class="b-catalog-popup__submenu-link">Оградительные сигнальные ленты</a>
+              </div>
+              <div class="b-catalog-popup__submenu-item"><a href="#" class="b-catalog-popup__submenu-link">Подставки резиновые</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="b-catalog-popup__menu-col">
+          <div class="b-catalog-popup__menu-item">
+            <a href="#" class="b-catalog-popup__menu-link">
+              <img src="/f/i/catalog-menu-icons/3.jpg" class="b-catalog-popup__menu-image" alt="">
+              <span class="b-catalog-popup__menu-text">Лежачие полицейские</span>
+            </a>
+          </div>
+          <div class="b-catalog-popup__menu-item">
+            <a href="#" class="b-catalog-popup__menu-link">
+              <img src="/f/i/catalog-menu-icons/4.jpg" class="b-catalog-popup__menu-image" alt="">
+              <span class="b-catalog-popup__menu-text">Знаки
+                <br>дорожные</span>
+            </a>
+            <div class="b-catalog-popup__submenu">
+              <div class="b-catalog-popup__submenu-item"><a href="#" class="b-catalog-popup__submenu-link">по ГОСТу</a>
+              </div>
+              <div class="b-catalog-popup__submenu-item"><a href="#" class="b-catalog-popup__submenu-link">Временные</a>
+              </div>
+              <div class="b-catalog-popup__submenu-item"><a href="#" class="b-catalog-popup__submenu-link">Светодиодные</a>
+              </div>
+              <div class="b-catalog-popup__submenu-item"><a href="#" class="b-catalog-popup__submenu-link">Аксессуары</a>
+              </div>
+            </div>
+          </div>
+          <div class="b-catalog-popup__menu-item">
+            <a href="#" class="b-catalog-popup__menu-link">
+              <img src="/f/i/catalog-menu-icons/5.jpg" class="b-catalog-popup__menu-image" alt="">
+              <span class="b-catalog-popup__menu-text">Сигнальные столбики</span>
+            </a>
+          </div>
+        </div>
+        <div class="b-catalog-popup__menu-col">
+          <div class="b-catalog-popup__menu-item">
+            <a href="#" class="b-catalog-popup__menu-link">
+              <img src="/f/i/catalog-menu-icons/6.jpg" class="b-catalog-popup__menu-image" alt="">
+              <span class="b-catalog-popup__menu-text">Барьерные дорожные ограждения</span>
+            </a>
+          </div>
+          <div class="b-catalog-popup__menu-item">
+            <a href="#" class="b-catalog-popup__menu-link">
+              <img src="/f/i/catalog-menu-icons/7.jpg" class="b-catalog-popup__menu-image" alt="">
+              <span class="b-catalog-popup__menu-text">Материалы для дорожной разметки</span>
+            </a>
+          </div>
+          <div class="b-catalog-popup__menu-item">
+            <a href="#" class="b-catalog-popup__menu-link">
+              <img src="/f/i/catalog-menu-icons/8.jpg" class="b-catalog-popup__menu-image" alt="">
+              <span class="b-catalog-popup__menu-text">Светофоры и контроллеры</span>
+            </a>
+          </div>
+          <div class="b-catalog-popup__menu-item">
+            <a href="#" class="b-catalog-popup__menu-link">
+              <img src="/f/i/catalog-menu-icons/9.jpg" class="b-catalog-popup__menu-image" alt="">
+              <span class="b-catalog-popup__menu-text">Зеркала дорожные</span>
+            </a>
+          </div>
+          <div class="b-catalog-popup__menu-item">
+            <a href="#" class="b-catalog-popup__menu-link">
+              <img src="/f/i/catalog-menu-icons/10.jpg" class="b-catalog-popup__menu-image" alt="">
+              <span class="b-catalog-popup__menu-text">Катафоты и маячки</span>
+            </a>
+          </div>
+        </div>
+        <div class="b-catalog-popup__menu-col">
+          <div class="b-catalog-popup__menu-item">
+            <a href="#" class="b-catalog-popup__menu-link">
+              <img src="/f/i/catalog-menu-icons/11.jpg" class="b-catalog-popup__menu-image" alt="">
+              <span class="b-catalog-popup__menu-text">Делиниаторы</span>
+            </a>
+          </div>
+          <div class="b-catalog-popup__menu-item">
+            <a href="#" class="b-catalog-popup__menu-link">
+              <img src="/f/i/catalog-menu-icons/12.jpg" class="b-catalog-popup__menu-image" alt="">
+              <span class="b-catalog-popup__menu-text">Фонари сигнальные осветительные</span>
+            </a>
+          </div>
+          <div class="b-catalog-popup__menu-item">
+            <a href="#" class="b-catalog-popup__menu-link">
+              <img src="/f/i/catalog-menu-icons/13.jpg" class="b-catalog-popup__menu-image" alt="">
+              <span class="b-catalog-popup__menu-text">Кабель каналы</span>
+            </a>
+          </div>
+          <div class="b-catalog-popup__menu-item">
+            <a href="#" class="b-catalog-popup__menu-link">
+              <img src="/f/i/catalog-menu-icons/14.jpg" class="b-catalog-popup__menu-image" alt="">
+              <span class="b-catalog-popup__menu-text">Шлагбаумы</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="b-catalog-popup__bottom">
+        <img src="/f/i/table.jpg" class="b-catalog-popup__bottom-image" alt="">
+        <div class="b-catalog-popup__bottom-detail">
+          <div class="b-catalog-popup__bottom-title">Уже есть сформированный список того, что необходимо?</div>
+          <p class="b-catalog-popup__bottom-text">Отправьте заявку, прикрепив файл со списком товаров, или просто <a href="#" class="b-catalog-popup__bottom-link">свяжитесь с нами</a> и наш специалист даст Вам подробную консультацию и ответит на все интересующие Вас вопросы.</p>
+          <a class="b-catalog-popup__bottom-btn orange-btn" href="#">
+            <span class="iconize-mail"></span>Отправить заявку</a>
+        </div>
+      </div>
+    </div>
+    <div class="b-app-pay-popup clearfix" id="b-app-pay-popup">
+      <a href="#" class="b-popup__close iconize-close" onclick="fancy_close();"></a>
+      <span class="b-app-pay-popup__tilte">Заявка на расчет</span>
+      <img src="/f/i/table2.png" class="b-app-pay-popup__image" alt="">
+      <p class="b-app-pay-popup__text">Если у вас уже есть сформированный список необходимой вам продукции, то просто отправьте заявку, прикрепив файл со списком товаров, и наш специалист свяжется с вами в течении 24 часов.</p>
+      <form class="b-app-pay-popup-form">
+        <input type="text" class="b-app-pay-popup__contact input-text" value="" placeholder="Контактное лицо">
+        <div class="b-app-pay-popup__phone-wrap">
+          <input type="text" class="b-app-pay-popup__phone input-text input-text_correct" value="" placeholder="Телефон">
+        </div>
+        <div class="b-app-pay-popup__email-wrap">
+          <input type="text" class="b-app-pay-popup__email input-text input-text_wrong" value="" placeholder="Электронная почта">
+          <span class="invalid-input-text">Поле заполнено неправлено</span>
+        </div>
+        <div class="b-app-pay-popup__add-file clearfix">
+          <span class="b-app-pay-popup__add-file-btn grey-btn iconize-plus"></span>
+          <span class="b-app-pay-popup__add-file-label">Прикрепить список товара</span>
+        </div>
+        <div class="b-app-pay-popup__submit-wrap">
+          <input type="submit" class="b-app-pay-popup__submit orange-btn" value="Отправить">
+        </div>
+      </form>
+    </div>
+    <div class="b-app-pay-succsess-popup clearfix" id="b-app-pay-succsess-popup">
+      <a href="#" class="b-popup__close iconize-close" onclick="fancy_close();"></a>
+      <div class="b-app-pay-succsess-popup__title-wrap">
+        <span class="b-app-pay-succsess-popup__title">Заявка успешно отправлена!</span>
+      </div>
+      <span class="b-app-pay-succsess-popup__text">Наш менеджер свяжется с вами в ближайшее время.</span>
+      <div class="b-app-pay-succsess-popup__submit-wrap">
+        <input type="submit" class="b-app-pay-succsess-popup__submit orange-btn" value="Спасибо">
+      </div>
+    </div>
+    <div class="b-contact-popup clearfix" id="b-contact-popup">
+      <a href="#" class="b-popup__close iconize-close" onclick="fancy_close();"></a>
+      <img src="/f/i/contact-image.png" class="b-contact-popup__image" alt="">
+      <div class="b-contact-popup__main">
+        <span class="b-contact-popup__title">Единый call-центр</span>
+        <span class="b-contact-popup__text iconize-rus">Бесплатный звонок по России</span>
+        <span class="b-contact-popup__phone">8 800 707-99-27</span>
+        <div class="b-contact-popup__buttons">
+          <span class="b-contact-popup__write orange-btn">Напишите нам</span>
+          <span class="b-contact-popup__or">или</span>
+          <span class="b-contact-popup__call orange-btn">Зажите обратный звонок</span>
+        </div>
+      </div>
+      <form class="b-contact-popup__form b-contact-popup__form_write clearfix">
+        <input type="text" class="b-contact-popup__contact input-text" value="" placeholder="Контактное лицо">
+        <input type="text" class="b-contact-popup__email input-text" value="" placeholder="Электронная почта">
+        <textarea class="b-contact-popup__message input-text input-text_area" placeholder="Текст сообщения"></textarea>
+        <div class="b-contact-popup__submit-wrap">
+          <input type="submit" class="b-contact-popup__submit orange-btn" value="Отправить">
+        </div>
+      </form>
+      <form class="b-contact-popup__form b-contact-popup__form_call clearfix">
+        <input type="text" class="b-contact-popup__contact input-text" value="" placeholder="Контактное лицо">
+        <input type="text" class="b-contact-popup__form-phone input-text" value="" placeholder="Телефон">
+        <textarea class="b-contact-popup__message input-text input-text_area" placeholder="Текст сообщения"></textarea>
+        <div class="b-contact-popup__submit-wrap">
+          <input type="submit" class="b-contact-popup__submit orange-btn" value="Отправить">
+        </div>
+      </form>
+      <div class="b-contact-popup__message-send clearfix">
+        <span class="b-contact-popup__message-text">Сообщение успешно отправлено!</span>
+      </div>
+    </div>
+    <div class="b-idn-calc-popup clearfix" id="b-idn-calc-popup">
+      <a href="#" class="b-popup__close iconize-close" onclick="fancy_close();"></a>
+      <span class="b-idn-calc-popup__title title">Калькулятор стоимости «лежачего полицейского»</span>
+      <div class="b-idn-calc-popup-switch">
+        <span class="b-idn-calc-popup-switch__item pseudo-dotted b-idn-calc-popup-switch__item_1 link link_undecor  b-idn-calc-popup-switch__item_active">ИДН-500</span>
+        <span class="b-idn-calc-popup-switch__item pseudo-dotted b-idn-calc-popup-switch__item_2 link link_undecor">ИДН-350</span>
+        <span class="b-idn-calc-popup-switch__item pseudo-dotted b-idn-calc-popup-switch__item_3 link link_undecor">ИДН-900</span>
+      </div>
+      <form class="b-idn-calc-popup-complect b-idn-calc-popup-complect_1 b-idn-calc-popup-complect_active">
+        <div class="b-idn-calc-popup-complect-width">
+          <img src="/f/i/idn-complect1.png" alt="" class="b-idn-calc-popup-complect-width__img">
+          <div class="b-idn-calc-popup-complect-width__left">
+            <span class="b-idn-calc-popup-complect-width__text">ИДН-500-2</span>
+            <span class="b-idn-calc-popup-complect-width__price">1400
+              <span>&#8377</span>
+            </span>
+          </div>
+          <div class="b-idn-calc-popup-complect-width__rigth">
+            <span class="b-idn-calc-popup-complect-width__text">ИДН-500-1</span>
+            <span class="b-idn-calc-popup-complect-width__price">700
+              <span>&#8377</span>
+            </span>
+          </div>
+          <span class="b-idn-calc-popup-complect__height">500
+            <span>mm</span>
+          </span>
+          <div class="b-idn-calc-popup-complect-width__value-wrap">
+            <span class="b-idn-calc-popup-complect-width__value">Ширина дороги</span>
+            <input type="text" class="b-idn-calc-popup-complect-width__input" value="5мм">
+          </div>
+        </div>
+        <div class="b-idn-calc-popup-complect__info">
+          <div class="b-idn-calc-popup-complect__info-row">
+            <span class="b-idn-calc-popup-complect__info-name-wrap">
+              <span class="b-idn-calc-popup-complect__info-name">Стоимость комплекта</span>
+              <span class="b-idn-calc-popup-complect__info-line"></span>
+            </span>
+            <span class="b-idn-calc-popup-complect__info-value b-idn-calc-popup-complect__info-value_price">16 800
+              <span>&#8377</span>
+            </span>
+          </div>
+          <div class="b-idn-calc-popup-complect__info-row">
+            <span class="b-idn-calc-popup-complect__info-name-wrap">
+              <span class="b-idn-calc-popup-complect__info-name">Страна производитель</span>
+              <span class="b-idn-calc-popup-complect__info-line"></span>
+            </span>
+            <div class="b-idn-calc-popup-complect__info-value">
+              <input id="country-rus1" class="b-idn-calc-popup-complect__info-value-radio radio" type="radio" name="country" checked />
+              <label class="b-idn-calc-popup-complect__info-value-label label" for="country-rus1">Россия</label>
+              <input id="country-chn1" class="b-idn-calc-popup-complect__info-value-radio radio" type="radio" name="country" />
+              <label class="b-idn-calc-popup-complect__info-value-label label" for="country-chn1">Китай</label>
+            </div>
+          </div>
+          <div class="b-idn-calc-popup-complect__info-row">
+            <span class="b-idn-calc-popup-complect__info-name-wrap">
+              <span class="b-idn-calc-popup-complect__info-name">Количество анкеров</span>
+              <span class="b-idn-calc-popup-complect__info-line"></span>
+            </span>
+            <div class="b-idn-calc-popup-complect__info-value">
+              <input id="anker1" class="b-idn-calc-popup-complect__info-value-check checkbox" type="checkbox" name="anker" />
+              <label class="b-idn-calc-popup-complect__info-value-label label" for="anker1">180 шт.</label>
+            </div>
+          </div>
+          <div class="b-idn-calc-popup-complect__info-row">
+            <span class="b-idn-calc-popup-complect__info-name-wrap">
+              <span class="b-idn-calc-popup-complect__info-name">Количество концевых элементов ИДН-500-1</span>
+              <span class="b-idn-calc-popup-complect__info-line"></span>
+            </span>
+            <span class="b-idn-calc-popup-complect__info-value">2 шт.</span>
+          </div>
+          <div class="b-idn-calc-popup-complect__info-row">
+            <span class="b-idn-calc-popup-complect__info-name-wrap">
+              <span class="b-idn-calc-popup-complect__info-name">Количество средних элементов ИДН-500-2</span>
+              <span class="b-idn-calc-popup-complect__info-line"></span>
+            </span>
+            <span class="b-idn-calc-popup-complect__info-value">5 шт.</span>
+          </div>
+          <div class="b-idn-calc-popup-complect__info-row">
+            <span class="b-idn-calc-popup-complect__info-name-wrap">
+              <span class="b-idn-calc-popup-complect__info-name">Общий вес комплекта</span>
+              <span class="b-idn-calc-popup-complect__info-line"></span>
+            </span>
+            <span class="b-idn-calc-popup-complect__info-value">43 кг</span>
+          </div>
+          <div class="b-idn-calc-popup-complect__info-row">
+            <span class="b-idn-calc-popup-complect__info-name-wrap">
+              <span class="b-idn-calc-popup-complect__info-name">Объем упаковки</span>
+              <span class="b-idn-calc-popup-complect__info-line"></span>
+            </span>
+            <span class="b-idn-calc-popup-complect__info-value">0,16 м<sup>3</sup>
+            </span>
+
+          </div>
+        </div>
+        <div class="b-idn-calc-popup-cart">
+          <span class="b-idn-calc-popup-cart__title">Количество комплектов</span>
+          <div class="b-idn-calc-popup-cart__qty">
+            <span class="b-idn-calc-popup-cart__qty-counter grey-btn grey-btn_counter grey-btn_counter-minus">-</span>
+            <input type="text" class="b-idn-calc-popup-cart__qty-input grey-input" value="1">
+            <span class="b-idn-calc-popup-cart__qty-counter grey-btn grey-btn_counter grey-btn_counter-plus">+</span>
+          </div>
+          <span class="b-idn-calc-popup-cart__price-title">Итого:</span>
+          <span class="b-idn-calc-popup-cart__price">33 600
+            <span>&#8377</span>
+          </span>
+          <input type="submit" id="add-to-cart" class="b-idn-calc-popup-cart__add orange-btn orange-btn_cart" value="Добавить в корзину">
+          <label for="add-to-cart" class="iconize-cart">&nbsp;</label>
+        </div>
+      </form>
+      <form class="b-idn-calc-popup-complect b-idn-calc-popup-complect_2">
+        <div class="b-idn-calc-popup-complect-width">
+          <img src="/f/i/idn-complect2.png" alt="" class="b-idn-calc-popup-complect-width__img">
+          <div class="b-idn-calc-popup-complect-width__left">
+            <span class="b-idn-calc-popup-complect-width__text">ИДН-350-2</span>
+            <span class="b-idn-calc-popup-complect-width__price">1400
+              <span>&#8377</span>
+            </span>
+          </div>
+          <div class="b-idn-calc-popup-complect-width__rigth">
+            <span class="b-idn-calc-popup-complect-width__text">ИДН-350-1</span>
+            <span class="b-idn-calc-popup-complect-width__price">700
+              <span>&#8377</span>
+            </span>
+          </div>
+          <span class="b-idn-calc-popup-complect__height">350
+            <span>mm</span>
+          </span>
+          <div class="b-idn-calc-popup-complect-width__value-wrap">
+            <span class="b-idn-calc-popup-complect-width__value">Ширина дороги</span>
+            <input type="text" class="b-idn-calc-popup-complect-width__input" value="5мм">
+          </div>
+        </div>
+        <div class="b-idn-calc-popup-complect__info">
+          <div class="b-idn-calc-popup-complect__info-row">
+            <span class="b-idn-calc-popup-complect__info-name-wrap">
+              <span class="b-idn-calc-popup-complect__info-name">Стоимость комплекта</span>
+              <span class="b-idn-calc-popup-complect__info-line"></span>
+            </span>
+            <span class="b-idn-calc-popup-complect__info-value b-idn-calc-popup-complect__info-value_price">16 800
+              <span>&#8377</span>
+            </span>
+          </div>
+          <div class="b-idn-calc-popup-complect__info-row">
+            <span class="b-idn-calc-popup-complect__info-name-wrap">
+              <span class="b-idn-calc-popup-complect__info-name">Страна производитель</span>
+              <span class="b-idn-calc-popup-complect__info-line"></span>
+            </span>
+            <div class="b-idn-calc-popup-complect__info-value">
+              <input id="country-rus2" class="b-idn-calc-popup-complect__info-value-radio radio" type="radio" name="country" checked />
+              <label class="b-idn-calc-popup-complect__info-value-label label" for="country-rus2">Россия</label>
+              <input id="country-chn2" class="b-idn-calc-popup-complect__info-value-radio radio" type="radio" name="country" />
+              <label class="b-idn-calc-popup-complect__info-value-label label" for="country-chn2">Китай</label>
+            </div>
+          </div>
+          <div class="b-idn-calc-popup-complect__info-row">
+            <span class="b-idn-calc-popup-complect__info-name-wrap">
+              <span class="b-idn-calc-popup-complect__info-name">Количество анкеров</span>
+              <span class="b-idn-calc-popup-complect__info-line"></span>
+            </span>
+            <div class="b-idn-calc-popup-complect__info-value">
+              <input id="anker2" class="b-idn-calc-popup-complect__info-value-check checkbox" type="checkbox" name="anker" />
+              <label class="b-idn-calc-popup-complect__info-value-label label" for="anker2">180 шт.</label>
+            </div>
+          </div>
+          <div class="b-idn-calc-popup-complect__info-row">
+            <span class="b-idn-calc-popup-complect__info-name-wrap">
+              <span class="b-idn-calc-popup-complect__info-name">Количество концевых элементов ИДН-350-1</span>
+              <span class="b-idn-calc-popup-complect__info-line"></span>
+            </span>
+            <span class="b-idn-calc-popup-complect__info-value">2 шт.</span>
+          </div>
+          <div class="b-idn-calc-popup-complect__info-row">
+            <span class="b-idn-calc-popup-complect__info-name-wrap">
+              <span class="b-idn-calc-popup-complect__info-name">Количество средних элементов ИДН-350-2</span>
+              <span class="b-idn-calc-popup-complect__info-line"></span>
+            </span>
+            <span class="b-idn-calc-popup-complect__info-value">5 шт.</span>
+          </div>
+          <div class="b-idn-calc-popup-complect__info-row">
+            <span class="b-idn-calc-popup-complect__info-name-wrap">
+              <span class="b-idn-calc-popup-complect__info-name">Общий вес комплекта</span>
+              <span class="b-idn-calc-popup-complect__info-line"></span>
+            </span>
+            <span class="b-idn-calc-popup-complect__info-value">43 кг</span>
+          </div>
+          <div class="b-idn-calc-popup-complect__info-row">
+            <span class="b-idn-calc-popup-complect__info-name-wrap">
+              <span class="b-idn-calc-popup-complect__info-name">Объем упаковки</span>
+              <span class="b-idn-calc-popup-complect__info-line"></span>
+            </span>
+            <span class="b-idn-calc-popup-complect__info-value">0,16 м<sup>3</sup>
+            </span>
+          </div>
+        </div>
+        <div class="b-idn-calc-popup-cart">
+          <span class="b-idn-calc-popup-cart__title">Количество комплектов</span>
+          <div class="b-idn-calc-popup-cart__qty">
+            <span class="b-idn-calc-popup-cart__qty-counter grey-btn grey-btn_counter grey-btn_counter-minus">-</span>
+            <input type="text" class="b-idn-calc-popup-cart__qty-input grey-input" value="1">
+            <span class="b-idn-calc-popup-cart__qty-counter grey-btn grey-btn_counter grey-btn_counter-plus">+</span>
+          </div>
+          <span class="b-idn-calc-popup-cart__price-title">Итого:</span>
+          <span class="b-idn-calc-popup-cart__price">33 600
+            <span>&#8377</span>
+          </span>
+          <input type="submit" id="add-to-cart" class="b-idn-calc-popup-cart__add orange-btn orange-btn_cart" value="Добавить в корзину">
+          <label for="add-to-cart" class="iconize-cart">&nbsp;</label>
+        </div>
+      </form>
+      <form class="b-idn-calc-popup-complect b-idn-calc-popup-complect_3">
+        <div class="b-idn-calc-popup-complect-width">
+          <img src="/f/i/idn-complect3.png" alt="" class="b-idn-calc-popup-complect-width__img">
+          <div class="b-idn-calc-popup-complect-width__left">
+            <span class="b-idn-calc-popup-complect-width__text">ИДН-900-2</span>
+            <span class="b-idn-calc-popup-complect-width__price">1400
+              <span>&#8377</span>
+            </span>
+          </div>
+          <div class="b-idn-calc-popup-complect-width__rigth">
+            <span class="b-idn-calc-popup-complect-width__text">ИДН-900-1</span>
+            <span class="b-idn-calc-popup-complect-width__price">700
+              <span>&#8377</span>
+            </span>
+          </div>
+          <span class="b-idn-calc-popup-complect__height">900
+            <span>mm</span>
+          </span>
+          <div class="b-idn-calc-popup-complect-width__value-wrap">
+            <span class="b-idn-calc-popup-complect-width__value">Ширина дороги</span>
+            <input type="text" class="b-idn-calc-popup-complect-width__input" value="5мм">
+          </div>
+        </div>
+        <div class="b-idn-calc-popup-complect__info">
+          <div class="b-idn-calc-popup-complect__info-row">
+            <span class="b-idn-calc-popup-complect__info-name-wrap">
+              <span class="b-idn-calc-popup-complect__info-name">Стоимость комплекта</span>
+              <span class="b-idn-calc-popup-complect__info-line"></span>
+            </span>
+            <span class="b-idn-calc-popup-complect__info-value b-idn-calc-popup-complect__info-value_price">16 800
+              <span>&#8377</span>
+            </span>
+          </div>
+          <div class="b-idn-calc-popup-complect__info-row">
+            <span class="b-idn-calc-popup-complect__info-name-wrap">
+              <span class="b-idn-calc-popup-complect__info-name">Страна производитель</span>
+              <span class="b-idn-calc-popup-complect__info-line"></span>
+            </span>
+            <div class="b-idn-calc-popup-complect__info-value">
+              <input id="country-rus3" class="b-idn-calc-popup-complect__info-value-radio radio" type="radio" name="country" checked />
+              <label class="b-idn-calc-popup-complect__info-value-label label" for="country-rus3">Россия</label>
+              <input id="country-chn3" class="b-idn-calc-popup-complect__info-value-radio radio" type="radio" name="country" />
+              <label class="b-idn-calc-popup-complect__info-value-label label" for="country-chn3">Китай</label>
+            </div>
+          </div>
+          <div class="b-idn-calc-popup-complect__info-row">
+            <span class="b-idn-calc-popup-complect__info-name-wrap">
+              <span class="b-idn-calc-popup-complect__info-name">Количество анкеров</span>
+              <span class="b-idn-calc-popup-complect__info-line"></span>
+            </span>
+            <div class="b-idn-calc-popup-complect__info-value">
+              <input id="anker3" class="b-idn-calc-popup-complect__info-value-check checkbox" type="checkbox" name="anker" />
+              <label class="b-idn-calc-popup-complect__info-value-label label" for="anker3">180 шт.</label>
+            </div>
+          </div>
+          <div class="b-idn-calc-popup-complect__info-row">
+            <span class="b-idn-calc-popup-complect__info-name-wrap">
+              <span class="b-idn-calc-popup-complect__info-name">Количество концевых элементов ИДН-900-1</span>
+              <span class="b-idn-calc-popup-complect__info-line"></span>
+            </span>
+            <span class="b-idn-calc-popup-complect__info-value">2 шт.</span>
+          </div>
+          <div class="b-idn-calc-popup-complect__info-row">
+            <span class="b-idn-calc-popup-complect__info-name-wrap">
+              <span class="b-idn-calc-popup-complect__info-name">Количество средних элементов ИДН-900-2</span>
+              <span class="b-idn-calc-popup-complect__info-line"></span>
+            </span>
+            <span class="b-idn-calc-popup-complect__info-value">5 шт.</span>
+          </div>
+          <div class="b-idn-calc-popup-complect__info-row">
+            <span class="b-idn-calc-popup-complect__info-name-wrap">
+              <span class="b-idn-calc-popup-complect__info-name">Общий вес комплекта</span>
+              <span class="b-idn-calc-popup-complect__info-line"></span>
+            </span>
+            <span class="b-idn-calc-popup-complect__info-value">43 кг</span>
+          </div>
+          <div class="b-idn-calc-popup-complect__info-row">
+            <span class="b-idn-calc-popup-complect__info-name-wrap">
+              <span class="b-idn-calc-popup-complect__info-name">Объем упаковки</span>
+              <span class="b-idn-calc-popup-complect__info-line"></span>
+            </span>
+            <span class="b-idn-calc-popup-complect__info-value">0,16 м<sup>3</sup>
+            </span>
+          </div>
+        </div>
+        <div class="b-idn-calc-popup-cart">
+          <span class="b-idn-calc-popup-cart__title">Количество комплектов</span>
+          <div class="b-idn-calc-popup-cart__qty">
+            <span class="b-idn-calc-popup-cart__qty-counter grey-btn grey-btn_counter grey-btn_counter-minus">-</span>
+            <input type="text" class="b-idn-calc-popup-cart__qty-input grey-input" value="1">
+            <span class="b-idn-calc-popup-cart__qty-counter grey-btn grey-btn_counter grey-btn_counter-plus">+</span>
+          </div>
+          <span class="b-idn-calc-popup-cart__price-title">Итого:</span>
+          <span class="b-idn-calc-popup-cart__price">33 600
+            <span>&#8377</span>
+          </span>
+          <input type="submit" id="add-to-cart" class="b-idn-calc-popup-cart__add orange-btn orange-btn_cart" value="Добавить в корзину">
+          <label for="add-to-cart" class="iconize-cart">&nbsp;</label>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>
