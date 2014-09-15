@@ -28,8 +28,9 @@
       auto: {
         play: false
       },
-      prev: ".b-slider__left",
-      next: ".b-slider__right",
+      height: "variable",
+      prev: ".b-slider__right",
+      next: ".b-slider__left",
     });
   });
   </script>
@@ -110,16 +111,15 @@
           </div>
         </div>
       </div>
+
       <div class="b-content">
-        <div class="b-path"><a class="link" href="#">Дорожные знаки</a>→<a class="link" href="#">По ГОСТу</a>→</div>
-        <span class="b-content__title" id="idn">1.1. Железнодорожный переезд со шлагбаумом</span>
-        <div class="clearfix"></div>
-        <div class="b-product">
-          <form class="b-params">
+        <div class="b-path"><a href="#">Дорожные знаки</a><span class="b-path__arrow">→</span><a href="#">По ГОСТу</a><span class="b-path__arrow">→</span></div>
+        <h1>1.1. Железнодорожный переезд со шлагбаумом</h1>
+        <div class="b-product"><div class="b-product__row"><div class="b-product__description">
+          <div class="b-params clearfix">
             <div class="b-params__left">
-              <span class="b-params__title title title_small">Тип пленки
-                <span class="b-params__hint"></span>
-              </span>
+              <div class="b-params__title title title_small">Тип пленки <span class="b-params__hint"></span></div>
+
               <div class="b-params-radio-wrap">
                 <input id="params1" class="b-params-radio radio" type="radio" name="params_left" checked />
                 <label class="b-params-label label" for="params1">«А» Коммерческая</label>
@@ -140,11 +140,12 @@
                 <input id="params5" class="b-params-radio radio" type="radio" name="params_left" />
                 <label class="b-params-label label" for="params5">«Б» Алмазная флуорисцентная</label>
               </div>
+
+
             </div>
             <div class="b-params__right">
-              <span class="b-params__title title title_small">Типоразмер
-                <span class="b-params__hint"></span>
-              </span>
+              <div class="b-params__title title title_small">Типоразмер <span class="b-params__hint"></span></div>
+
               <div class="b-params-radio-wrap">
                 <input id="params6" class="b-params-radio radio" type="radio" name="params_right" checked />
                 <label class="b-params-label label" for="params6">1-ый типоразмер</label>
@@ -159,50 +160,54 @@
               </div>
               <input id="params9" class="b-params-check checkbox" type="checkbox" name="params_check" />
               <label class="b-params-label label" for="params9">Флуорисцентный фон</label>
+
             </div>
-            <div class="clearfix"></div>
+
+</div>
             <div class="b-gost iconize-gost">
               <span class="b-gost__title">Товар соответствует ГОСТу</span>
               <a href="#" class="b-gost__link link">Р 52290-2004</a>
             </div>
             <div class="b-product-tip iconize-clock">
               <span class="b-product-tip__text">Товар производится
-                <strong>под заказ</strong>в течении 2-3 рабочих дней с момента оформления заказа.</span>
+                <strong>под заказ</strong> в течении 2-3 рабочих дней с момента оформления заказа.</span>
             </div>
             <div class="b-product-cart">
               <div class="b-product-cart__price">
-                <span class="b-product-cart__price-title">Цена:</span>
-                <span class="b-product-cart__price-text">700
-                  <span>&#8377</span>
+                <span class="b-product-cart__price-title">Цена за упаковку:</span>
+                <span class="b-product-cart__price-text">700<span>&#8377;</span>
                 </span>
               </div>
-              <div class="b-product-cart__qty">
+              <div class="nowrap"><div class="b-product-cart__qty">
                 <span class="b-product-cart__qty-title">Количество:</span>
-                <span class="b-product-cart__qty-counter grey-btn grey-btn_counter grey-btn_counter-minus">-</span>
+                <span class="b-product-cart__qty-counter grey-btn grey-btn_counter grey-btn_counter_big grey-btn_counter-minus">-</span>
                 <input type="text" class="b-product-cart__qty-input grey-input" value="1">
-                <span class="b-product-cart__qty-counter grey-btn grey-btn_counter grey-btn_counter-plus">+</span>
-              </div>
-              <div class="b-product-cart__submit-wrap">
-                <input id="add-to-cart" type="submit" class="b-product-cart__submit orange-btn orange-btn_cart" value="Добавить в корзину" />
-                <label for="add-to-cart" class="iconize-cart">&nbsp;</label>
-              </div>
+                <span class="b-product-cart__qty-counter grey-btn grey-btn_counter grey-btn_counter_big grey-btn_counter-plus">+</span>
+              </div><div class="b-product-cart__submit-wrap">
+                <span class="orange-btn orange-btn_bigcart iconize-cart">Добавить в корзину</span>
+              </div></div>
             </div>
-             <div class="b-product-addit-links">
+            <div class="b-product-addit-links">
               <a href="" class="b-product-addit__print dotted-link">
                 <span class="iconize-print"></span>Распечатать</a>
               <a href="" class="b-product-addit__email dotted-link">
                 <span class="iconize-send-email"></span>Отправить на E-Mail</a>
             </div>
-          </form>
-           <div class="b-slider">
-            <div class="b-slider__wrap">
+            <div class="b-product__text">
+                       <h3>Применение и назначение</h3>
+            <p>Устанавливаются в населённом пункте за 50—100 м, вне населённых пунктов за 150—300 м до начала опасного участка. Приближение к железнодорожному переезду, оборудованному шлагбаумом. Водитель обязан снизить скорость, оценить ситуацию. Этот знак дублируется только вне населённого пункта, второй знак устанавливается на расстоянии не менее 50 м до начала опасного участка.</p>
+            </div>
+          </div>
+          <div class="b-product__image">
+          <div class="b-slider b-slider_big" style="height:450px">
+            <div class="b-slider__wrap clearfix">
               <div class="b-slider__holder">
                 <ul>
-                  <li class="b-slider__item">
+                  <li class="b-slider__item" style="padding-top:30px">
                     <img src="/f/i/img19.jpg" alt="" class="b-slider__item-img">
                     <span class="b-slider__item-title">1.1</span>
                   </li>
-                  <li class="b-slider__item">
+                  <li class="b-slider__item" style="padding-top:30px">
                     <img src="/f/i/img20.jpg" alt="" class="b-slider__item-img">
                     <span class="b-slider__item-title">1.1</span>
                   </li>
@@ -214,7 +219,7 @@
                     <img src="/f/i/img21.jpg" alt="" class="b-slider__item-img">
                     <span class="b-slider__item-title">1.3.1</span>
                   </li>
-                  <li class="b-slider__item">
+                  <li class="b-slider__item" style="padding-top:30px">
                     <img src="/f/i/img20.jpg" alt="" class="b-slider__item-img">
                     <span class="b-slider__item-title">1.1</span>
                   </li>
@@ -224,15 +229,15 @@
                   </li>
                 </ul>
               </div>
-              <span class="b-slider__left"></span>
+
+            </div><span class="b-slider__left"></span>
               <span class="b-slider__right"></span>
-            </div>
           </div>
-          <div class="clearfix"></div>
-          <div class="b-product-addit">
-            <span class="title">Применение и назначение</span>
-            <p class="text">Устанавливаются в населённом пункте за 50—100 м, вне населённых пунктов за 150—300 м до начала опасного участка. Приближение к железнодорожному переезду, оборудованному шлагбаумом. Водитель обязан снизить скорость, оценить ситуацию. Этот знак дублируется только вне населённого пункта, второй знак устанавливается на расстоянии не менее 50 м до начала опасного участка.</p>
-            <span class="title">Дополнительные аксессуары</span>
+          </div>
+
+          </div>
+</div>
+            <h2 class="b-product__title b-product__title_secondary">Дополнительные аксессуары</h2>
             <div class="b-product-tiles b-product-tiles_untitle b-product-tiles_full">
               <div class="b-product-tiles-wrap">
               <div class="b-product-tiles__item-wrap">
@@ -253,14 +258,13 @@
                     <div class="b-product-tiles__add-wrap">
                       <span type="submit" id="add-to-cart" class="b-product-tiles__add orange-btn iconize-cart orange-btn_cart">В корзину</span>
                     </div>
-                    <span class="b-product-tiles__in-cart">Товар в
-                      <span class="link">корзине</span>
-                    </span>
+
                   </a>
+
                 </div>
                 </div>
                 <div class="b-product-tiles__item-wrap">
-                <div class="b-product-tiles__item b-product-tiles__item_in-cart">
+                <div class="b-product-tiles__item">
                   <a href="#" class="b-product-tiles__item-link">
                     <img src="/f/i/img22.jpg" class="b-product-tiles__item-image">
                     <span class="b-product-tiles__item-mask"></span>
@@ -269,6 +273,22 @@
                     <div class="b-product-tiles__item-available">
                       <span class="item-available iconize-available">В наличии</span>
                     </div>
+
+                  </a>
+                   <div class="b-product-tiles__in-cart">Товар добавлен в&nbsp;<b><a href="#">корзину</a></b>
+                    </div>
+                </div>
+                </div>
+                <div class="b-product-tiles__item-wrap">
+                <div class="b-product-tiles__item">
+                  <a href="#" class="b-product-tiles__item-link">
+                    <img src="/f/i/img23.jpg" class="b-product-tiles__item-image">
+                    <span class="b-product-tiles__item-mask"></span>
+                    <span class="b-product-tiles__item-name">Крепление в сборе (коромысло одинарное)</span>
+                    <span class="b-product-tiles__item-price">72 &#8377</span>
+                    <div class="b-product-tiles__item-available">
+                      <span class="item-available iconize-available">В наличии</span>
+                    </div>
                     <div class="b-product-tiles__qty">
                       <span class="b-product-tiles__qty-counter grey-btn grey-btn_counter grey-btn_counter-minus">-</span>
                       <input type="text" class="b-product-tiles__qty-input grey-input" value="1">
@@ -277,9 +297,7 @@
                     <div class="b-product-tiles__add-wrap">
                       <span type="submit" id="add-to-cart" class="b-product-tiles__add orange-btn iconize-cart orange-btn_cart">В корзину</span>
                     </div>
-                    <span class="b-product-tiles__in-cart">Товар в
-                      <span class="link">корзине</span>
-                    </span>
+
                   </a>
                 </div>
                 </div>
@@ -301,9 +319,7 @@
                     <div class="b-product-tiles__add-wrap">
                       <span type="submit" id="add-to-cart" class="b-product-tiles__add orange-btn iconize-cart orange-btn_cart">В корзину</span>
                     </div>
-                    <span class="b-product-tiles__in-cart">Товар в
-                      <span class="link">корзине</span>
-                    </span>
+
                   </a>
                 </div>
                 </div>
@@ -325,9 +341,7 @@
                     <div class="b-product-tiles__add-wrap">
                       <span type="submit" id="add-to-cart" class="b-product-tiles__add orange-btn iconize-cart orange-btn_cart">В корзину</span>
                     </div>
-                    <span class="b-product-tiles__in-cart">Товар в
-                      <span class="link">корзине</span>
-                    </span>
+
                   </a>
                 </div>
                 </div>
@@ -349,9 +363,7 @@
                     <div class="b-product-tiles__add-wrap">
                       <span type="submit" id="add-to-cart" class="b-product-tiles__add orange-btn iconize-cart orange-btn_cart">В корзину</span>
                     </div>
-                    <span class="b-product-tiles__in-cart">Товар в
-                      <span class="link">корзине</span>
-                    </span>
+
                   </a>
                 </div>
                 </div>
@@ -373,9 +385,7 @@
                     <div class="b-product-tiles__add-wrap">
                       <span type="submit" id="add-to-cart" class="b-product-tiles__add orange-btn iconize-cart orange-btn_cart">В корзину</span>
                     </div>
-                    <span class="b-product-tiles__in-cart">Товар в
-                      <span class="link">корзине</span>
-                    </span>
+
                   </a>
                 </div>
                 </div>
@@ -397,9 +407,7 @@
                     <div class="b-product-tiles__add-wrap">
                       <span type="submit" id="add-to-cart" class="b-product-tiles__add orange-btn iconize-cart orange-btn_cart">В корзину</span>
                     </div>
-                    <span class="b-product-tiles__in-cart">Товар в
-                      <span class="link">корзине</span>
-                    </span>
+
                   </a>
                 </div>
                 </div>
@@ -421,9 +429,7 @@
                     <div class="b-product-tiles__add-wrap">
                       <span type="submit" id="add-to-cart" class="b-product-tiles__add orange-btn iconize-cart orange-btn_cart">В корзину</span>
                     </div>
-                    <span class="b-product-tiles__in-cart">Товар в
-                      <span class="link">корзине</span>
-                    </span>
+
                   </a>
                 </div>
                 </div>
@@ -439,47 +445,24 @@
                     </div>
                     <div class="b-product-tiles__qty">
                       <span class="b-product-tiles__qty-counter grey-btn grey-btn_counter grey-btn_counter-minus">-</span>
-                      <input type="text" class="b-product-tiles__qty-input grey-input" value="1">
+                      <input type="number" class="b-product-tiles__qty-input grey-input" value="1">
                       <span class="b-product-tiles__qty-counter grey-btn grey-btn_counter grey-btn_counter-plus">+</span>
                     </div>
                     <div class="b-product-tiles__add-wrap">
                       <span type="submit" id="add-to-cart" class="b-product-tiles__add orange-btn iconize-cart orange-btn_cart">В корзину</span>
                     </div>
-                    <span class="b-product-tiles__in-cart">Товар в
-                      <span class="link">корзине</span>
-                    </span>
-                  </a>
-                </div>
-                </div>
-                <div class="b-product-tiles__item-wrap">
-                <div class="b-product-tiles__item">
-                  <a href="#" class="b-product-tiles__item-link">
-                    <img src="/f/i/img23.jpg" class="b-product-tiles__item-image">
-                    <span class="b-product-tiles__item-mask"></span>
-                    <span class="b-product-tiles__item-name">Крепление в сборе (коромысло одинарное)</span>
-                    <span class="b-product-tiles__item-price">72 &#8377</span>
-                    <div class="b-product-tiles__item-available">
-                      <span class="item-available iconize-available">В наличии</span>
-                    </div>
-                    <div class="b-product-tiles__qty">
-                      <span class="b-product-tiles__qty-counter grey-btn grey-btn_counter grey-btn_counter-minus">-</span>
-                      <input type="text" class="b-product-tiles__qty-input grey-input" value="1">
-                      <span class="b-product-tiles__qty-counter grey-btn grey-btn_counter grey-btn_counter-plus">+</span>
-                    </div>
-                    <div class="b-product-tiles__add-wrap">
-                      <span type="submit" id="add-to-cart" class="b-product-tiles__add orange-btn iconize-cart orange-btn_cart">В корзину</span>
-                    </div>
-                    <span class="b-product-tiles__in-cart">Товар в
-                      <span class="link">корзине</span>
-                    </span>
                   </a>
                 </div>
                 </div>
               </div>
             </div>
-          </div>
+
+          
+
+
         </div>
-      </div>
+
+
     </div>
     <div class="b-footer">
       <div class="b-footer__col">

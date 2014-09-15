@@ -684,7 +684,11 @@
        scrollbarPosition: "inside",
        scrollInertia: 200,
        autoDraggerLength: false
-
-     });
+     ,
+          callbacks:{
+            onScrollStart:function(){ if ($(this).next().is(':hidden')) {$(this).next().fadeIn(); }},
+            onTotalScroll:function(){  $(this).next().fadeOut();},
+          }
+          });
    });
  }
